@@ -21,7 +21,8 @@
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
   --measure: 44rem;
-  --wide: 66rem;
+  --wide: 56rem;
+  --figure: 48rem;
   --gutter: 16px;
   color-scheme: light;
 }
@@ -169,13 +170,13 @@ code { font-family: var(--mono); font-size: 0.84em; }
 
 /* ---------- figures ---------- */
 
-figure { margin: 2rem auto; max-width: var(--wide); }
+figure { margin: 2rem auto; max-width: var(--figure); }
 .figure-frame {
   display: block;
   background: var(--figure-bg);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: clamp(0.5rem, 2vw, 1.4rem);
+  padding: clamp(0.4rem, 1.5vw, 0.9rem);
 }
 a.figure-frame { cursor: zoom-in; }
 a.figure-frame:hover { border-color: var(--ink-2); }
@@ -194,7 +195,7 @@ figcaption b { color: var(--ink); }
   .stat .num { font-size: 1.8rem; }
 }
 .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.15rem 1.15rem; }
-.stat .num { display: block; font-size: 2.1rem; line-height: 1.1; color: var(--green-ink); margin-bottom: 0.4rem; font-variant-numeric: lining-nums; }
+.stat .num { display: block; font-size: 1.9rem; line-height: 1.1; color: var(--green-ink); margin-bottom: 0.4rem; font-variant-numeric: lining-nums; }
 .stat.rose .num { color: var(--rose-ink); }
 .stat p { margin: 0; font-size: 0.95rem; line-height: 1.45; color: var(--ink-2); }
 
