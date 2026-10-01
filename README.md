@@ -32,9 +32,8 @@ The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in 
 
 ## Before going public
 
-- [ ] Authors and affiliations (hero; search for `TODO` in `index.html`)
 - [ ] arXiv and code links (replace the two "coming soon" buttons)
-- [ ] Final BibTeX
+- [ ] arXiv eprint / url in the BibTeX
 - [ ] Contact address with a Stanford affiliation in the footer
 - [ ] Absolute `og:image` / `og:url` once the final domain is known
 

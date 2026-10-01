@@ -115,14 +115,17 @@ a:hover { text-decoration-thickness: 2px; }
 .hero-logo { width: min(26rem, 82%); margin: 0 auto 2.25rem; }
 .hero h1 {
   font-weight: normal;
-  font-size: clamp(1.25rem, 0.6rem + 3.6vw, 2.6rem);
+  font-size: clamp(1.25rem, 0.6rem + 3.6vw, 1.85rem);
   line-height: 1.2;
-  margin: 0 auto 1.1rem;
+  margin: 0 auto 1.2rem;
   letter-spacing: -0.005em;
   text-wrap: balance;
 }
 .tagline { color: var(--ink-2); margin: 0 0 1.6rem; font-size: 1.15rem; }
-.authors { color: var(--ink-2); font-size: 1rem; margin: 0 auto 1.8rem; font-style: italic; }
+.authors { color: var(--ink); font-size: 1.15rem; margin: 0 0 0.25rem; }
+.authors sup, .equal sup { font-size: 0.65em; margin-left: 0.05em; }
+.affil { color: var(--ink-2); font-size: 1.05rem; margin: 0 0 0.2rem; }
+.equal { color: var(--ink-2); font-size: 0.85rem; margin: 0 0 1.6rem; }
 
 .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem; }
 .btn {
