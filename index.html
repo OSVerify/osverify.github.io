@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSVerify: One-Sided Verification</title>
+  <meta name="description" content="OSVerify filters out invalid AI-generated solutions while keeping the false-rejection rate of valid ones under a fixed budget, so that limited expert review is spent on the candidates most likely to be correct.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F9F6F1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1B1A18" media="(prefers-color-scheme: dark)">
+
+  <!-- Update to the final address (https://osv.stanford.edu/) once the domain is live. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OSVerify: One-Sided Verification Under Limited Expert Review">
+  <meta property="og:description" content="Decoupling error proposal from error validation to filter invalid candidates while preserving valid ones for expert review.">
+  <meta property="og:image" content="assets/img/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="OSVerify home">
+        <picture>
+          <source srcset="assets/img/logo-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="assets/img/logo-light.svg" alt="" width="124" height="39">
+        </picture>
+      </a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#problem">Problem</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#research">Research use</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <div class="hero container" id="top">
+      <picture>
+        <source srcset="assets/img/logo-dark.svg" media="(prefers-color-scheme: dark)">
+        <img class="hero-logo" src="assets/img/logo-light.svg" alt="OSVerify" width="1240" height="390">
+      </picture>
+      <h1>One-Sided Verification Under Limited Expert Review</h1>
+      <p class="tagline">AI can now propose candidate solutions to open scientific problems far faster than experts can review them. OSVerify filters out invalid candidates while keeping the rejection rate of valid ones under a fixed budget, so expert time goes to the candidates most likely to be correct.</p>
+      <!-- TODO: replace with the author list and affiliations when the paper is de-anonymized. -->
+      <p class="authors">Authors and affiliations will be listed with the paper release.</p>
+      <div class="buttons">
+        <span class="btn" aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm7 1.5V9h5.5L13 3.5ZM8 13h8v1.5H8V13Zm0 3.5h8V18H8v-1.5Z"/></svg>
+          Paper <span class="soon">coming soon</span>
+        </span>
+        <span class="btn" aria-disabled="true">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          Code <span class="soon">coming soon</span>
+        </span>
+        <a class="btn secondary" href="#citation">BibTeX</a>
+      </div>
+    </div>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <h2 id="overview-title" class="visually-hidden">Overview</h2>
+        <figure>
+          <a class="figure-frame" href="assets/img/fig1_teaser.png"><img src="assets/img/fig1_teaser.png" width="1920" height="815"
+                 alt="Three panels. (a) An AI solver produces many candidate solutions to an open question, too many for expert review. (b) OSVerify: an error proposer decomposes the solution and proposes candidate errors; an error validator votes on each error, and the solution is rejected if any error gets enough Substantial votes, otherwise it passes to expert review. (c) Curves of invalid solutions left to review versus valid solutions lost on Putnam100 and FirstProof-Eval, where OSVerify sits well below the LLM-judge and voting baselines, and the trained variant lower still."><span class="visually-hidden"> (open full-size image)</span></a>
+          <p class="zoom-hint">Tap the figure to open it at full size.</p>
+          <figcaption><b>Figure 1.</b> (a) AI-generated candidates can outpace limited expert review. (b) OSVerify splits verification into hierarchical error proposal and repeated error validation, turning solution verification into error validation. (c) With at most 5% of valid solutions lost (FNR), OSVerify cuts the invalid candidates that still need review by 52% on Putnam100 and 34% on FirstProof-Eval. Training the validator raises the cut to 83% and 41%.</figcaption>
+        </figure>
+
+        <div class="stats" role="list">
+          <div class="stat" role="listitem"><span class="num">46%</span><p>fewer invalid candidates left for expert review than voting baselines, averaged over benchmarks under the same low FNR constraint</p></div>
+          <div class="stat rose" role="listitem"><span class="num">57%</span><p>fewer once the error validator is post-trained with reinforcement learning</p></div>
+          <div class="stat" role="listitem"><span class="num">0.68&thinsp;→&thinsp;0.90</span><p>AUROC when the model checks a stated error instead of judging the whole solution (FirstProof-Eval)</p></div>
+          <div class="stat rose" role="listitem"><span class="num">3</span><p>open conjectures in relative Langlands duality resolved with OSVerify as the verifier, with proofs confirmed by experts</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABSTRACT ================= -->
+    <section id="abstract" aria-labelledby="abstract-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="abstract-title">Abstract</h2>
+          <p>AI has become increasingly helpful in scientific discovery, yet human expert review remains essential for problems without reliable automated evaluation. This becomes a fundamental challenge as candidate generation scales beyond available review capacity.</p>
+          <p>We study verification under limited human effort, where rare valid solutions need to be prioritized while invalid candidates are filtered out to reduce human workload. We adopt the one-sided verification objective that maximizes the rejection rate of invalid solutions (TNR) under a constraint on the false-rejection rate of valid ones (FNR), making human review cost an explicit term to minimize.</p>
+          <p>Drawing on the intuition that verifying a specific error can be easier than discovering one, we introduce OSVerify, an algorithmic framework that decouples error proposal from error validation. The error proposer searches for errors across different granularities by hierarchical decomposition, while the validator distinguishes substantial errors from minor or hallucinated ones.</p>
+          <p>On competition- and research-level benchmarks, OSVerify reduces the number of human reviews of invalid solutions by 46% on average compared to voting baselines under the same empirical low FNR constraint, and post-training the validator raises the reduction to 57%. As real-world use cases, we apply OSVerify to find errors in published research papers, which the original authors subsequently confirmed, and to help resolve three open conjectures in the Langlands program, confirmed by experts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROBLEM ================= -->
+    <section id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="problem-title">The problem</h2>
+          <p class="lead">When experts are the bottleneck, a verifier should answer two questions differently: how many valid solutions does it throw away, and how much reading does it save?</p>
+          <p>Valid solutions to hard discovery problems are rare, and discarding one may lose an important result. At the same time, every invalid candidate that slips through costs an expert's time. Following the Neyman–Pearson principle, we treat these as a constrained objective rather than a single accuracy number:</p>
+        </div>
+        <div class="objective" role="group" aria-label="One-sided verification objective">
+          <span class="math"><span class="op">maximize</span>&ensp;TNR(<i>V</i>)&ensp;<span class="op">subject to</span>&ensp;FNR(<i>V</i>) ≤ <i>τ</i></span>
+          <span class="def"><b>TNR</b>: fraction of invalid solutions the verifier rejects. <b>FNR</b>: fraction of valid solutions it wrongly rejects. Under a fixed FNR budget τ, every gain in TNR removes invalid candidates from the expert's queue.</span>
+        </div>
+        <div class="prose">
+          <p>Standard LLM-as-a-judge verification struggles under this objective. Sampling more judgments and voting helps, but saturates quickly, and at a zero FNR budget it often rejects nothing at all. What does help is changing the question: checking whether a <em>specific, stated</em> error invalidates a solution is far more reliable than judging the whole solution from scratch.</p>
+        </div>
+        <figure>
+          <a class="figure-frame" href="assets/img/fig1_motivation_row.png"><img src="assets/img/fig1_motivation_row.png" width="1920" height="426" loading="lazy"
+                 alt="Three panels on gpt-oss-120b. (a) Rejection frequencies over 64 judgments for valid and invalid Putnam100 solutions; lowering the threshold catches 34% more invalid solutions but loses 36% more valid ones. (b) TNR against judgments per solution: curves for FNR at most 5% and 10% rise then flatten near 40%, and the FNR equals 0 curve stays at zero. (c) TNR against FNR: checking a stated error reaches about 78% TNR at near-zero FNR with AUROC 0.90, while judging the solution stays near 50% with AUROC 0.68."><span class="visually-hidden"> (open full-size image)</span></a>
+          <p class="zoom-hint">Tap the figure to open it at full size.</p>
+          <figcaption><b>Figure 2.</b> (a) Frequency of LLM rejections on Putnam100 with 64 judgments per solution. (b) Voting TNR rises and then saturates as the number of judgments grows, whatever the FNR constraint. (c) Judging a stated error <span class="math">(<i>x</i>, <i>y</i>, <i>e</i>)</span> reaches higher TNR than judging the solution <span class="math">(<i>x</i>, <i>y</i>)</span> at matched FNR, especially when FNR is low. All panels use <code>gpt-oss-120b</code>.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= METHOD ================= -->
+    <section id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="method-title">Method</h2>
+          <p>OSVerify brings the generate-and-verify structure inside verification itself. Instead of asking “is this solution valid?”, it asks a sequence of narrower questions: “does <em>this</em> error hold, and does it invalidate the solution?” A single confirmed error is enough to reject, so the error becomes the natural unit of evidence.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Error proposal</h3>
+            <p>The proposer recursively splits the solution into two contiguous parts, building a tree from the whole argument down to individual claims. It then inspects every node, with the full problem and solution in context, and proposes errors that could invalidate the solution.</p>
+            <p class="muted">Goal: <b>coverage</b>. On as many invalid solutions as possible, at least one proposed error should be real and substantial.</p>
+          </article>
+          <article class="step">
+            <h3>Error validation</h3>
+            <p>Each proposed error <span class="math"><i>e</i></span> is checked independently against the full problem and solution. The validator first asks whether the error holds, then whether it invalidates the solution:</p>
+            <ul class="labels" aria-label="Validator labels">
+              <li>Not-Real</li><li>Minor</li><li class="sub">Substantial</li>
+            </ul>
+            <p class="muted">Goal: <b>precision</b>. Hallucinated errors and minor issues should not cost a valid solution.</p>
+          </article>
+          <article class="step">
+            <h3>Decision</h3>
+            <p>Sampling the validator several times estimates how likely each error is to be substantial. A solution’s rejection score is the highest such probability over its proposed errors.</p>
+            <p>OSVerify rejects when the score clears a threshold <span class="math"><i>t</i></span> chosen to meet the FNR budget, and passes the solution to expert review otherwise.</p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <p><b>Learning to validate.</b> The validator always sees the same input, a problem, a solution and one proposed error, whatever produced them. That makes it trainable across problems. We build error-level supervision (errors on valid solutions are negatives; errors on invalid solutions are positives only when a reference-assisted validator confirms them in at least 3 of 5 samples) and post-train the validator with GRPO and LoRA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="results-title">Results</h2>
+          <p>We evaluate on competition-level <b>Putnam100</b> and <b>Hard2Verify (H2V)</b>, and research-level <b>FirstProof-Eval</b>, built from First Proof with human-labeled valid and invalid solutions. To mimic problems beyond the verifier’s own ability, we use relatively weak backbones (<code>gpt-oss-120b</code> and <code>gpt-5-mini</code>). Reference solutions and formal proof checkers are withheld from every verifier.</p>
+        </div>
+
+        <div class="table-wrap" tabindex="0" role="region" aria-labelledby="results-caption" aria-describedby="results-note">
+          <table class="results">
+            <caption id="results-caption" class="visually-hidden">Empirical TNR (%) of each method under FNR constraints of 0%, 5% and 10%, on Putnam100, H2V and FirstProof-Eval</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="colgroup" colspan="3">Putnam100</th>
+                <th scope="colgroup" colspan="3" class="dsep">H2V</th>
+                <th scope="colgroup" colspan="3" class="dsep">FirstProof-Eval</th>
+              </tr>
+              <tr>
+                <th scope="col" style="text-align:left;padding-left:1rem">FNR ≤</th>
+                <th scope="col">0%</th><th scope="col">5%</th><th scope="col">10%</th>
+                <th scope="col" class="dsep">0%</th><th scope="col">5%</th><th scope="col">10%</th>
+                <th scope="col" class="dsep">0%</th><th scope="col">5%</th><th scope="col">10%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group"><th colspan="10" scope="rowgroup"><span>gpt-oss-120b</span></th></tr>
+              <tr>
+                <th scope="row">LLM-as-a-Judge</th>
+                <td>0<span class="sd">±0</span></td><td>0<span class="sd">±0</span></td><td>0<span class="sd">±0</span></td>
+                <td class="dsep">0<span class="sd">±0</span></td><td>54.4<span class="sd">±2.0</span></td><td>54.4<span class="sd">±2.0</span></td>
+                <td class="dsep">0<span class="sd">±0</span></td><td>0<span class="sd">±0</span></td><td>43.3<span class="sd">±2.9</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Voting</th>
+                <td>0<span class="sd">±0</span></td><td>38.4<span class="sd">±3.9</span></td><td>45.5<span class="sd">±2.8</span></td>
+                <td class="dsep">60.9<span class="sd">±4.2</span></td><td>69.2<span class="sd">±3.6</span></td><td>75.6<span class="sd">±3.7</span></td>
+                <td class="dsep">29.5<span class="sd">±10.2</span></td><td>35.9<span class="sd">±2.5</span></td><td>48.8<span class="sd">±2.2</span></td>
+              </tr>
+              <tr class="ours">
+                <th scope="row">OSVerify</th>
+                <td>0<span class="sd">±0</span></td><td>70.4<span class="sd">±14.3</span></td><td>77.9<span class="sd">±3.3</span></td>
+                <td class="dsep"><strong>83.2</strong><span class="sd">±0.6</span></td><td><strong>84.7</strong><span class="sd">±0.6</span></td><td><strong>84.7</strong><span class="sd">±0.5</span></td>
+                <td class="dsep">50.4<span class="sd">±15.1</span></td><td>58.0<span class="sd">±3.1</span></td><td>60.8<span class="sd">±1.3</span></td>
+              </tr>
+              <tr class="trained">
+                <th scope="row">+ trained validator</th>
+                <td><strong>85.8</strong><span class="sd">±2.9</span></td><td><strong>89.6</strong><span class="sd">±1.7</span></td><td><strong>92.3</strong><span class="sd">±1.5</span></td>
+                <td class="dsep">82.4<span class="sd">±1.1</span></td><td>83.2<span class="sd">±0.7</span></td><td>83.2<span class="sd">±0.7</span></td>
+                <td class="dsep"><strong>57.8</strong><span class="sd">±3.0</span></td><td><strong>62.3</strong><span class="sd">±0.8</span></td><td><strong>62.7</strong><span class="sd">±0.3</span></td>
+              </tr>
+              <tr class="group"><th colspan="10" scope="rowgroup"><span>gpt-5-mini</span></th></tr>
+              <tr>
+                <th scope="row">LLM-as-a-Judge</th>
+                <td>0<span class="sd">±0</span></td><td>0<span class="sd">±0</span></td><td>63.1<span class="sd">±3.9</span></td>
+                <td class="dsep">66.3<span class="sd">±1.8</span></td><td>66.3<span class="sd">±1.8</span></td><td>66.3<span class="sd">±1.8</span></td>
+                <td class="dsep">0<span class="sd">±0</span></td><td>0<span class="sd">±0</span></td><td>42.7<span class="sd">±2.4</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Voting</th>
+                <td>28.5<span class="sd">±17.3</span></td><td>58.1<span class="sd">±4.4</span></td><td>75.4<span class="sd">±3.7</span></td>
+                <td class="dsep">82.9<span class="sd">±1.2</span></td><td>82.9<span class="sd">±1.2</span></td><td>82.9<span class="sd">±1.2</span></td>
+                <td class="dsep">19.1<span class="sd">±16.4</span></td><td>42.6<span class="sd">±1.8</span></td><td>49.2<span class="sd">±2.3</span></td>
+              </tr>
+              <tr class="ours">
+                <th scope="row">OSVerify</th>
+                <td><strong>72.1</strong><span class="sd">±21.9</span></td><td><strong>82.9</strong><span class="sd">±1.6</span></td><td><strong>86.6</strong><span class="sd">±1.3</span></td>
+                <td class="dsep"><strong>85.7</strong><span class="sd">±0.3</span></td><td><strong>85.7</strong><span class="sd">±0.3</span></td><td><strong>85.7</strong><span class="sd">±0.3</span></td>
+                <td class="dsep"><strong>33.9</strong><span class="sd">±25.5</span></td><td><strong>60.0</strong><span class="sd">±9.1</span></td><td><strong>65.4</strong><span class="sd">±1.4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="scroll-hint">Scroll the table sideways to see all benchmarks.</p>
+        <p class="table-note" id="results-note"><b>Table 1.</b> Empirical TNR (%) under empirical FNR constraints of 0%, 5% and 10%; higher is better. Mean ± standard deviation over 2,000 resampling trials; bold marks the best entry per column for each backbone. A zero includes the always-pass fallback when no nontrivial operating point meets the constraint.</p>
+
+        <div class="prose" style="margin-top:2rem">
+          <p>With <code>gpt-oss-120b</code> and a 5% FNR budget, OSVerify raises TNR over voting from 38.4% to 70.4% on Putnam100, from 69.2% to 84.7% on H2V, and from 35.9% to 58.0% on FirstProof-Eval. Training the validator matters most under the strictest constraint: at zero FNR it lifts Putnam100 TNR from 0% to 85.8%, and the gains carry over to FirstProof-Eval, which is never seen during training.</p>
+          <p>Both stages scale with compute. Deeper decomposition finds more substantial errors, and more validation votes per error make rejections more reliable.</p>
+        </div>
+
+        <figure>
+          <a class="figure-frame" href="assets/img/scaling_rows.png"><img src="assets/img/scaling_rows.png" width="1920" height="742" loading="lazy"
+                 alt="Two rows of line charts. (a) TNR against maximum decomposition depth from 0 to 4 on Putnam100 and FirstProof-Eval at FNR at most 5% and 10%: both training-free and trained validators improve by 10 to 15 points, mostly by depth 2. (b) TNR against validation votes per error from 1 to 30 for gpt-oss-120b and gpt-5-mini: curves for FNR at most 10%, 5% and 0 rise and level off, with the zero-FNR curve rising last."><span class="visually-hidden"> (open full-size image)</span></a>
+          <p class="zoom-hint">Tap the figure to open it at full size.</p>
+          <figcaption><b>Figure 3.</b> (a) TNR rises with the maximum decomposition depth of the error proposer, for both the training-free and the trained validator. (b) TNR rises with the number of validation votes per error, including under the zero-FNR constraint.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH USE ================= -->
+    <section id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="research-title">Use in mathematical research</h2>
+          <p>Beyond benchmarks, we apply OSVerify to the Langlands program, one of the most demanding areas of mathematics, where checking a technical argument requires scarce specialist expertise. These studies use frontier closed-source models as the verifier backbone.</p>
+        </div>
+
+        <div class="cases">
+          <article class="case">
+            <h3>Reviewing research papers</h3>
+            <p>OSVerify found mathematical errors in a paper published in the <em>Annals of Mathematics</em> and in a recent preprint. The authors confirmed the errors and revised their papers; the main conclusions of both still hold. Every issue in the table was verified as real by human experts.</p>
+            <table class="mini">
+              <thead><tr><th scope="col">Paper</th><th scope="col" style="text-align:right">OSVerify</th><th scope="col" style="text-align:right">Direct review</th></tr></thead>
+              <tbody>
+                <tr><td>Zhu (2017)<span class="venue">Annals of Mathematics</span></td><td class="n"><strong>45</strong></td><td class="n">11</td></tr>
+                <tr><td>Liu &amp; Wang (2026)<span class="venue">arXiv preprint</span></td><td class="n"><strong>88</strong></td><td class="n">3</td></tr>
+              </tbody>
+            </table>
+            <p class="muted">Direct review asks the same backbone model, through its web interface, to review the paper and then to look for any remaining issues.</p>
+          </article>
+          <article class="case">
+            <h3>Resolving open conjectures</h3>
+            <p>Used as the verifier for an agentic mathematical problem solver, with no formal proof checker anywhere in the loop, OSVerify helped produce proofs of three previously open statements in relative Langlands duality:</p>
+            <ol class="conj">
+              <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2);</li>
+              <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (Conj. 8.1.8), with (i) and (ii) in the setting of Liu–Wang, Conj. 4.36;</li>
+              <li>the automorphic commutator relation (Liu–Wang, Conj. 4.45), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
+            </ol>
+            <p class="muted">Human experts have confirmed the proofs, and the results are being prepared for submission to mathematical journals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CITATION ================= -->
+    <section id="citation" aria-labelledby="citation-title">
+      <div class="container">
+        <div class="prose">
+          <h2 id="citation-title">Citation</h2>
+        </div>
+        <div class="bib">
+          <!-- TODO: replace with the final BibTeX once the paper is public. -->
+          <pre id="bibtex"><code>@article{osverify2026,
+  title   = {One-Sided Verification Under Limited Expert Review},
+  author  = {To be announced},
+  year    = {2026},
+  note    = {Preprint coming soon}
+}</code></pre>
+          <button class="copy" type="button" data-copy="bibtex">Copy</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-footer">
+      <div class="container row">
+        <picture>
+          <source srcset="assets/img/logo-dark.svg" media="(prefers-color-scheme: dark)">
+          <img class="mark" src="assets/img/logo-light.svg" alt="OSVerify" width="102" height="32">
+        </picture>
+        <ul class="links">
+          <li><a href="https://github.com/OSVerify">GitHub</a></li>
+          <!-- TODO: add a contact address with a valid Stanford affiliation (required by Stanford's Minimum Web Standards). -->
+        </ul>
+      </div>
+    </div>
+    <!-- Stanford global footer: required links per Stanford Minimum Web Standards (Accessibility link is mandatory). -->
+    <div class="global-footer">
+      <div class="container">
+        <nav aria-label="Stanford University links">
+          <ul>
+            <li><a href="https://www.stanford.edu/">Stanford Home</a></li>
+            <li><a href="https://visit.stanford.edu/basics">Maps &amp; Directions</a></li>
+            <li><a href="https://www.stanford.edu/search">Search Stanford</a></li>
+            <li><a href="https://emergency.stanford.edu">Emergency Info</a></li>
+            <li><a href="https://www.stanford.edu/terms">Terms of Use</a></li>
+            <li><a href="https://www.stanford.edu/privacy">Privacy</a></li>
+            <li><a href="https://uit.stanford.edu/security/copyright-infringement">Copyright</a></li>
+            <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4">Trademarks</a></li>
+            <li><a href="https://non-discrimination.stanford.edu/">Non-Discrimination</a></li>
+            <li><a href="https://www.stanford.edu/accessibility">Accessibility</a></li>
+          </ul>
+        </nav>
+        <p>© Stanford University, Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
