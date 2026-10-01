@@ -115,14 +115,13 @@ a:hover { text-decoration-thickness: 2px; }
 .hero-logo { width: min(26rem, 82%); margin: 0 auto 2.25rem; }
 .hero h1 {
   font-weight: normal;
-  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 2.9rem);
-  line-height: 1.18;
+  font-size: clamp(1.25rem, 0.6rem + 3.6vw, 2.6rem);
+  line-height: 1.2;
   margin: 0 auto 1.1rem;
-  max-width: 24ch;
   letter-spacing: -0.005em;
   text-wrap: balance;
 }
-.tagline { color: var(--ink-2); max-width: 38rem; margin: 0 auto 1.6rem; font-size: 1.15rem; }
+.tagline { color: var(--ink-2); margin: 0 0 1.6rem; font-size: 1.15rem; }
 .authors { color: var(--ink-2); font-size: 1rem; margin: 0 auto 1.8rem; font-style: italic; }
 
 .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem; }
@@ -305,4 +304,5 @@ ol.conj li { margin-bottom: 0.5rem; }
 .global-footer a:hover { color: var(--ink); }
 .global-footer p { margin: 0; }
 
+.nowrap { white-space: nowrap; }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
