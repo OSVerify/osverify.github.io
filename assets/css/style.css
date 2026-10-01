@@ -20,9 +20,7 @@
   --serif: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", "TeX Gyre Pagella", Georgia, serif;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
-  --measure: 44rem;
-  --wide: 56rem;
-  --figure: 48rem;
+  --col: 48rem; /* single column: text, figures, tables and cards share this width */
   --gutter: 16px;
   color-scheme: light;
 }
@@ -92,8 +90,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .skip-link:focus { top: 0.75rem; }
 
-.container { width: 100%; max-width: calc(var(--wide) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
-.prose { max-width: var(--measure); margin-left: auto; margin-right: auto; }
+.container { width: 100%; max-width: calc(var(--col) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
 
 /* ---------- top bar ---------- */
 
@@ -170,7 +167,7 @@ code { font-family: var(--mono); font-size: 0.84em; }
 
 /* ---------- figures ---------- */
 
-figure { margin: 2rem auto; max-width: var(--figure); }
+figure { margin: 2rem 0; }
 .figure-frame {
   display: block;
   background: var(--figure-bg);
@@ -182,13 +179,12 @@ a.figure-frame { cursor: zoom-in; }
 a.figure-frame:hover { border-color: var(--ink-2); }
 .zoom-hint { display: none; font-size: 0.85rem; color: var(--ink-2); margin: 0.4rem 0 0; text-align: center; }
 @media (max-width: 760px) { .zoom-hint { display: block; } }
-figcaption { color: var(--ink-2); font-size: 0.95rem; line-height: 1.55; margin: 0.85rem auto 0; max-width: var(--measure); }
+figcaption { color: var(--ink-2); font-size: 0.95rem; line-height: 1.55; margin: 0.85rem 0 0; }
 figcaption b { color: var(--ink); }
 
 /* ---------- key numbers ---------- */
 
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem; margin: 2.25rem 0 0.5rem; }
-@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin: 2.25rem 0 0.5rem; }
 @media (max-width: 420px) {
   .stats { grid-template-columns: 1fr; gap: 0.6rem; }
   .stat { padding: 0.9rem 1rem; }
@@ -202,7 +198,7 @@ figcaption b { color: var(--ink); }
 /* ---------- objective / formulas ---------- */
 
 .objective {
-  margin: 1.6rem auto; padding: 1.1rem 1.25rem; max-width: var(--measure);
+  margin: 1.6rem 0; padding: 1.1rem 1.25rem;
   background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--green);
   border-radius: 6px; text-align: center; font-size: 1.2rem;
 }
@@ -213,14 +209,16 @@ figcaption b { color: var(--ink); }
 
 /* ---------- method steps ---------- */
 
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 2rem 0 1rem; counter-reset: step; }
-@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
-.step { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem 1.3rem 1.1rem; position: relative; }
+.steps { display: grid; gap: 0.9rem; margin: 1.75rem 0 1rem; counter-reset: step; }
+.step { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); column-gap: 1rem; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.15rem 1.3rem 1.05rem; }
+.step > * { grid-column: 2; }
 .step::before {
   counter-increment: step; content: counter(step);
   display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%;
-  border: 1px solid var(--green); color: var(--green-ink); font-size: 1rem; margin-bottom: 0.7rem;
+  border: 1px solid var(--green); color: var(--green-ink); font-size: 1rem;
+  grid-column: 1; grid-row: 1 / span 6;
 }
+.step h3 { line-height: 1.8rem; margin-bottom: 0.3rem; }
 .step p { font-size: 1rem; line-height: 1.55; margin-bottom: 0.6rem; }
 .step p:last-child { margin-bottom: 0; }
 
@@ -229,7 +227,7 @@ figcaption b { color: var(--ink); }
 .labels .sub { background: var(--rose-tint); border-color: var(--rose); color: var(--rose-ink); }
 
 .callout {
-  max-width: var(--measure); margin: 1.5rem auto 0; padding: 1rem 1.2rem;
+  margin: 1.25rem 0 0; padding: 1rem 1.2rem;
   background: var(--rose-tint); border-radius: 8px; font-size: 1rem;
 }
 .callout p:last-child { margin-bottom: 0; }
@@ -238,14 +236,14 @@ figcaption b { color: var(--ink); }
 
 .table-wrap { overflow-x: auto; margin: 1.75rem 0 0.5rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .table-wrap:focus-visible { outline-offset: 2px; }
-table.results { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 46rem; font-size: 0.95rem; font-variant-numeric: lining-nums tabular-nums; }
+table.results { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 44rem; font-size: 0.9rem; font-variant-numeric: lining-nums tabular-nums; }
 .results caption { caption-side: bottom; text-align: left; padding: 0.8rem 1rem; font-size: 0.9rem; color: var(--ink-2); border-top: 1px solid var(--line); }
-.results th, .results td { padding: 0.5rem 0.55rem; text-align: right; white-space: nowrap; }
+.results th, .results td { padding: 0.45rem 0.4rem; text-align: right; white-space: nowrap; }
 .results thead th { font-weight: normal; color: var(--ink-2); }
 .results thead tr:first-child th { color: var(--ink); font-weight: bold; border-bottom: 1px solid var(--line); text-align: center; }
 .results thead tr:last-child th { border-bottom: 1px solid var(--ink-2); }
-.results th[scope="row"] { text-align: left; font-weight: normal; padding-left: 1rem; }
-.results .group th { text-align: left; padding-left: 1rem !important; font-family: var(--mono); font-size: 0.85rem; color: var(--ink-2); background: var(--surface-2); padding: 0.4rem; }
+.results th[scope="row"] { text-align: left; font-weight: normal; padding-left: 0.75rem; }
+.results .group th { text-align: left; padding-left: 0.75rem !important; font-family: var(--mono); font-size: 0.85rem; color: var(--ink-2); background: var(--surface-2); padding: 0.4rem; }
 .results .dsep { border-left: 1px solid var(--line); }
 .results th[scope="row"], .results thead tr:last-child th:first-child, .results thead tr:first-child td:first-child { position: sticky; left: 0; z-index: 1; background: var(--surface); }
 .results .ours { background: var(--green-tint); }
@@ -254,9 +252,9 @@ table.results { border-collapse: separate; border-spacing: 0; width: 100%; min-w
 .results .ours th[scope="row"] { font-weight: bold; }
 .results .trained { background: var(--rose-tint); }
 .results .trained th[scope="row"] { font-weight: bold; }
-.results td .sd { color: var(--ink-2); font-size: 0.78em; margin-left: 0.12rem; display: inline-block; min-width: 2.6em; text-align: left; }
+.results td .sd { color: var(--ink-2); font-size: 0.72em; margin-left: 0.1rem; }
 .results td strong { font-weight: bold; }
-.results .group th span { position: sticky; left: 1rem; }
+.results .group th span { position: sticky; left: 0.75rem; }
 .table-note { color: var(--ink-2); font-size: 0.9rem; line-height: 1.5; margin: 0.7rem 0 0; }
 .table-note b { color: var(--ink); }
 .scroll-hint { display: none; font-size: 0.85rem; color: var(--ink-2); margin: 0.4rem 0 0; }
@@ -264,8 +262,8 @@ table.results { border-collapse: separate; border-spacing: 0; width: 100%; min-w
 
 /* ---------- case study ---------- */
 
-.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.75rem; }
-@media (max-width: 860px) { .cases { grid-template-columns: 1fr; } }
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1.75rem; }
+@media (max-width: 720px) { .cases { grid-template-columns: 1fr; } }
 .case { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.3rem 1.35rem; }
 .case p, .case li { font-size: 1rem; line-height: 1.55; }
 
@@ -281,7 +279,7 @@ ol.conj li { margin-bottom: 0.5rem; }
 
 /* ---------- bibtex ---------- */
 
-.bib { position: relative; max-width: var(--measure); margin: 0 auto; }
+.bib { position: relative; }
 .bib pre {
   margin: 0; padding: 1.1rem 1.2rem; overflow-x: auto;
   background: var(--surface); border: 1px solid var(--line); border-radius: 8px;

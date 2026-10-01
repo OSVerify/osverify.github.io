@@ -18,7 +18,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -176,7 +176,7 @@
                 <th scope="colgroup" colspan="3" class="dsep">FirstProof-Eval</th>
               </tr>
               <tr>
-                <th scope="col" style="text-align:left;padding-left:1rem">FNR ≤</th>
+                <th scope="col" style="text-align:left;padding-left:0.75rem">FNR ≤</th>
                 <th scope="col">0%</th><th scope="col">5%</th><th scope="col">10%</th>
                 <th scope="col" class="dsep">0%</th><th scope="col">5%</th><th scope="col">10%</th>
                 <th scope="col" class="dsep">0%</th><th scope="col">5%</th><th scope="col">10%</th>
@@ -233,7 +233,7 @@
         <p class="scroll-hint">Scroll the table sideways to see all benchmarks.</p>
         <p class="table-note" id="results-note"><b>Table 1.</b> Empirical TNR (%) under empirical FNR constraints of 0%, 5% and 10%; higher is better. Mean ± standard deviation over 2,000 resampling trials; bold marks the best entry per column for each backbone. A zero includes the always-pass fallback when no nontrivial operating point meets the constraint.</p>
 
-        <div class="prose" style="margin-top:2rem">
+        <div class="prose" style="margin-top:1.75rem">
           <p>With <code>gpt-oss-120b</code> and a 5% FNR budget, OSVerify raises TNR over voting from 38.4% to 70.4% on Putnam100, from 69.2% to 84.7% on H2V, and from 35.9% to 58.0% on FirstProof-Eval. Training the validator matters most under the strictest constraint: at zero FNR it lifts Putnam100 TNR from 0% to 85.8%, and the gains carry over to FirstProof-Eval, which is never seen during training.</p>
           <p>Both stages scale with compute. Deeper decomposition finds more substantial errors, and more validation votes per error make rejections more reliable.</p>
         </div>
