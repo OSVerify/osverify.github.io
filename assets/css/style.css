@@ -2,18 +2,20 @@
    Palette follows the logo and paper figures: green #4F7F5C → cream → rose #C9808F. */
 
 :root {
-  --bg: #F9F6F1;
-  --surface: #FFFDF9;
-  --surface-2: #F2EDE5;
-  --ink: #3A3531;
-  --ink-2: #5F5850;
-  --line: #E2D9CC;
+  --bg: #FDFCFA;
+  --surface: #FFFFFF;
+  --surface-2: #F5F2EC;
+  --ink: #2B2724;
+  --ink-2: #57504A;
+  --line: #E7E0D5;
   --green: #4F7F5C;
   --green-ink: #3E6A4A;
-  --green-tint: #EDF2E9;
+  --green-tint: #EFF5ED;
   --rose: #C9808F;
   --rose-ink: #985064;
-  --rose-tint: #F7ECEF;
+  --rose-tint: #FAF0F2;
+  --hl-green: #CBE3C6;
+  --hl-rose: #F0CFD9;
   --figure-bg: #FFFFFF;
   --focus: #3E6A4A;
 
@@ -39,6 +41,8 @@
     --rose: #D99AA8;
     --rose-ink: #E6AFBC;
     --rose-tint: #35262B;
+    --hl-green: rgba(127, 175, 140, 0.30);
+    --hl-rose: rgba(217, 154, 168, 0.28);
     --figure-bg: #FFFFFF;
     --focus: #97C6A3;
     color-scheme: dark;
@@ -58,6 +62,8 @@
   --rose: #D99AA8;
   --rose-ink: #E6AFBC;
   --rose-tint: #35262B;
+  --hl-green: rgba(127, 175, 140, 0.30);
+  --hl-rose: rgba(217, 154, 168, 0.28);
   --figure-bg: #FFFFFF;
   --focus: #97C6A3;
   color-scheme: dark;
@@ -165,6 +171,37 @@ code { font-family: var(--mono); font-size: 0.84em; }
 #overview figure { margin-top: 0; }
 
 .lead { font-size: 1.2rem; }
+strong, b { font-weight: bold; color: var(--ink); }
+
+/* marker-style highlight */
+mark.hl {
+  color: inherit;
+  background: linear-gradient(to top, var(--hl-green) 0, var(--hl-green) 0.6em, transparent 0.6em);
+  padding: 0 0.12em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+mark.hl.rose { background: linear-gradient(to top, var(--hl-rose) 0, var(--hl-rose) 0.6em, transparent 0.6em); }
+
+/* boxed notes: TL;DR, key insight, highlights */
+.box {
+  margin: 1.5rem 0; padding: 1rem 1.25rem 1.05rem;
+  background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green);
+  border-radius: 8px;
+}
+.box.rose { border-left-color: var(--rose); }
+.box .label {
+  display: block; margin-bottom: 0.35rem;
+  font-variant: small-caps; letter-spacing: 0.07em; font-weight: bold; font-size: 1rem;
+  color: var(--green-ink);
+}
+.box.rose .label { color: var(--rose-ink); }
+.box p { margin-bottom: 0.6rem; }
+.box p:last-child { margin-bottom: 0; }
+.box ul { margin: 0; padding-left: 1.15rem; }
+.box li { margin-bottom: 0.45rem; }
+.box li:last-child { margin-bottom: 0; }
+.tldr { font-size: 1.08rem; margin-top: 0; }
 .muted { color: var(--ink-2); }
 
 /* ---------- figures ---------- */
@@ -201,7 +238,7 @@ figcaption b { color: var(--ink); }
 
 .objective {
   margin: 1.6rem 0; padding: 1.1rem 1.25rem;
-  background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--green);
+  background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green);
   border-radius: 6px; text-align: center; font-size: 1.2rem;
 }
 .objective .math { white-space: normal; }
@@ -228,11 +265,6 @@ figcaption b { color: var(--ink); }
 .labels li { font-size: 0.82rem; padding: 0.15rem 0.6rem; border-radius: 999px; border: 1px solid var(--line); font-variant: small-caps; letter-spacing: 0.04em; }
 .labels .sub { background: var(--rose-tint); border-color: var(--rose); color: var(--rose-ink); }
 
-.callout {
-  margin: 1.25rem 0 0; padding: 1rem 1.2rem;
-  background: var(--rose-tint); border-radius: 8px; font-size: 1rem;
-}
-.callout p:last-child { margin-bottom: 0; }
 
 /* ---------- results table ---------- */
 

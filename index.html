@@ -7,7 +7,7 @@
   <meta name="description" content="OSVerify filters out invalid AI-generated solutions while keeping the false-rejection rate of valid ones under a fixed budget, so that limited expert review is spent on the candidates most likely to be correct.">
   <meta name="author" content="Fan Nie, Haotian Ye, Shurui Liu, Zihao Wang, Stefano Ermon, James Zou">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#F9F6F1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#FDFCFA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1B1A18" media="(prefers-color-scheme: dark)">
 
   <!-- Update to the final address (https://osv.stanford.edu/) once the domain is live. -->
@@ -19,7 +19,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -71,6 +71,10 @@
     <section id="overview" aria-labelledby="overview-title">
       <div class="container">
         <h2 id="overview-title" class="visually-hidden">Overview</h2>
+        <div class="box tldr">
+          <span class="label">TL;DR</span>
+          <p>OSVerify turns <b>solution verification</b> into <b>error verification</b>: a proposer searches for errors at every granularity of a solution, and a validator rejects only on errors it confirms as <b>substantial</b>. Under the same low FNR budget, experts review <mark class="hl">46% fewer invalid candidates</mark> than with voting baselines, and <mark class="hl rose">57% fewer</mark> with an RL-trained validator.</p>
+        </div>
         <figure>
           <a class="figure-frame" href="assets/img/fig1_teaser.png"><img src="assets/img/fig1_teaser.png" width="1920" height="815"
                  alt="Three panels. (a) An AI solver produces many candidate solutions to an open question, too many for expert review. (b) OSVerify: an error proposer decomposes the solution and proposes candidate errors; an error validator votes on each error, and the solution is rejected if any error gets enough Substantial votes, otherwise it passes to expert review. (c) Curves of invalid solutions left to review versus valid solutions lost on Putnam100 and FirstProof-Eval, where OSVerify sits well below the LLM-judge and voting baselines, and the trained variant lower still."><span class="visually-hidden"> (open full-size image)</span></a>
@@ -92,10 +96,10 @@
       <div class="container">
         <div class="prose">
           <h2 id="abstract-title">Abstract</h2>
-          <p>AI has become increasingly helpful in scientific discovery, yet human expert review remains essential for problems without reliable automated evaluation. This becomes a fundamental challenge as candidate generation scales beyond available review capacity.</p>
-          <p>We study verification under limited human effort, where rare valid solutions need to be prioritized while invalid candidates are filtered out to reduce human workload. We adopt the one-sided verification objective that maximizes the rejection rate of invalid solutions (TNR) under a constraint on the false-rejection rate of valid ones (FNR), making human review cost an explicit term to minimize.</p>
-          <p>Drawing on the intuition that verifying a specific error can be easier than discovering one, we introduce OSVerify, an algorithmic framework that decouples error proposal from error validation. The error proposer searches for errors across different granularities by hierarchical decomposition, while the validator distinguishes substantial errors from minor or hallucinated ones.</p>
-          <p>On competition- and research-level benchmarks, OSVerify reduces the number of human reviews of invalid solutions by 46% on average compared to voting baselines under the same empirical low FNR constraint, and post-training the validator raises the reduction to 57%. As real-world use cases, we apply OSVerify to find errors in published research papers, which the original authors subsequently confirmed, and to help resolve three open conjectures in the Langlands program, confirmed by experts.</p>
+          <p>AI has become increasingly helpful in scientific discovery, yet <b>human expert review remains essential</b> for problems without reliable automated evaluation. This becomes a fundamental challenge as candidate generation scales beyond available review capacity.</p>
+          <p>We study verification under limited human effort, where rare valid solutions need to be prioritized while invalid candidates are filtered out to reduce human workload. We adopt the <b>one-sided verification</b> objective that maximizes the rejection rate of invalid solutions (TNR) under a constraint on the false-rejection rate of valid ones (FNR), making human review cost an explicit term to minimize.</p>
+          <p>Drawing on the intuition that <mark class="hl">verifying a specific error can be easier than discovering one</mark>, we introduce <b>OSVerify</b>, an algorithmic framework that <b>decouples error proposal from error validation</b>. The error proposer searches for errors across different granularities by hierarchical decomposition, while the validator distinguishes substantial errors from minor or hallucinated ones.</p>
+          <p>On competition- and research-level benchmarks, OSVerify reduces the number of human reviews of invalid solutions <mark class="hl">by 46% on average</mark> compared to voting baselines under the same empirical low FNR constraint, and post-training the validator raises the reduction to <mark class="hl rose">57%</mark>. As real-world use cases, we apply OSVerify to find errors in published research papers, which <b>the original authors subsequently confirmed</b>, and to help resolve <b>three open conjectures in the Langlands program</b>, confirmed by experts.</p>
         </div>
       </div>
     </section>
@@ -106,14 +110,18 @@
         <div class="prose">
           <h2 id="problem-title">The problem</h2>
           <p class="lead">When experts are the bottleneck, a verifier should answer two questions differently: how many valid solutions does it throw away, and how much reading does it save?</p>
-          <p>Valid solutions to hard discovery problems are rare, and discarding one may lose an important result. At the same time, every invalid candidate that slips through costs an expert's time. Following the Neyman–Pearson principle, we treat these as a constrained objective rather than a single accuracy number:</p>
+          <p><b>Valid solutions to hard discovery problems are rare</b>, and discarding one may lose an important result. At the same time, <b>every invalid candidate that slips through costs an expert's time</b>. Following the Neyman–Pearson principle, we treat these as a constrained objective rather than a single accuracy number:</p>
         </div>
         <div class="objective" role="group" aria-label="One-sided verification objective">
           <span class="math"><span class="op">maximize</span>&ensp;TNR(<i>V</i>)&ensp;<span class="op">subject to</span>&ensp;FNR(<i>V</i>) ≤ <i>τ</i></span>
           <span class="def"><b>TNR</b>: fraction of invalid solutions the verifier rejects. <b>FNR</b>: fraction of valid solutions it wrongly rejects. Under a fixed FNR budget τ, every gain in TNR removes invalid candidates from the expert's queue.</span>
         </div>
         <div class="prose">
-          <p>Standard LLM-as-a-judge verification struggles under this objective. Sampling more judgments and voting helps, but saturates quickly, and at a zero FNR budget it often rejects nothing at all. What does help is changing the question: checking whether a <em>specific, stated</em> error invalidates a solution is far more reliable than judging the whole solution from scratch.</p>
+          <p>Standard LLM-as-a-judge verification struggles under this objective. Sampling more judgments and voting helps, but <b>saturates quickly</b>, and at a zero FNR budget it often <b>rejects nothing at all</b>.</p>
+        </div>
+        <div class="box">
+          <span class="label">Key insight</span>
+          <p>Change the question. Checking whether a <em>specific, stated</em> error invalidates a solution is far more reliable than judging the whole solution from scratch: with the same model on FirstProof-Eval, AUROC rises from <mark class="hl">0.68 to 0.90</mark>.</p>
         </div>
         <figure>
           <a class="figure-frame" href="assets/img/fig1_motivation_row.png"><img src="assets/img/fig1_motivation_row.png" width="1920" height="426" loading="lazy"
@@ -129,18 +137,22 @@
       <div class="container">
         <div class="prose">
           <h2 id="method-title">Method</h2>
-          <p>OSVerify brings the generate-and-verify structure inside verification itself. Instead of asking “is this solution valid?”, it asks a sequence of narrower questions: “does <em>this</em> error hold, and does it invalidate the solution?” A single confirmed error is enough to reject, so the error becomes the natural unit of evidence.</p>
+          <p>OSVerify brings the generate-and-verify structure inside verification itself. Instead of asking “is this solution valid?”, it asks a sequence of narrower questions: “does <em>this</em> error hold, and does it invalidate the solution?” <b>A single confirmed error is enough to reject</b>, so the error becomes the natural unit of evidence.</p>
+        </div>
+        <div class="objective" role="group" aria-label="OSVerify decision rule">
+          <span class="math"><b>Reject</b> <i>y</i>&ensp;⇔&ensp;some proposed error <i>e</i> ∈ <i>G</i>(<i>x</i>, <i>y</i>) is confirmed <span class="sc">Substantial</span></span>
+          <span class="def">Otherwise the solution passes to expert review. The proposer <i>G</i> aims for coverage; the validator decides whether each error warrants rejection.</span>
         </div>
 
         <div class="steps">
           <article class="step">
             <h3>Error proposal</h3>
-            <p>The proposer recursively splits the solution into two contiguous parts, building a tree from the whole argument down to individual claims. It then inspects every node, with the full problem and solution in context, and proposes errors that could invalidate the solution.</p>
+            <p>The proposer <b>recursively splits the solution into two contiguous parts</b>, building a tree from the whole argument down to individual claims. It then <b>inspects every node</b>, with the full problem and solution in context, and proposes errors that could invalidate the solution.</p>
             <p class="muted">Goal: <b>coverage</b>. On as many invalid solutions as possible, at least one proposed error should be real and substantial.</p>
           </article>
           <article class="step">
             <h3>Error validation</h3>
-            <p>Each proposed error <span class="math"><i>e</i></span> is checked independently against the full problem and solution. The validator first asks whether the error holds, then whether it invalidates the solution:</p>
+            <p>Each proposed error <span class="math"><i>e</i></span> is checked independently against the full problem and solution. The validator first asks <b>whether the error holds</b>, then <b>whether it invalidates the solution</b>:</p>
             <ul class="labels" aria-label="Validator labels">
               <li>Not-Real</li><li>Minor</li><li class="sub">Substantial</li>
             </ul>
@@ -148,13 +160,14 @@
           </article>
           <article class="step">
             <h3>Decision</h3>
-            <p>Sampling the validator several times estimates how likely each error is to be substantial. A solution’s rejection score is the highest such probability over its proposed errors.</p>
+            <p>Sampling the validator several times estimates how likely each error is to be substantial. A solution’s rejection score is <b>the highest such probability</b> over its proposed errors.</p>
             <p>OSVerify rejects when the score clears a threshold <span class="math"><i>t</i></span> chosen to meet the FNR budget, and passes the solution to expert review otherwise.</p>
           </article>
         </div>
 
-        <div class="callout">
-          <p><b>Learning to validate.</b> The validator always sees the same input, a problem, a solution and one proposed error, whatever produced them. That makes it trainable across problems. We build error-level supervision (errors on valid solutions are negatives; errors on invalid solutions are positives only when a reference-assisted validator confirms them in at least 3 of 5 samples) and post-train the validator with GRPO and LoRA.</p>
+        <div class="box rose">
+          <span class="label">Learning to validate</span>
+          <p>The validator always sees the same input, a problem, a solution and one proposed error, whatever produced them. That makes it <b>trainable across problems</b>. We build error-level supervision (errors on valid solutions are negatives; errors on invalid solutions are positives only when a reference-assisted validator confirms them in at least 3 of 5 samples) and post-train the validator with <b>GRPO and LoRA</b>.</p>
         </div>
       </div>
     </section>
@@ -235,9 +248,14 @@
         <p class="scroll-hint">Scroll the table sideways to see all benchmarks.</p>
         <p class="table-note" id="results-note"><b>Table 1.</b> Empirical TNR (%) under empirical FNR constraints of 0%, 5% and 10%; higher is better. Mean ± standard deviation over 2,000 resampling trials; bold marks the best entry per column for each backbone. A zero includes the always-pass fallback when no nontrivial operating point meets the constraint.</p>
 
-        <div class="prose" style="margin-top:1.75rem">
-          <p>With <code>gpt-oss-120b</code> and a 5% FNR budget, OSVerify raises TNR over voting from 38.4% to 70.4% on Putnam100, from 69.2% to 84.7% on H2V, and from 35.9% to 58.0% on FirstProof-Eval. Training the validator matters most under the strictest constraint: at zero FNR it lifts Putnam100 TNR from 0% to 85.8%, and the gains carry over to FirstProof-Eval, which is never seen during training.</p>
-          <p>Both stages scale with compute. Deeper decomposition finds more substantial errors, and more validation votes per error make rejections more reliable.</p>
+        <div class="box">
+          <span class="label">Highlights</span>
+          <ul>
+            <li>At a 5% FNR budget with <code>gpt-oss-120b</code>, OSVerify raises TNR over voting by <mark class="hl">+32.0 points on Putnam100</mark> (38.4 → 70.4), <b>+15.5 on H2V</b> (69.2 → 84.7) and <b>+22.1 on FirstProof-Eval</b> (35.9 → 58.0).</li>
+            <li>Training the validator matters most under the strictest constraint: at <b>zero FNR</b>, Putnam100 TNR goes from <mark class="hl rose">0% to 85.8%</mark>.</li>
+            <li>The gains carry over to <b>FirstProof-Eval, which is never seen during training</b> (50.4% → 57.8% at zero FNR).</li>
+            <li><b>Both stages scale with compute</b>: deeper decomposition finds more substantial errors, and more validation votes per error make rejections more reliable (Figure 3).</li>
+          </ul>
         </div>
 
         <figure>
@@ -254,13 +272,13 @@
       <div class="container">
         <div class="prose">
           <h2 id="research-title">Use in mathematical research</h2>
-          <p>Beyond benchmarks, we apply OSVerify to the Langlands program, one of the most demanding areas of mathematics, where checking a technical argument requires scarce specialist expertise. These studies use frontier closed-source models as the verifier backbone.</p>
+          <p>Beyond benchmarks, we apply OSVerify to the <b>Langlands program</b>, one of the most demanding areas of mathematics, where checking a technical argument requires scarce specialist expertise. These studies use frontier closed-source models as the verifier backbone.</p>
         </div>
 
         <div class="cases">
           <article class="case">
             <h3>Reviewing research papers</h3>
-            <p>OSVerify found mathematical errors in a paper published in the <em>Annals of Mathematics</em> and in a recent preprint. The authors confirmed the errors and revised their papers; the main conclusions of both still hold. Every issue in the table was verified as real by human experts.</p>
+            <p>OSVerify found mathematical errors in a paper published in the <em>Annals of Mathematics</em> and in a recent preprint. <b>The authors confirmed the errors and revised their papers</b>; the main conclusions of both still hold. Every issue in the table was verified as real by human experts.</p>
             <table class="mini">
               <thead><tr><th scope="col">Paper</th><th scope="col" style="text-align:right">OSVerify</th><th scope="col" style="text-align:right">Direct review</th></tr></thead>
               <tbody>
@@ -272,13 +290,13 @@
           </article>
           <article class="case">
             <h3>Resolving open conjectures</h3>
-            <p>Used as the verifier for an agentic mathematical problem solver, with no formal proof checker anywhere in the loop, OSVerify helped produce proofs of three previously open statements in relative Langlands duality:</p>
+            <p>Used as the verifier for an agentic mathematical problem solver, with <b>no formal proof checker</b> anywhere in the loop, OSVerify helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
             <ol class="conj">
               <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2);</li>
               <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (Conj. 8.1.8), with (i) and (ii) in the setting of Liu–Wang, Conj. 4.36;</li>
               <li>the automorphic commutator relation (Liu–Wang, Conj. 4.45), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
             </ol>
-            <p class="muted">Human experts have confirmed the proofs, and the results are being prepared for submission to mathematical journals.</p>
+            <p class="muted"><b>Human experts have confirmed the proofs</b>, and the results are being prepared for submission to mathematical journals.</p>
           </article>
         </div>
       </div>
