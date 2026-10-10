@@ -69,8 +69,10 @@ def card(paper):
       <div class="study-meta"><span>OpenAI · {text(paper['version'])}</span>{badges(paper)}</div>
       <h3><a href="cases/{slug}.html">{text(paper['title'])}</a></h3>
       <p>{text(paper['summary'])}</p>
-      <div class="paper-links"><a href="cases/{slug}.html">Read issues <span aria-hidden="true">→</span></a>
-        <a href="{text(paper['paper_url'])}">Original paper <span aria-hidden="true">↗</span></a></div>
+      <div class="paper-links">
+        <a class="paper-link-primary" href="cases/{slug}.html">Read issues <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
+        <a class="paper-link-secondary" href="{text(paper['paper_url'])}"><span>Original paper</span><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg></a>
+      </div>
     </article>'''
 
 

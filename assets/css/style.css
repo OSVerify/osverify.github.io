@@ -339,8 +339,15 @@ ol.conj li { margin-bottom: 0.5rem; }
 .paper-card h3 a { color: var(--ink); text-decoration: none; }
 .paper-card h3 a:hover { color: var(--green-ink); text-decoration: underline; }
 .paper-card p { font-size: 1rem; color: var(--ink-2); margin: 0.7rem 0; }
-.paper-links { display: flex; flex-wrap: wrap; gap: 0.15rem 1.5rem; font-size: 0.95rem; }
-.paper-links a { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 44px; }
+.paper-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; margin-top: 1.1rem; font-size: 0.95rem; }
+.paper-links a { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 44px; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.paper-links svg { width: 1rem; height: 1rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.paper-link-primary { padding: 0.65rem 1rem; border: 1px solid var(--green-ink); border-radius: 6px; background: var(--green-ink); color: var(--bg); }
+.paper-link-primary:hover { background: var(--ink); border-color: var(--ink); }
+.paper-link-primary:focus-visible { border-radius: 6px; }
+.paper-link-secondary { padding: 0.5rem 0.15rem; color: var(--ink-2); }
+.paper-link-secondary:hover { color: var(--green-ink); }
+.paper-link-secondary:hover span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 .finding-counts { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
 .severity { display: inline-block; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.85rem; line-height: 1.5; white-space: nowrap; }
 .severity.major { color: var(--rose-ink); background: var(--rose-tint); }
