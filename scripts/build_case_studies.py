@@ -67,7 +67,7 @@ def card(paper):
     slug = text(paper['slug'])
     return f'''<article class="paper-card">
       <div class="study-meta"><span>OpenAI · {text(paper['version'])}</span>{badges(paper)}</div>
-      <h3><a href="cases/{slug}.html">{text(paper['title'])}</a></h3>
+      <h2><a href="cases/{slug}.html">{text(paper['title'])}</a></h2>
       <p>{text(paper['summary'])}</p>
       <div class="paper-links">
         <a class="paper-link-primary" href="cases/{slug}.html">Read issues <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
@@ -137,16 +137,9 @@ def paper_page(paper):
 def main():
     (ROOT / 'cases').mkdir(exist_ok=True)
     total = sum(len(p['issues']) for p in PAPERS)
-    majors = sum(count(p, 'major') for p in PAPERS)
-    body = f'''<div class="page-intro container">
-      <p class="eyebrow">Paper Referee · OpenAI Math</p><h1>Results</h1>
-      <p class="lead">Specific issues, counterexamples, and proposed repairs from OSVerify’s reviews of OpenAI’s mathematical preprints.</p>
-      <p class="muted">Browse each paper’s findings, grouped into Major and Minor issues, alongside a link to the original paper.</p>
-      <p class="collection-summary">{len(PAPERS)} papers <span aria-hidden="true">·</span> {total} findings <span aria-hidden="true">·</span> {majors} Major / {total-majors} Minor</p>
-    </div>
-    <section class="study-section" id="paper-referee" aria-labelledby="paper-referee-title"><div class="container">
-      <h2 id="paper-referee-title">Paper Referee</h2>
-      <p class="collection-note">This collection includes reports with released findings. Counts and severity labels reflect OSVerify’s internal review, not author confirmation. Any remaining coverage limitations are noted on the individual paper.</p>
+    body = f'''<section class="study-section" id="paper-referee" aria-labelledby="paper-referee-title"><div class="container">
+      <h1 class="collection-title" id="paper-referee-title">Paper Referee</h1>
+      <p class="collection-note">This collection presents referee reports generated using OSVerify to review mathematical papers.</p>
       <div class="paper-list">{''.join(card(p) for p in PAPERS)}</div>
     </div></section>'''
     (ROOT / 'case-studies.html').write_text(document('Results', 'Paper Referee results from OSVerify, with original papers, Major and Minor findings, and proposed repairs.', body))

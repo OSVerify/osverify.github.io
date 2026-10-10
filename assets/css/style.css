@@ -157,7 +157,7 @@ a:hover { text-decoration-thickness: 2px; }
 section { padding: 3.25rem 0; }
 section + section { border-top: 1px solid var(--line); }
 
-h2 {
+h2, .collection-title {
   font-weight: normal;
   font-variant: small-caps;
   letter-spacing: 0.06em;
@@ -165,7 +165,7 @@ h2 {
   line-height: 1.2;
   margin: 0 0 1.4rem;
 }
-h2::after {
+h2::after, .collection-title::after {
   content: ""; display: block; width: 3.25rem; height: 2px; margin-top: 0.55rem;
   background: linear-gradient(90deg, var(--green), var(--rose));
 }
@@ -319,25 +319,20 @@ ol.conj li { margin-bottom: 0.5rem; }
 /* ---------- case studies page ---------- */
 
 .case-link { margin-bottom: 0; }
-.page-intro { padding-top: 3.75rem; padding-bottom: 2.5rem; }
 .eyebrow { color: var(--green-ink); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; }
-.page-intro h1 { font-size: clamp(2.4rem, 6vw, 3.5rem); font-weight: normal; line-height: 1.1; margin: 0 0 1rem; }
-.page-intro .lead { max-width: 38rem; color: var(--ink-2); }
 .case-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
 .case-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0.45rem 1rem; border: 1px solid var(--line); border-radius: 999px; font-size: 1rem; text-decoration: none; }
 .case-nav a:hover { background: var(--green-tint); border-color: var(--green); }
 .case-nav a[href="#major-issues"] { color: var(--rose-ink); }
 .case-nav a[href="#major-issues"]:hover { background: var(--rose-tint); border-color: var(--rose); }
-.study-section { border-top: 1px solid var(--line); }
 .study-meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.35rem 1rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--ink-2); }
-.collection-summary { margin: 1.5rem 0 0; color: var(--ink-2); font-size: 0.95rem; }
-.collection-summary span { padding: 0 0.4rem; }
 .collection-note { font-size: 1rem; color: var(--ink-2); }
 .paper-list { display: grid; gap: 1rem; margin-top: 1.75rem; }
 .paper-card { padding: 1.4rem 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
-.paper-card h3 { font-size: 1.4rem; font-weight: normal; line-height: 1.3; }
-.paper-card h3 a { color: var(--ink); text-decoration: none; }
-.paper-card h3 a:hover { color: var(--green-ink); text-decoration: underline; }
+.paper-card h2 { font-size: 1.4rem; font-weight: normal; font-variant: normal; letter-spacing: normal; line-height: 1.3; margin: 0 0 0.5rem; }
+.paper-card h2::after { display: none; }
+.paper-card h2 a { color: var(--ink); text-decoration: none; }
+.paper-card h2 a:hover { color: var(--green-ink); text-decoration: underline; }
 .paper-card p { font-size: 1rem; color: var(--ink-2); margin: 0.7rem 0; }
 .paper-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; margin-top: 1.1rem; font-size: 0.95rem; }
 .paper-links a { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 44px; line-height: 1.2; text-decoration: none; white-space: nowrap; }
@@ -381,7 +376,6 @@ ol.conj li { margin-bottom: 0.5rem; }
 .issue-context p { font-size: 0.9rem; margin: 0.6rem 0; }
 .issue-context .source-location { font-size: 0.85rem; }
 @media (max-width: 480px) {
-  .page-intro { padding-top: 2.5rem; }
   .paper-card, .issue-card { padding: 1.1rem; }
   .paper-intro { padding-top: 1rem; }
   .back-link { margin-bottom: 1.25rem; }
