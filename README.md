@@ -4,7 +4,11 @@ Project page for **OSVerify: One-Sided Verification Under Limited Expert Review*
 Plain static HTML/CSS with no build step, meant for GitHub Pages and eventually served at `osv.stanford.edu`.
 
 ```
-index.html            single-page site
+index.html            main blog / project article, including citation
+case-studies.html     index of OpenAI paper referee case studies
+cases/               individual paper pages, grouped by Major / Minor issues
+data/                curated findings and source-report provenance
+scripts/             static case study page generator
 404.html              GitHub Pages not-found page
 assets/css/style.css  all styles (light + dark via prefers-color-scheme)
 assets/js/site.js     BibTeX copy button
@@ -19,6 +23,35 @@ python3 -m http.server 8765
 ```
 
 Then open http://localhost:8765.
+
+## Navigation and case studies
+
+The shared top menu is **Blog / Case Studies / Cite**. Blog opens the main
+article; Cite always opens its `#citation` section. Case study pages inherit
+the header and footer from `index.html`, with Case Studies marked current.
+
+`case-studies.html#paper-referee` lists reports with released findings. Each
+paper has an original-paper link, reviewed version date, and separate Major
+and Minor groups. Each issue has a stable shareable anchor.
+Severity comes from the source report, not from the headline or the existence
+of a proposed repair. Partial search coverage is shown explicitly. Source
+commit strings are not shown on the pages.
+
+Full referee PDFs are temporarily withheld while their formatting is revised.
+Keep those draft files outside the published website directory.
+
+To update entries, edit `data/case-studies.json` and run:
+
+```bash
+python3 scripts/build_case_studies.py
+```
+
+Commit the generated HTML along with its input data; GitHub Pages needs no
+build step. `data/case-study-provenance.json` records report hashes and issue
+IDs for checking the import. The imported findings are OSVerify-reviewed,
+not author-confirmed. Reference-only follow-ups do not replace the original
+full-paper review's coverage state. The three expanded counterexample cards
+adapt the earlier social summaries; original feedback remains in the data.
 
 ## Updating figures
 
@@ -53,3 +86,10 @@ The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in 
 5. Register the site in Siteimprove, as Stanford's Minimum Web Standards require for public sites.
 
 Stanford sites such as `crfm.stanford.edu` and `hazyresearch.stanford.edu` use this same CNAME-to-GitHub-Pages setup.
+
+Case pages display printed paper references from the referee export's
+`paper-locations/locations.json`. `data/paper-locations.json` keeps that mapping,
+its frozen-source hashes, and the original line spans for traceability. Numbers
+come from LaTeX cross-references or exact named headings in the original PDF.
+Classification explanations and raw source-line lists are not rendered in the
+case-page metadata; the Major/Minor grouping is retained.

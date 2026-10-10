@@ -1,0 +1,1460 @@
+[
+  {
+    "slug": "quantum-langlands",
+    "title": "Global quantum geometric Langlands at irrational level",
+    "version": "October 4, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026/quantum-langlands.pdf",
+    "summary": "A direct-sum counterexample to the absolute pairing, a faulty global scalar identification, and incorrect cross-references.",
+    "coverage_complete": true,
+    "scopes_searched": 51,
+    "scopes_total": 51,
+    "issues": [
+      {
+        "source_issue_id": "node-0011-issue-000001",
+        "anchor": "the-absolute-pairing-fails-to-preserve-direct-sums",
+        "title": "The absolute pairing fails to preserve direct sums",
+        "location": "Section 4.3 · Proposition 4.3 · Equation (4.3)",
+        "severity": "major",
+        "classification_note": "A continuous evaluation for the full parameter class remains to be constructed. The counterexample tests the stated generality at s = 0; it is not a counterexample at irrational level.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The absolute pairing (W2) is not continuous for the full stated parameter class. Take S to be a countable disjoint union of points with constant marking, H = SL_2, X = P^1, and s = 0. The zero-label stratum is A^1, and the normalized pairing of opposite exponential objects is C. Let W carry the positive object on every component and V_n the negative object only on component n. All lie in the zero-pole bound, but ordinary global sections give B(W,⊕_n V_n) = ∏_n C, while ⊕_n B(W,V_n) = ⊕_n C. Neither the bounded-zero convention nor increasing pole bounds removes this failure. This counterexample does not challenge the pairing on X^I or the relative pairing.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 299,
+                "end_line": 313
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 501,
+                "end_line": 510
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1513,
+                "end_line": 1519
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1740,
+                "end_line": 1746
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1917,
+                "end_line": 1940
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1989,
+                "end_line": 2018
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5371,
+                "end_line": 5377
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "For the stated non-quasi-compact parameter generality, distinguish ordinary absolute de Rham sections from a continuous categorical evaluation and justify the construction supporting the asserted duality. Check agreement with (W2) on quasi-compact parameters and compatibility with the claimed closed-image transposition identities. In the disjoint-union example, continuity requires the direct sum of the componentwise evaluations; that observation alone does not construct the evaluation for general S. The current extension in pole bounds does not supply this parameter-direction argument.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 299,
+                "end_line": 313
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 501,
+                "end_line": 510
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1513,
+                "end_line": 1519
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1740,
+                "end_line": 1746
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1917,
+                "end_line": 1940
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1989,
+                "end_line": 2018
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5371,
+                "end_line": 5377
+              }
+            ]
+          }
+        ],
+        "social": {
+          "claim": "The absolute pairing (W2) is asserted to be continuous for the stated parameter class, which includes non-quasi-compact spaces.",
+          "evidence": [
+            "Take S to be a countable disjoint union of points with constant marking, H = SL₂, X = ℙ¹, and s = 0. The zero-label stratum is 𝔸¹; the normalized pairing of opposite exponential objects is ℂ.",
+            "Let W carry the positive object on every component, and Vₙ the negative object only on component n. All lie in the zero-pole bound. Ordinary global sections give:"
+          ],
+          "equations": [
+            "B(W, ⨁ₙ Vₙ) = ∏ₙ ℂ",
+            "⨁ₙ B(W, Vₙ) = ⨁ₙ ℂ"
+          ],
+          "conclusion": "The canonical comparison from the direct sum to the product is not an isomorphism. Increasing pole bounds does not remove the failure. This tests the stated generality at s = 0; it is not a counterexample at irrational level, and does not challenge the relative pairing or the pairing on Xᴵ."
+        },
+        "paper_references": [
+          "Section 2.1",
+          "Section 2.3",
+          "Section 4.1",
+          "Section 4.2",
+          "Section 4.3",
+          "Proposition 4.3",
+          "Equation (4.3)",
+          "Proof of Proposition 4.3",
+          "Section 8.5",
+          "Proof of Lemma 8.5"
+        ],
+        "reference_labels": {
+          "(W2)": "(4.3)",
+          "eq:W1": "(4.1)",
+          "whittaker:stratum-projector": "(4.2)"
+        }
+      },
+      {
+        "source_issue_id": "node-0018-issue-000001",
+        "anchor": "constant-fibres-do-not-imply-a-global-scalar-identification",
+        "title": "Constant fibres do not imply a global scalar identification",
+        "location": "Section 6.1 · Proof of Proposition 6.1",
+        "severity": "minor",
+        "classification_note": "The report supplies a local-trivialization and descent repair that preserves the required conservativity without a global splitting.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The global scalar-identity assertion at lines 3299–3300 is too strong. After the stated cancellations, the diagonal coefficient is E=p_*ω_{H×N}, where p(h',n)=h'B⁻ after the change h'=hn, up to fixed normalization shifts. For H=SL₂, its ordinary constant-sheaf counterpart is Rπ_*ℂ_{SL₂} on P¹. A constant derived coefficient with fibre H*(B⁻) would have four-dimensional total global cohomology, whereas the actual pushforward has H*(SL₂), of total dimension two. Thus constant fibre cohomology does not eliminate the torsor's derived extension data. This disproves the global scalar identification, not the required conservativity.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3267,
+                "end_line": 3272
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3285,
+                "end_line": 3303
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3883,
+                "end_line": 3887
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Replace the global scalar-identity conclusion at lines 3299–3300 with a justification of conservativity using the actual diagonal coefficient. Retain the proposition's scope of all twisted D-modules and spectator factors, since that conservativity is used at lines 3884–3885.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3267,
+                "end_line": 3272
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3285,
+                "end_line": 3303
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3883,
+                "end_line": 3887
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Keep E=p_*ω_{H×N}, with p(h',n)=h'B⁻. Trivialize H→H/B⁻ on translates of the big cell. On each covering open U, the coefficient becomes ω_U⊗V, where V=Γ_dR(B⁻×N,ω) is a nonzero finite complex. Over ℂ, V splits into shifted finite-dimensional vector spaces, so tensoring with V detects zero for arbitrary input complexes. Descent therefore makes tensoring with E conservative globally. The same calculation on products with spectator charts preserves spectators. Together with the preceding diagonal-support calculation, this proves conservativity of the composite and hence of finite averaging, supplying the conservativity needed downstream without asserting a global splitting.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3267,
+                "end_line": 3272
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3285,
+                "end_line": 3303
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3883,
+                "end_line": 3887
+              }
+            ]
+          }
+        ],
+        "social": {
+          "claim": "The global scalar-identity assertion in the finite-averaging argument is too strong: constant fibre cohomology does not eliminate a torsor’s derived extension data.",
+          "evidence": [
+            "After the stated cancellations, the diagonal coefficient is E = p_*ω_{H×N}, where p(h′, n) = h′B⁻, up to fixed normalization shifts. For H = SL₂, the constant-sheaf counterpart is Rπ_*ℂ_{SL₂} on ℙ¹ for π : SL₂ → ℙ¹. Here B⁻ is the opposite Borel subgroup and N the unipotent subgroup in the averaging construction.",
+            "With complex coefficients and dimensions summed over all degrees, a constant derived coefficient with fibre H*(B⁻) would give total dimension four. The actual pushforward instead has the cohomology of SL₂, of total dimension two:"
+          ],
+          "equations": [
+            "dim H*(ℙ¹) · dim H*(B⁻) = 2 · 2 = 4",
+            "dim H*(SL₂) = 2"
+          ],
+          "conclusion": "The claimed global scalar identification fails. The report proposes a repair of conservativity using the actual coefficient and descent."
+        },
+        "paper_references": [
+          "Section 6.1",
+          "Proof of Proposition 6.1",
+          "Section 6.6",
+          "Proof of Theorem 6.7"
+        ],
+        "reference_labels": {
+          "(W2)": "(4.3)",
+          "eq:W1": "(4.1)",
+          "whittaker:stratum-projector": "(4.2)"
+        }
+      },
+      {
+        "source_issue_id": "node-0038-issue-000001",
+        "anchor": "three-references-point-to-the-wrong-equation",
+        "title": "Three references point to the wrong equation",
+        "location": "Section 10.5 · Proof of Proposition 10.6",
+        "severity": "minor",
+        "classification_note": "The intended definitions and formulas are already present; correcting their references resolves the issue.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The references to eq:W1 at lines 7026, 7134, and 7139 are inaccurate: that equation displays finite-loop averaging, whereas these passages refer to the zero-defect phase, the parameter map q_D, and the stratum projector. The intended definitions and projector are present elsewhere in the submission, so this is a nonblocking cross-reference defect.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 7025,
+                "end_line": 7027
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7131,
+                "end_line": 7140
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1819,
+                "end_line": 1822
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1725,
+                "end_line": 1734
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1760,
+                "end_line": 1764
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1852,
+                "end_line": 1866
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Correct the reference at line 7026 to the definition of psi_D at lines 1760–1764, specialized to D=0. At line 7134, refer to the definition of q_D at lines 1725–1734 and the formula whittaker:stratum-projector. At line 7139, replace eq:W1 with whittaker:stratum-projector. Add labels to the definitions if needed; the associated shift calculation is already given at lines 1856–1862.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 7025,
+                "end_line": 7027
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7131,
+                "end_line": 7140
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1819,
+                "end_line": 1822
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1725,
+                "end_line": 1734
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1760,
+                "end_line": 1764
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1852,
+                "end_line": 1866
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 10.5",
+          "Proof of Proposition 10.6",
+          "Section 4.2",
+          "Proof of Proposition 4.2",
+          "Equation (4.1)",
+          "Equation (4.2)"
+        ],
+        "reference_labels": {
+          "(W2)": "(4.3)",
+          "eq:W1": "(4.1)",
+          "whittaker:stratum-projector": "(4.2)"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "planar-unit-distances",
+    "title": "A power saving for planar unit distances",
+    "version": "September 23, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf",
+    "summary": "Genericity over a coefficient field can be lost after adjoining another grid point.",
+    "coverage_complete": true,
+    "scopes_searched": 40,
+    "scopes_total": 40,
+    "issues": [
+      {
+        "source_issue_id": "node-0033-issue-000001",
+        "anchor": "genericity-can-fail-after-enlarging-the-coefficient-field",
+        "title": "Genericity can fail after enlarging the coefficient field",
+        "location": "Section 8.2 · Lemma 8.3",
+        "severity": "major",
+        "classification_note": "The proposed correction narrows the original assertion. The report explains why the cited applications are preserved, but does not establish the broader assertion as written.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The automatic enlargement assertion at lines 3507–3509 is too broad. For grid vertices p,r, put a=z_p, b=z_r and B=B_0(a+b). The generic-grid lemma implies that p is generic over B, but adjoining r makes a belong to B(r), reducing p’s transcendence degree below its locus dimension. Thus joint genericity over B_0 does not justify adjoining other grid points to arbitrary B. The preceding evaluation criterion, which explicitly assumes genericity over its coefficient field, is unaffected.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3401,
+                "end_line": 3409
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3493,
+                "end_line": 3509
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3600,
+                "end_line": 3612
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3688,
+                "end_line": 3707
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3845,
+                "end_line": 3854
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Revise lines 3507–3509 to distinguish genericity guaranteed by the generic-grid lemma from genericity that must be established over a larger coefficient field.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3401,
+                "end_line": 3409
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3493,
+                "end_line": 3509
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3600,
+                "end_line": 3612
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3688,
+                "end_line": 3707
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3845,
+                "end_line": 3854
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Restrict automatic preservation to adjoining other grid points to B_0. Their selected coordinates are jointly independent of the point’s selected coordinates, and adjoining their remaining curve coordinates is algebraic, so the point remains generic. For an arbitrary larger coefficient field, retain the explicit genericity hypothesis. The application over K_0 already establishes that hypothesis separately at lines 3600–3612; the later anchor applications use independence over B_0 and algebraic extensions. This correction resolves the identified overstatement without changing those arguments.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3401,
+                "end_line": 3409
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3493,
+                "end_line": 3509
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3600,
+                "end_line": 3612
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3688,
+                "end_line": 3707
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3845,
+                "end_line": 3854
+              }
+            ]
+          }
+        ],
+        "social": {
+          "claim": "At the end of Section 8.2, the paper asserts that a point generic over a coefficient field stays generic after adjoining other grid points. The grid lemma guarantees joint independence over the base field B₀, but not over an arbitrary larger field.",
+          "evidence": [
+            "Let p and r be distinct grid vertices, with p on a curve or plane V over B₀ of dimension d ∈ {1, 2}. The selected coordinates are jointly algebraically independent over B₀; each vertex’s remaining coordinates are algebraic over B₀ and its own selected coordinates.",
+            "Choose selected coordinates a of p and b of r, and set B = B₀(a + b). Since b is transcendental over B₀(p), the point p remains generic over B, with transcendence degree d. But adjoining r gives:"
+          ],
+          "equations": [
+            "a = (a + b) − b ∈ B(r)",
+            "trdeg over B(r) of B(r, p) ≤ d − 1"
+          ],
+          "conclusion": "One of p’s independent coordinates is now in the coefficient field. Thus p is no longer generic on V over B(r). The evaluation criterion that explicitly assumes genericity is unaffected."
+        },
+        "paper_references": [
+          "Section 8.2",
+          "Lemma 8.3",
+          "Equation (8.5)",
+          "Section 8.3",
+          "Proof of Lemma 8.5",
+          "Equation (8.12)",
+          "Section 8.4",
+          "Proof of Lemma 8.6",
+          "Section 8.5"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "trilinear-hilbert",
+    "title": "An L³ bound for the trilinear Hilbert transform",
+    "version": "October 5, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf",
+    "summary": "A missing endpoint hypothesis, an omitted predictor term, and a mismatch in the first-failing-role convention.",
+    "coverage_complete": true,
+    "scopes_searched": 52,
+    "scopes_total": 52,
+    "issues": [
+      {
+        "source_issue_id": "node-0037-issue-000001",
+        "anchor": "the-bad-density-chains-lemma-is-missing-an-endpoint-hypothesis",
+        "title": "The bad-density chains lemma is missing an endpoint hypothesis",
+        "location": "Section 8.5 · Lemma 8.6",
+        "severity": "major",
+        "classification_note": "The proposed repair strengthens the written hypotheses. The later application supplies the missing condition, so this finding does not establish that the final numerical conclusion is false.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The bad-density chains lemma restricts its entire nesting display to i<N, leaving P_{N,h}⊆C_{N,h} unstated. Its proof nevertheless uses this inclusion in the log-mismatch indicator bound: without it, c_{N,h}−p_{N,h−Δ} can be negative while the indicator equals one. This identifies a defect in the proof under the written hypotheses, not a counterexample to the final numerical conclusion. The subsequent PRE/CURRENT graph application supplies the missing inclusion.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 6010,
+                "end_line": 6017
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 6043,
+                "end_line": 6066
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5748,
+                "end_line": 5769
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 6247,
+                "end_line": 6275
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Separate the nesting hypothesis into P_{i,h}⊆C_{i,h} for every 1≤i≤N and C_{i,h}⊆P_{i+1,h} for i<N. Together with monotonicity in height, these justify the nonnegative log differences and the temporal nesting of the C sets used in the proof. PRE refinement of CURRENT supplies the first condition at every event, and the linked-event inclusion supplies the second. This endpoint correction requires no change to the chain-length bound used in the linear-side energy argument.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 6010,
+                "end_line": 6017
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 6043,
+                "end_line": 6066
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5748,
+                "end_line": 5769
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 6247,
+                "end_line": 6275
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 8.5",
+          "Lemma 8.6",
+          "Proof of Lemma 8.6",
+          "Section 8.4",
+          "Equation (22)",
+          "Section 8.6",
+          "Proof of Proposition 8.9"
+        ]
+      },
+      {
+        "source_issue_id": "node-0017-issue-000001",
+        "anchor": "the-predictor-identity-omits-a-conditional-expectation-term",
+        "title": "The predictor identity omits a conditional-expectation term",
+        "location": "Section 5.2 · Lemma 5.3 · Equation (7)",
+        "severity": "minor",
+        "classification_note": "The supplied correction preserves the parameter dependence of estimate (7), with adjusted absolute constants.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The predictor identity at lines 2708–2715 omits a term for the general augmented inputs admitted in this section. Orthogonality gives μ_h=εa_{h,p}−√ε E_h[(F_a)_p], so its increment also includes −√ε(E_{h+1}−E_h)[(F_a)_p]. For example, F_a=Φ_p has zero residual and predictor coefficient one, contradicting μ_h=εa_{h,p}. The stated identity is valid for scalar embeddings, and this counterexample does not disprove estimate (7).",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 517,
+                "end_line": 523
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2432,
+                "end_line": 2452
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2676,
+                "end_line": 2715
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2737,
+                "end_line": 2781
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2971,
+                "end_line": 3005
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Correct the predictor-moment identity and its increment for the stated augmented-input domain, and carry the additional conditional-expectation term through the smooth-bump, coarse-mean, and curvature-difference estimates in the proof of (7).",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 517,
+                "end_line": 523
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2432,
+                "end_line": 2452
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2676,
+                "end_line": 2715
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2737,
+                "end_line": 2781
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2971,
+                "end_line": 3005
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Set f_p=(F_a)_p and use μ_h=√ε[(P_hF_a)_p−E_hf_p]. The projection increments and conditional-expectation increments each have a sum of squared L²(J) norms at most ||F_a||²₂. Consequently (∑_h||μ_{h+1}−μ_h||²₂)^(1/2)≤2√ε||F_a||₂ and ||μ_H||₂≤2√ε||F_a||₂. In the existing proof, these bounds retain the 2^(−K_0), K_0√ε, and √ε contributions with adjusted absolute constants. Thus this correction preserves the parameter dependence needed for (7) and its high-truncation application; for scalar embeddings the added term vanishes.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 517,
+                "end_line": 523
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2432,
+                "end_line": 2452
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2676,
+                "end_line": 2715
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2737,
+                "end_line": 2781
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2971,
+                "end_line": 3005
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 3.2",
+          "Lemma 3.2",
+          "Section 5.1",
+          "Section 5.2",
+          "Lemma 5.3",
+          "Equation (7)",
+          "Proof of Lemma 5.3",
+          "Section 5.4",
+          "Proof of Proposition 5.6"
+        ]
+      },
+      {
+        "source_issue_id": "node-0043-issue-000001",
+        "anchor": "the-first-failing-role-convention-uses-the-wrong-order",
+        "title": "The first-failing-role convention uses the wrong order",
+        "location": "Section 9.1 · Section 9.2",
+        "severity": "minor",
+        "classification_note": "Correcting the wording and masks preserves the partition and subsequent summed estimates.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "Lines 6789–6793 contain a local convention mismatch. Assignment to the first failing role requires each role to succeed at trials assigned to later roles. Requiring success at trials assigned to earlier roles instead describes assignment to the last failing role. Both conventions partition failed trials, so this mismatch does not itself invalidate the subsequent summed estimates.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 6788,
+                "end_line": 6799
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7045,
+                "end_line": 7071
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Keep the first-failing-role convention and replace “the earlier roles' required positions” with “the trials assigned to later roles.” Explicitly, if a(t) is the assigned role, role j must fail when a(t)=j and succeed when a(t)>j, with no condition when a(t)<j. Retain success in every core role at the final height. These corrected masks still select whole minimal-component core subtotals by predicate coherence. For each fixed assignment, the assigned failure counts n_j remain unchanged, and the upper bounds at lines 7052–7071 still follow by discarding the additional success conditions.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 6788,
+                "end_line": 6799
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7045,
+                "end_line": 7071
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 9.1",
+          "Section 9.2"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cm-hodge",
+    "title": "The rational Hodge conjecture for CM abelian varieties",
+    "version": "October 6, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+    "summary": "An incorrect page range in the bibliography entry for Milne’s 1999 article.",
+    "coverage_complete": true,
+    "scopes_searched": 29,
+    "scopes_total": 29,
+    "issues": [
+      {
+        "source_issue_id": "node-0025-issue-000001",
+        "anchor": "milne-s-article-has-the-wrong-page-range",
+        "title": "Milne’s article has the wrong page range",
+        "location": "Bibliography, entry “Milne1999Tate”",
+        "severity": "minor",
+        "classification_note": "This is a bibliographic correction; the theorem and remark locators do not need adjustment.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The Milne1999Tate bibliography entry gives pages 45–76, but the published range is 47–81, as confirmed by [Milne’s article page](https://www.jmilne.org/math/articles/1999b.html). This is a nonblocking bibliographic error.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4512,
+                "end_line": 4521
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Change the Milne1999Tate pages field to `pages = {47--81}`. The existing theorem and remark locators need no adjustment for this pagination correction.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4512,
+                "end_line": 4521
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Bibliography, entry “Milne1999Tate”"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "hilbert-tenth-rationals",
+    "title": "Hilbert's tenth problem over the rational numbers",
+    "version": "October 6, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+    "summary": "A citation labels a remark and a proposition incorrectly.",
+    "coverage_complete": true,
+    "scopes_searched": 39,
+    "scopes_total": 39,
+    "issues": [
+      {
+        "source_issue_id": "node-0027-issue-000001",
+        "anchor": "silverman-s-chapter-x-results-are-mislabeled",
+        "title": "Silverman’s Chapter X results are mislabeled",
+        "location": "Section 5 · Proof of Proposition 2.1",
+        "severity": "minor",
+        "classification_note": "The corrected locators support the descent inputs used in the paper.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The citation at line 3372 mislabels Silverman's Chapter X results: 4.7 is a remark, and 4.9 is a proposition. This is a citation-label error and does not invalidate the descent application.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3370,
+                "end_line": 3379
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace the locator at line 3372 with: Chapter X, Remark 4.7, Example 4.8, Proposition 4.9, and Remark 4.9.1, pp. 335–338. These cover the quotient sequence, two-isogeny formulas, square-class map, and dual application used here.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 3370,
+                "end_line": 3379
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 5",
+          "Proof of Proposition 2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks",
+    "title": "Cap-selected amplitudes and triangle chords for honeycomb walks",
+    "version": "September 26, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks-September-26-2026/main.pdf",
+    "summary": "An intermediate strict inequality becomes an equality in the stated parameter range.",
+    "coverage_complete": true,
+    "scopes_searched": 33,
+    "scopes_total": 33,
+    "issues": [
+      {
+        "source_issue_id": "node-0018-issue-000001",
+        "anchor": "a-strict-comparison-becomes-an-equality",
+        "title": "A strict comparison becomes an equality",
+        "location": "Section 9 · Proof of Proposition 9.1",
+        "severity": "minor",
+        "classification_note": "Keeping the exact maximum restores strictness and preserves the later variation and edge-deficit estimates.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The final strict comparison in lines 3055–3057 is false when Q≥ζ: with q=max(Q,ζ) and ζ>7.5, both Q(0.024/q+0.012/q) and 0.036 min(1,Q/7.5) equal 0.036. This occurs within the stated first-atom domain, for example at b=4/5 and x=1/10, where Q=8>ζ. The error concerns the intermediate comparison; the intended strict total-variation bound remains valid.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 2944,
+                "end_line": 2947
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2975,
+                "end_line": 2988
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3052,
+                "end_line": 3063
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3101,
+                "end_line": 3111
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace the chain in lines 3055–3057 by Q TV_[q,∞)(h_-/u)≤3mQ/q<0.036 min(1,Q/7.5), retaining the exact maximum m from line 2984. The product-variation inequality gives the first bound because TV_[q,∞)(h_-)≤2m, sup h_-≤m, and TV_[q,∞)(1/u)=sup(1/u)=1/q. The strict inequality follows from m<0.012 and Q/q≤min(1,Q/7.5). This preserves the subsequent absolute-variation estimates in lines 3061–3063 and 3103–3109 and their contributions to the edge-deficit bounds.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 2944,
+                "end_line": 2947
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2975,
+                "end_line": 2988
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3052,
+                "end_line": 3063
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 3101,
+                "end_line": 3111
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 9",
+          "Proof of Proposition 9.1",
+          "Equation (9.10)",
+          "Equation (9.12)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cylinder-loop-weights-and-planar-nesting",
+    "title": "Cylinder loop weights and planar nesting",
+    "version": "September 26, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Cylinder-loop-weights-and-planar-nesting-September-26-2026/main.pdf",
+    "summary": "An endpoint estimate is applied globally without its bounded bulk contribution.",
+    "coverage_complete": true,
+    "scopes_searched": 44,
+    "scopes_total": 44,
+    "issues": [
+      {
+        "source_issue_id": "node-0016-issue-000001",
+        "anchor": "the-global-kernel-bound-omits-a-bulk-contribution",
+        "title": "The global kernel bound omits a bulk contribution",
+        "location": "Section 3.6 · Proof of Lemma 3.9",
+        "severity": "minor",
+        "classification_note": "Adding the bounded bulk term repairs the estimate; the existing L² term absorbs it in the subsequent argument.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The unqualified C/d(s) integral estimate in lines 2493–2494 is too strong for the full second kernel R(s,v)=θ′(s)θ′(v)/sin²((θ(s)+θ(v))/2). Its integral over v∈[−A,A] equals 4θ′(s)/sinθ(s). At s=0 this tends to 4πvarrho(0)>0, whereas C/d(0) tends to zero. The endpoint estimate is valid locally, but a global estimate needs a bounded bulk contribution.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 2481,
+                "end_line": 2498
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2339,
+                "end_line": 2345
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1872,
+                "end_line": 1878
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2471,
+                "end_line": 2479
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2537,
+                "end_line": 2556
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Qualify C/d(s) as an endpoint-region estimate and account separately for the bounded bulk contribution, or replace the full-kernel integral bound by C(1+1/d(s)).",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 2481,
+                "end_line": 2498
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2339,
+                "end_line": 2345
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1872,
+                "end_line": 1878
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2471,
+                "end_line": 2479
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2537,
+                "end_line": 2556
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "The exact integral 4θ′(s)/sinθ(s), together with θ′=πλ_L and sinθ(s) comparable to λ_L(s)min(1,d(s)), gives the corrected global bound C(1+1/d(s)). By symmetry of R, this yields ∫∫R(s,v)|Q(s)+Q(v)|²dsdv≤C(‖Q‖₂²+∫_{d(s)≤2}|Q(s)|²/d(s)ds). Thus the existing L² term absorbs the bulk contribution, preserving the upper comparison in line 2478 and its use in the subsequent gap and counting argument.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 2481,
+                "end_line": 2498
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2339,
+                "end_line": 2345
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1872,
+                "end_line": 1878
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2471,
+                "end_line": 2479
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2537,
+                "end_line": 2556
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 3.6",
+          "Proof of Lemma 3.9",
+          "Section 3.5",
+          "Section 3.1"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "renewal-and-changes-of-law-for-critical-honeycomb-walks",
+    "title": "Renewal and changes of law for critical honeycomb walks",
+    "version": "September 26, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Renewal-and-changes-of-law-for-critical-honeycomb-walks-September-26-2026/main.pdf",
+    "summary": "The signed-cylinder citation gives the wrong proposition numbers.",
+    "coverage_complete": true,
+    "scopes_searched": 59,
+    "scopes_total": 59,
+    "issues": [
+      {
+        "source_issue_id": "root-issue-000001",
+        "anchor": "the-signed-cylinder-citation-points-to-the-wrong-propositions",
+        "title": "The signed-cylinder citation points to the wrong propositions",
+        "location": "Section 11.1",
+        "severity": "minor",
+        "classification_note": "Replacing the proposition numbers preserves the finite inputs and their downstream uses.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The signed-cylinder citation at line 4164 has incorrect proposition numbers. In the supplied cited PDF, the boundary-arch result is Proposition 10.1 (page 76), and the interior-visit comparison is Proposition 10.7 (statement on page 89, proof through page 90). These results support the corresponding inputs at lines 4175–4189 under matching conventions.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4163,
+                "end_line": 4164
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4175,
+                "end_line": 4189
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "At line 4164, replace “Propositions 9.1–9.2” with “Propositions 10.1 and 10.7”. Retain Section 2 and Theorems 1.1–1.2 in that citation. This corrects the locators without changing the stated finite inputs or their downstream uses.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4163,
+                "end_line": 4164
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4175,
+                "end_line": 4189
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 11.1",
+          "Equation (66)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "kakeya-4d",
+    "title": "Every Four-Dimensional Kakeya Set Has Full Hausdorff Dimension",
+    "version": "September 24, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/paper.pdf",
+    "summary": "An incorrect lemma locator and a reversed description of a coordinate-map Jacobian.",
+    "coverage_complete": true,
+    "scopes_searched": 48,
+    "scopes_total": 48,
+    "issues": [
+      {
+        "source_issue_id": "node-0006-issue-000001",
+        "anchor": "the-weighted-plank-estimate-has-the-wrong-lemma-number",
+        "title": "The weighted plank estimate has the wrong lemma number",
+        "location": "Section 1.1 · Section 2.5 · Section 5.1",
+        "severity": "minor",
+        "classification_note": "The intended lemma matches the stated input; only the locator needs correction.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The cited September 23, 2026 preprint states the weighted plank estimate as Lemma 3.3 on page 20; item 2.3 is instead the critical-exponent definition. The incorrect locator appears at candidate lines 200, 1366, 5751, and 13753. The intended lemma's statement matches the weighted plank input.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 199,
+                "end_line": 203
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1364,
+                "end_line": 1371
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5750,
+                "end_line": 5753
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 13747,
+                "end_line": 13754
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace Lemma~2.3 with Lemma~3.3 in the three citations to ThreeDimensional and its bibliography note. This corrects the reference without altering the stated weighted plank estimate.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 199,
+                "end_line": 203
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1364,
+                "end_line": 1371
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5750,
+                "end_line": 5753
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 13747,
+                "end_line": 13754
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 1.1",
+          "Section 2.5",
+          "Proof of Lemma 2.15",
+          "Section 5.1",
+          "Proof of Lemma 5.1",
+          "Bibliography, entry “ThreeDimensional”"
+        ],
+        "reference_labels": {
+          "(a03:packet-base-cap)": "(4.20)"
+        }
+      },
+      {
+        "source_issue_id": "node-0013-issue-000001",
+        "anchor": "the-jacobian-sentence-reverses-the-coordinate-maps",
+        "title": "The Jacobian sentence reverses the coordinate maps",
+        "location": "Section 4.3 · Proof of Proposition 4.7 · Equation (4.20)",
+        "severity": "minor",
+        "classification_note": "The displayed estimates already use the correct change-of-variables factors.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The Jacobian sentence preceding (a03:packet-base-cap) reverses the coordinate maps. The parent-to-unit coordinate map base_Q has absolute Jacobian (q_sJ_s)⁻¹; q_sJ_s belongs to its inverse. The displayed pushforward density estimate uses the correct change-of-variables factor.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 843,
+                "end_line": 849
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1140,
+                "end_line": 1145
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1186,
+                "end_line": 1195
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4568,
+                "end_line": 4586
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace the Jacobian sentence with: “Writing u = base_Q(t,y) for unit base coordinates, the volume elements satisfy dt dy = q_sJ_s du.” Keep (a03:packet-base-cap) and the following time-normalization formulas unchanged; their change-of-variables factors are already correct.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 843,
+                "end_line": 849
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1140,
+                "end_line": 1145
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 1186,
+                "end_line": 1195
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4568,
+                "end_line": 4586
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 2.3",
+          "Definition 2.8",
+          "Equation (2.7)",
+          "Section 2.4",
+          "Proof of Lemma 2.13",
+          "Equation (2.15)",
+          "Section 4.3",
+          "Proof of Proposition 4.7",
+          "Equation (4.20)"
+        ],
+        "reference_labels": {
+          "(a03:packet-base-cap)": "(4.20)"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "cosmetic-surgery",
+    "title": "Purely cosmetic surgery on knots in the three-sphere",
+    "version": "September 23, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/paper.pdf",
+    "summary": "A parameter-count misstatement, a boundary-flux sign error, and an overcount in an index equality.",
+    "coverage_complete": false,
+    "scopes_searched": 53,
+    "scopes_total": 54,
+    "issues": [
+      {
+        "source_issue_id": "node-0021-issue-000001",
+        "anchor": "the-single-interval-case-misstates-how-many-parameters-disappear",
+        "title": "The single-interval case misstates how many parameters disappear",
+        "location": "Section 5.4 · Lemma 5.8",
+        "severity": "minor",
+        "classification_note": "Correcting the wording preserves the test assignments and score calculations.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "In the single-interval k=1 case at line 4916, “both parameters disappear” misstates the parameter count: there is only one interval parameter. Its removal leaves both resulting pieces with p=0, consistent with the displayed parameter total and the bounds in lines 4918–4920.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4751,
+                "end_line": 4754
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4882,
+                "end_line": 4884
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4901,
+                "end_line": 4912
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4914,
+                "end_line": 4922
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace “both parameters disappear” with “the single interval parameter disappears, so both pieces have p=0.” This correction preserves the test assignments and the subsequent single-interval score calculations.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4751,
+                "end_line": 4754
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4882,
+                "end_line": 4884
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4901,
+                "end_line": 4912
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4914,
+                "end_line": 4922
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 5.3",
+          "Proof of Proposition 5.7",
+          "Section 5.4",
+          "Lemma 5.8",
+          "Proof of Lemma 5.8",
+          "Equation (5.19)"
+        ]
+      },
+      {
+        "source_issue_id": "node-0046-issue-000001",
+        "anchor": "the-index-equality-counts-virtually-restored-lens-parameters",
+        "title": "The index equality counts virtually restored lens parameters",
+        "location": "Section 9.7 · Proof of Proposition 9.12",
+        "severity": "minor",
+        "classification_note": "Replacing the equality with the justified upper bound preserves the tangential inequality and its applications.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The actual-index equality in lines 9831–9832 counts virtually restored lens parameters as actual parameters. With h_i separated lens ends, the open-face pure-line index before tests and particle-position variables is d_s+p_i-h_i: p_i restores those h_i parameters, while the sharp fillings contribute zero tangential correction. This overcount does not invalidate the subsequent upper bound.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 9828,
+                "end_line": 9837
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7845,
+                "end_line": 7848
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7595,
+                "end_line": 7596
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7904,
+                "end_line": 7909
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Correct the actual-index sentence in the first-stage regularity proof to distinguish the retained face parameters from the virtually restored count p_i. Preserve the upper bound d_s+p_i+4ℓ_i≥0 used in Definition (i).",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 9828,
+                "end_line": 9837
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7845,
+                "end_line": 7848
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7595,
+                "end_line": 7596
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7904,
+                "end_line": 7909
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace “has index d_s+p_i” with “has index at most d_s+p_i,” explaining the loss of one parameter per separated lens end. Including particle positions gives index at most d_s+p_i-h_i+4ℓ_i≤d_s+p_i+4ℓ_i. Nonemptiness and tangential transversality therefore still imply the required inequality, preserving its use in the outside-component and fixed-type exclusions.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 9828,
+                "end_line": 9837
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7845,
+                "end_line": 7848
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7595,
+                "end_line": 7596
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 7904,
+                "end_line": 7909
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 9.7",
+          "Proof of Proposition 9.12",
+          "Section 8.3",
+          "Section 8.2",
+          "Proposition 8.3",
+          "Definition 8.7",
+          "Equation (8.14)"
+        ]
+      },
+      {
+        "source_issue_id": "node-0043-issue-000001",
+        "anchor": "the-boundary-flux-pairing-has-its-sign-reversed",
+        "title": "The boundary-flux pairing has its sign reversed",
+        "location": "Section 9.4",
+        "severity": "minor",
+        "classification_note": "The pairing is zero for every allowed end constant, so the corrected sign still gives bₑ = 0.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The boundary-flux evaluation at line 9167 has its sign reversed. For Q=G*G with limiting operator −∂t²+Δγ, Green's boundary expression is ⟨∂tξ,χ_e c⟩−⟨ξ,∂t(χ_e c)⟩. With ξ=a_e+t b_e plus a decaying remainder and t increasing outward, its limit is +⟨b_e,c⟩. The conclusion b_e=0 is unaffected.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 9151,
+                "end_line": 9157
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 9162,
+                "end_line": 9171
+              }
+            ]
+          },
+          {
+            "kind": "repair_request",
+            "text": "Replace −⟨b_e,c⟩_{L²(Y_e)} by +⟨b_e,c⟩_{L²(Y_e)} at line 9167. Since the pairing is zero for every independently allowed parallel end constant c, this correction retains b_e=0 and the same starting point for the subsequent integration-by-parts argument.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 9151,
+                "end_line": 9157
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 9162,
+                "end_line": 9171
+              }
+            ]
+          }
+        ],
+        "social": null,
+        "paper_references": [
+          "Section 9.4"
+        ]
+      }
+    ]
+  }
+]

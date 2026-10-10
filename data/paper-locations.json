@@ -1,0 +1,608 @@
+{
+  "quantum-langlands": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Global quantum geometric Langlands at irrational level October 4 2026",
+    "source_sha256": "def4ae96b4b9a8991347aa13ee614baa4cbd721a41bcb0c6c58d877a527e08c4",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0011-issue-000001": {
+        "references": [
+          "Section 2.1",
+          "Section 2.3",
+          "Section 4.1",
+          "Section 4.2",
+          "Section 4.3",
+          "Proposition 4.3",
+          "Equation (4.3)",
+          "Proof of Proposition 4.3",
+          "Section 8.5",
+          "Proof of Lemma 8.5"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 299,
+            "end_line": 313
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 501,
+            "end_line": 510
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1513,
+            "end_line": 1519
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1740,
+            "end_line": 1746
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1917,
+            "end_line": 1940
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1989,
+            "end_line": 2018
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5371,
+            "end_line": 5377
+          }
+        ]
+      },
+      "node-0018-issue-000001": {
+        "references": [
+          "Section 6.1",
+          "Proof of Proposition 6.1",
+          "Section 6.6",
+          "Proof of Theorem 6.7"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 3267,
+            "end_line": 3272
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3285,
+            "end_line": 3303
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3883,
+            "end_line": 3887
+          }
+        ]
+      },
+      "node-0038-issue-000001": {
+        "references": [
+          "Section 10.5",
+          "Proof of Proposition 10.6",
+          "Section 4.2",
+          "Proof of Proposition 4.2",
+          "Equation (4.1)",
+          "Equation (4.2)"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 7025,
+            "end_line": 7027
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 7131,
+            "end_line": 7140
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1819,
+            "end_line": 1822
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1725,
+            "end_line": 1734
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1760,
+            "end_line": 1764
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1852,
+            "end_line": 1866
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "8d9bc135865dbc97a76efbf10fd7b9631bbe1107bd87c467b64db60eb3f229f1",
+    "compilation_status": "compiled"
+  },
+  "planar-unit-distances": {
+    "schema_version": "paper-locations-1",
+    "request_id": "A power saving for planar unit distances September 23 2026",
+    "source_sha256": "f948c8881f224056a8a6608755418fefd3e32f28dee8078867395114ccf8eb4d",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0033-issue-000001": {
+        "references": [
+          "Section 8.2",
+          "Lemma 8.3",
+          "Equation (8.5)",
+          "Section 8.3",
+          "Proof of Lemma 8.5",
+          "Equation (8.12)",
+          "Section 8.4",
+          "Proof of Lemma 8.6",
+          "Section 8.5"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 3401,
+            "end_line": 3409
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3493,
+            "end_line": 3509
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3600,
+            "end_line": 3612
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3688,
+            "end_line": 3707
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3845,
+            "end_line": 3854
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "72bfa9153772b2124385cf4e53a5557320ab92e29fe4bdcb35a05a34481aede0",
+    "compilation_status": "compiled"
+  },
+  "trilinear-hilbert": {
+    "schema_version": "paper-locations-1",
+    "request_id": "An L3 bound for the trilinear Hilbert transform October 5 2026",
+    "source_sha256": "286042b941867bd703d062b8600ac6a97b2acb0619e5b17384dd676bf1d0c920",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0017-issue-000001": {
+        "references": [
+          "Section 3.2",
+          "Lemma 3.2",
+          "Section 5.1",
+          "Section 5.2",
+          "Lemma 5.3",
+          "Equation (7)",
+          "Proof of Lemma 5.3",
+          "Section 5.4",
+          "Proof of Proposition 5.6"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 517,
+            "end_line": 523
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2432,
+            "end_line": 2452
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2676,
+            "end_line": 2715
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2737,
+            "end_line": 2781
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2971,
+            "end_line": 3005
+          }
+        ]
+      },
+      "node-0043-issue-000001": {
+        "references": [
+          "Section 9.1",
+          "Section 9.2"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 6788,
+            "end_line": 6799
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 7045,
+            "end_line": 7071
+          }
+        ]
+      },
+      "node-0037-issue-000001": {
+        "references": [
+          "Section 8.5",
+          "Lemma 8.6",
+          "Proof of Lemma 8.6",
+          "Section 8.4",
+          "Equation (22)",
+          "Section 8.6",
+          "Proof of Proposition 8.9"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 6010,
+            "end_line": 6017
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 6043,
+            "end_line": 6066
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5748,
+            "end_line": 5769
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 6247,
+            "end_line": 6275
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "24b584066ae76b2f28dc03d32a2b0a2cdc3b4f92e0e82f4a3d133f28ccc5a936",
+    "compilation_status": "compiled"
+  },
+  "cm-hodge": {
+    "schema_version": "paper-locations-1",
+    "request_id": "The rational Hodge conjecture for CM abelian varieties October 6 2026",
+    "source_sha256": "643ba7ddb770ed0344f33854eb48fedccb9c5cb10fc992613d8ddfa911ba85af",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0025-issue-000001": {
+        "references": [
+          "Bibliography, entry “Milne1999Tate”"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 4512,
+            "end_line": 4521
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "6e3e66a407773ad5091d4cb48d9b4dc55a69c58fb0948a88daf19f3bb21bf27b",
+    "compilation_status": "compiled"
+  },
+  "hilbert-tenth-rationals": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Hilberts tenth problem over the rational numbers October 6 2026",
+    "source_sha256": "a0d0adb774096eecee9435d2b84c142f27922a579bda82d09d8f7629f1fdf485",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0027-issue-000001": {
+        "references": [
+          "Section 5",
+          "Proof of Proposition 2.1"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 3370,
+            "end_line": 3379
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "f79236c22b981fe66aaf3ba494a466bf26db212117db47d95a31bf0315af2b30",
+    "compilation_status": "compiled"
+  },
+  "cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Cap selected amplitudes and triangle chords for honeycomb walks September 26 2026",
+    "source_sha256": "0d4effd562ed11c1ec4620a8037cebe1826e7f3415d2c4e37640420917c598b4",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0018-issue-000001": {
+        "references": [
+          "Section 9",
+          "Proof of Proposition 9.1",
+          "Equation (9.10)",
+          "Equation (9.12)"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 2944,
+            "end_line": 2947
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2975,
+            "end_line": 2988
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3052,
+            "end_line": 3063
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 3101,
+            "end_line": 3111
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "7fd6eb0adc06ad82c6a5dba6286d3c49096692b9d967ac3d117e753fdc09db8f",
+    "compilation_status": "compiled"
+  },
+  "cylinder-loop-weights-and-planar-nesting": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Cylinder loop weights and planar nesting September 26 2026",
+    "source_sha256": "9d64762e7270967d1c4911fef9e69ca2e49d38d187db6735b51927baf186ae80",
+    "numbering_status": "pdf_headings",
+    "issues": {
+      "node-0016-issue-000001": {
+        "references": [
+          "Section 3.6",
+          "Proof of Lemma 3.9",
+          "Section 3.5",
+          "Section 3.1"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 2481,
+            "end_line": 2498
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2339,
+            "end_line": 2345
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1872,
+            "end_line": 1878
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2471,
+            "end_line": 2479
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2537,
+            "end_line": 2556
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "2e5effc6ded133601d01d0608f8031145b1fdc6519949b424c92bad191a4b209",
+    "compilation_status": "compilation_failed"
+  },
+  "renewal-and-changes-of-law-for-critical-honeycomb-walks": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Renewal and changes of law for critical honeycomb walks September 26 2026",
+    "source_sha256": "8d229ab2419c4fb2dab7913d51f349fffa716cdc885a6fb6fedd800ada5bb459",
+    "numbering_status": "compiled",
+    "issues": {
+      "root-issue-000001": {
+        "references": [
+          "Section 11.1",
+          "Equation (66)"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 4163,
+            "end_line": 4164
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4175,
+            "end_line": 4189
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "d179fa55e4b82fed6e226b4d9b9894f4ea28c990283e0b55173dc98b10c42356",
+    "compilation_status": "compiled"
+  },
+  "kakeya-4d": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Every four dimensional Kakeya set has full Hausdorff dimension September 24 2026",
+    "source_sha256": "9c4330cec0437cab72da1a7731bb98a894d8f451352cf6d0c433ed44251a6a59",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0006-issue-000001": {
+        "references": [
+          "Section 1.1",
+          "Section 2.5",
+          "Proof of Lemma 2.15",
+          "Section 5.1",
+          "Proof of Lemma 5.1",
+          "Bibliography, entry “ThreeDimensional”"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 199,
+            "end_line": 203
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1364,
+            "end_line": 1371
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5750,
+            "end_line": 5753
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 13747,
+            "end_line": 13754
+          }
+        ]
+      },
+      "node-0013-issue-000001": {
+        "references": [
+          "Section 2.3",
+          "Definition 2.8",
+          "Equation (2.7)",
+          "Section 2.4",
+          "Proof of Lemma 2.13",
+          "Equation (2.15)",
+          "Section 4.3",
+          "Proof of Proposition 4.7",
+          "Equation (4.20)"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 843,
+            "end_line": 849
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1140,
+            "end_line": 1145
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 1186,
+            "end_line": 1195
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4568,
+            "end_line": 4586
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "30d0c186aa9c697d02ab9bf736968028f1ce8a2f164f1d7291398d530035ccde",
+    "compilation_status": "compiled"
+  },
+  "cosmetic-surgery": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Purely Cosmetic Surgery on Knots in the Three Sphere September 23 2026",
+    "source_sha256": "b81bbc86ced12d2e629fc2cf4c77d54f6543df78efe8ab818b92012f4db0ecb1",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0021-issue-000001": {
+        "references": [
+          "Section 5.3",
+          "Proof of Proposition 5.7",
+          "Section 5.4",
+          "Lemma 5.8",
+          "Proof of Lemma 5.8",
+          "Equation (5.19)"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 4751,
+            "end_line": 4754
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4882,
+            "end_line": 4884
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4901,
+            "end_line": 4912
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4914,
+            "end_line": 4922
+          }
+        ]
+      },
+      "node-0046-issue-000001": {
+        "references": [
+          "Section 9.7",
+          "Proof of Proposition 9.12",
+          "Section 8.3",
+          "Section 8.2",
+          "Proposition 8.3",
+          "Definition 8.7",
+          "Equation (8.14)"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 9828,
+            "end_line": 9837
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 7845,
+            "end_line": 7848
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 7595,
+            "end_line": 7596
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 7904,
+            "end_line": 7909
+          }
+        ]
+      },
+      "node-0043-issue-000001": {
+        "references": [
+          "Section 9.4"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 9151,
+            "end_line": 9157
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 9162,
+            "end_line": 9171
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "ee916c92b825a8686ddfa5cf1970c320d611899212992da40ca56791bd79fa3d",
+    "compilation_status": "compiled"
+  }
+}

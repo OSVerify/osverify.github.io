@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An L³ bound for the trilinear Hilbert transform · OSVerify</title>
+  <meta name="description" content="A missing endpoint hypothesis, an omitted predictor term, and a mismatch in the first-failing-role convention.">
+  <meta name="author" content="Fan Nie, Haotian Ye, Shurui Liu, Zihao Wang, Stefano Ermon, James Zou">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FDFCFA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1B1A18" media="(prefers-color-scheme: dark)">
+
+  <!-- Update to the final address (https://osv.stanford.edu/) once the domain is live. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="An L³ bound for the trilinear Hilbert transform · OSVerify">
+  <meta property="og:description" content="A missing endpoint hypothesis, an omitted predictor term, and a mismatch in the first-failing-role convention.">
+  <meta property="og:image" content="../assets/img/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css?v=11">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../" aria-label="OSVerify home">
+        <picture>
+          <source srcset="../assets/img/logo-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="../assets/img/logo-light.svg" alt="" width="124" height="39">
+        </picture>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="../">Blog</a>
+        <a href="../case-studies.html" aria-current="page">Case Studies</a>
+        <a href="../#citation">Cite</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<header class="paper-intro container">
+      <a class="back-link" href="../case-studies.html">← All case studies</a>
+      <p class="eyebrow">Paper Referee · OpenAI</p><h1>An L³ bound for the trilinear Hilbert transform</h1>
+      <p class="paper-version">Reviewed version: October 5, 2026</p><div class="finding-counts"><span class="severity major">1 Major</span><span class="severity minor">2 Minor</span></div>
+      <div class="paper-actions"><a class="btn" href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf">Original paper <span aria-hidden="true">↗</span></a></div>
+      <p class="review-note">Findings and severity labels below are from OSVerify’s internal review. They do not by themselves establish that the paper’s main theorem is false.</p>
+      <nav class="case-nav issue-nav" aria-label="Issue severity"><a href="#major-issues">Major issues (1)</a><a href="#minor-issues">Minor issues (2)</a></nav>
+    </header><section class="issue-group" id="major-issues" aria-labelledby="major-title"><div class="container"><h2 id="major-title">Major issues <span class="group-count">1</span></h2><article class="issue-card major" id="the-bad-density-chains-lemma-is-missing-an-endpoint-hypothesis" data-issue-id="node-0037-issue-000001">
+      <div class="issue-masthead"><span class="severity major">Major · Issue 01</span><a href="#the-bad-density-chains-lemma-is-missing-an-endpoint-hypothesis" aria-label="Link to issue: The bad-density chains lemma is missing an endpoint hypothesis">Link <span aria-hidden="true">↗</span></a></div>
+      <h3>The bad-density chains lemma is missing an endpoint hypothesis</h3><p class="issue-location">Section 8.5 · Lemma 8.6</p>
+      <h4>Issue &amp; evidence</h4><p>The bad-density chains lemma restricts its entire nesting display to i&lt;N, leaving P_{N,h}⊆C_{N,h} unstated. Its proof nevertheless uses this inclusion in the log-mismatch indicator bound: without it, c_{N,h}−p_{N,h−Δ} can be negative while the indicator equals one. This identifies a defect in the proof under the written hypotheses, not a counterexample to the final numerical conclusion. The subsequent PRE/CURRENT graph application supplies the missing inclusion.</p><aside class="issue-repair"><h4>Proposed repair by OSVerify</h4><p>Separate the nesting hypothesis into P_{i,h}⊆C_{i,h} for every 1≤i≤N and C_{i,h}⊆P_{i+1,h} for i&lt;N. Together with monotonicity in height, these justify the nonnegative log differences and the temporal nesting of the C sets used in the proof. PRE refinement of CURRENT supplies the first condition at every event, and the linked-event inclusion supplies the second. This endpoint correction requires no change to the chain-length bound used in the linear-side energy argument.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 8.5; Lemma 8.6; Proof of Lemma 8.6; Section 8.4; Equation (22); Section 8.6; Proof of Proposition 8.9.</p></details>
+    </article></div></section><section class="issue-group" id="minor-issues" aria-labelledby="minor-title"><div class="container"><h2 id="minor-title">Minor issues <span class="group-count">2</span></h2><article class="issue-card minor" id="the-predictor-identity-omits-a-conditional-expectation-term" data-issue-id="node-0017-issue-000001">
+      <div class="issue-masthead"><span class="severity minor">Minor · Issue 02</span><a href="#the-predictor-identity-omits-a-conditional-expectation-term" aria-label="Link to issue: The predictor identity omits a conditional-expectation term">Link <span aria-hidden="true">↗</span></a></div>
+      <h3>The predictor identity omits a conditional-expectation term</h3><p class="issue-location">Section 5.2 · Lemma 5.3 · Equation (7)</p>
+      <h4>Issue &amp; evidence</h4><p>The predictor identity at lines 2708–2715 omits a term for the general augmented inputs admitted in this section. Orthogonality gives μ_h=εa_{h,p}−√ε E_h[(F_a)_p], so its increment also includes −√ε(E_{h+1}−E_h)[(F_a)_p]. For example, F_a=Φ_p has zero residual and predictor coefficient one, contradicting μ_h=εa_{h,p}. The stated identity is valid for scalar embeddings, and this counterexample does not disprove estimate (7).</p><aside class="issue-repair"><h4>Proposed repair by OSVerify</h4><p>Set f_p=(F_a)_p and use μ_h=√ε[(P_hF_a)_p−E_hf_p]. The projection increments and conditional-expectation increments each have a sum of squared L²(J) norms at most ||F_a||²₂. Consequently (∑_h||μ_{h+1}−μ_h||²₂)^(1/2)≤2√ε||F_a||₂ and ||μ_H||₂≤2√ε||F_a||₂. In the existing proof, these bounds retain the 2^(−K_0), K_0√ε, and √ε contributions with adjusted absolute constants. Thus this correction preserves the parameter dependence needed for (7) and its high-truncation application; for scalar embeddings the added term vanishes.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 3.2; Lemma 3.2; Section 5.1; Section 5.2; Lemma 5.3; Equation (7); Proof of Lemma 5.3; Section 5.4; Proof of Proposition 5.6.</p></details>
+    </article><article class="issue-card minor" id="the-first-failing-role-convention-uses-the-wrong-order" data-issue-id="node-0043-issue-000001">
+      <div class="issue-masthead"><span class="severity minor">Minor · Issue 03</span><a href="#the-first-failing-role-convention-uses-the-wrong-order" aria-label="Link to issue: The first-failing-role convention uses the wrong order">Link <span aria-hidden="true">↗</span></a></div>
+      <h3>The first-failing-role convention uses the wrong order</h3><p class="issue-location">Section 9.1 · Section 9.2</p>
+      <h4>Issue &amp; evidence</h4><p>Lines 6789–6793 contain a local convention mismatch. Assignment to the first failing role requires each role to succeed at trials assigned to later roles. Requiring success at trials assigned to earlier roles instead describes assignment to the last failing role. Both conventions partition failed trials, so this mismatch does not itself invalidate the subsequent summed estimates.</p><aside class="issue-repair"><h4>Proposed repair by OSVerify</h4><p>Keep the first-failing-role convention and replace “the earlier roles&#x27; required positions” with “the trials assigned to later roles.” Explicitly, if a(t) is the assigned role, role j must fail when a(t)=j and succeed when a(t)&gt;j, with no condition when a(t)&lt;j. Retain success in every core role at the final height. These corrected masks still select whole minimal-component core subtotals by predicate coherence. For each fixed assignment, the assigned failure counts n_j remain unchanged, and the upper bounds at lines 7052–7071 still follow by discarding the additional success conditions.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 9.1; Section 9.2.</p></details>
+    </article></div></section>
+  </main>
+
+  <footer>
+    <div class="site-footer">
+      <div class="container row">
+        <picture>
+          <source srcset="../assets/img/logo-dark.svg" media="(prefers-color-scheme: dark)">
+          <img class="mark" src="../assets/img/logo-light.svg" alt="OSVerify" width="102" height="32">
+        </picture>
+        <ul class="links">
+          <li><a href="https://github.com/OSVerify">GitHub</a></li>
+          <!-- TODO: add a contact address with a valid Stanford affiliation (required by Stanford's Minimum Web Standards). -->
+        </ul>
+      </div>
+    </div>
+    <!-- Stanford global footer: required links per Stanford Minimum Web Standards (Accessibility link is mandatory). -->
+    <div class="global-footer">
+      <div class="container">
+        <nav aria-label="Stanford University links">
+          <ul>
+            <li><a href="https://www.stanford.edu/">Stanford Home</a></li>
+            <li><a href="https://visit.stanford.edu/basics">Maps &amp; Directions</a></li>
+            <li><a href="https://www.stanford.edu/search">Search Stanford</a></li>
+            <li><a href="https://emergency.stanford.edu">Emergency Info</a></li>
+            <li><a href="https://www.stanford.edu/terms">Terms of Use</a></li>
+            <li><a href="https://www.stanford.edu/privacy">Privacy</a></li>
+            <li><a href="https://uit.stanford.edu/security/copyright-infringement">Copyright</a></li>
+            <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4">Trademarks</a></li>
+            <li><a href="https://non-discrimination.stanford.edu/">Non-Discrimination</a></li>
+            <li><a href="https://www.stanford.edu/accessibility">Accessibility</a></li>
+          </ul>
+        </nav>
+        <p>© Stanford University, Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
