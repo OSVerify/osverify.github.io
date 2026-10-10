@@ -41,7 +41,7 @@ def document(title, description, body, prefix=''):
     head = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m[1] + text(title + ' · OSVerify'), head)
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m[1] + text(description), head)
     head = head.replace('<a href="./" aria-current="page">Blog</a>', '<a href="./">Blog</a>')
-    head = head.replace('<a href="case-studies.html">Case Studies</a>', '<a href="case-studies.html" aria-current="page">Case Studies</a>')
+    head = head.replace('<a href="case-studies.html">Results</a>', '<a href="case-studies.html" aria-current="page">Results</a>')
     foot = FOOT
     if prefix:
         for attr in ('href', 'src', 'srcset', 'content'):
@@ -59,7 +59,7 @@ def count(paper, severity):
 def badges(paper):
     result = ''.join(f'<span class="severity {s}">{count(paper, s)} {s.title()}</span>' for s in ('major', 'minor'))
     if not paper['coverage_complete']:
-        result += '<span class="review-status">Partial review</span>'
+        result += '<span class="review-status">Coverage incomplete</span>'
     return '<div class="finding-counts">' + result + '</div>'
 
 
@@ -108,9 +108,9 @@ def paper_page(paper):
     nav = ''.join(f'<a href="#{s}-issues">{s.title()} issues ({count(paper, s)})</a>' for s in ('major', 'minor'))
     scope = ''
     if not paper['coverage_complete']:
-        scope = f'<p class="review-note"><b>Partial review.</b> This report searched {paper["scopes_searched"]} of {paper["scopes_total"]} planned scopes. The findings below passed OSVerify’s internal review; the full-paper search is incomplete.</p>'
+        scope = f'<p class="review-note"><b>Review coverage.</b> This report searched {paper["scopes_searched"]} of {paper["scopes_total"]} planned scopes. The findings below passed OSVerify’s internal review; the full-paper search is incomplete.</p>'
     body = f'''<header class="paper-intro container">
-      <a class="back-link" href="../case-studies.html">← All case studies</a>
+      <a class="back-link" href="../case-studies.html">← All results</a>
       <p class="eyebrow">Paper Referee · OpenAI</p><h1>{title}</h1>
       <p class="paper-version">Reviewed version: {text(paper['version'])}</p>{badges(paper)}
       <div class="paper-actions"><a class="btn" href="{text(paper['paper_url'])}">Original paper <span aria-hidden="true">↗</span></a></div>
@@ -135,20 +135,20 @@ def main():
     total = sum(len(p['issues']) for p in PAPERS)
     majors = sum(count(p, 'major') for p in PAPERS)
     body = f'''<div class="page-intro container">
-      <p class="eyebrow">Paper Referee · OpenAI Math</p><h1>Case studies</h1>
+      <p class="eyebrow">Paper Referee · OpenAI Math</p><h1>Results</h1>
       <p class="lead">Specific issues, counterexamples, and proposed repairs from OSVerify’s reviews of OpenAI’s mathematical preprints.</p>
       <p class="muted">Browse each paper’s findings, grouped into Major and Minor issues, alongside a link to the original paper.</p>
       <p class="collection-summary">{len(PAPERS)} papers <span aria-hidden="true">·</span> {total} findings <span aria-hidden="true">·</span> {majors} Major / {total-majors} Minor</p>
     </div>
     <section class="study-section" id="paper-referee" aria-labelledby="paper-referee-title"><div class="container">
-      <h2 id="paper-referee-title">Paper referee</h2>
-      <p class="collection-note">This collection includes reports with released findings. Counts and severity labels reflect OSVerify’s internal review, not author confirmation. Partial reviews are marked individually.</p>
+      <h2 id="paper-referee-title">Paper Referee</h2>
+      <p class="collection-note">This collection includes reports with released findings. Counts and severity labels reflect OSVerify’s internal review, not author confirmation. Any remaining coverage limitations are noted on the individual paper.</p>
       <div class="paper-list">{''.join(card(p) for p in PAPERS)}</div>
     </div></section>'''
-    (ROOT / 'case-studies.html').write_text(document('Case Studies', 'Paper referee case studies from OSVerify, with original papers, Major and Minor findings, and proposed repairs.', body))
+    (ROOT / 'case-studies.html').write_text(document('Results', 'Paper Referee results from OSVerify, with original papers, Major and Minor findings, and proposed repairs.', body))
     for paper in PAPERS:
         (ROOT / f'cases/{paper["slug"]}.html').write_text(paper_page(paper))
-    print(f'Rendered case study index and {len(PAPERS)} paper pages ({total} issues).')
+    print(f'Rendered results index and {len(PAPERS)} paper pages ({total} issues).')
 
 
 if __name__ == '__main__':

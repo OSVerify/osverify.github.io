@@ -24,17 +24,17 @@ python3 -m http.server 8765
 
 Then open http://localhost:8765.
 
-## Navigation and case studies
+## Navigation and results
 
-The shared top menu is **Blog / Case Studies / Cite**. Blog opens the main
-article; Cite always opens its `#citation` section. Case study pages inherit
-the header and footer from `index.html`, with Case Studies marked current.
+The shared top menu is **Blog / Results / Cite**. Blog opens the main
+article; Cite always opens its `#citation` section. Results pages inherit
+the header and footer from `index.html`, with Results marked current.
 
 `case-studies.html#paper-referee` lists reports with released findings. Each
 paper has an original-paper link, reviewed version date, and separate Major
 and Minor groups. Each issue has a stable shareable anchor.
 Severity comes from the source report, not from the headline or the existence
-of a proposed repair. Partial search coverage is shown explicitly. Source
+of a proposed repair. Incomplete review coverage is shown explicitly. Source
 commit strings are not shown on the pages.
 
 Full referee PDFs are temporarily withheld while their formatting is revised.
