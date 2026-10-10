@@ -109,6 +109,8 @@ def paper_page(paper):
     scope = ''
     if not paper['coverage_complete']:
         scope = f'<p class="review-note"><b>Review coverage.</b> This report searched {paper["scopes_searched"]} of {paper["scopes_total"]} planned scopes. The findings below passed OSVerify’s internal review; the full-paper search is incomplete.</p>'
+    if paper.get("review_note"):
+        scope += f'<p class="review-note"><b>Review note.</b> {text(paper["review_note"])}</p>'
     body = f'''<header class="paper-intro container">
       <a class="back-link" href="../case-studies.html">← All results</a>
       <p class="eyebrow">Paper Referee · OpenAI</p><h1>{title}</h1>

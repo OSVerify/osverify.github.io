@@ -115,6 +115,15 @@
       "node-0046-issue-000001",
       "node-0043-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Findings use the released primary report snapshot. Coverage includes the separately recorded whole-paper follow-up, bound to identical source text; reference access limitations remain separate from search coverage.",
+    "coverage_update": {
+      "report": "results/cosmetic-surgery-full-review-20261010-v2/verification/report.json",
+      "report_sha256": "12793e3c68440101a778cd5876b96c8de459bac9f23170e3af2cfb945e59ef97",
+      "combined_coverage": "results/cosmetic-surgery-full-review-20261010-v2/combined-coverage.json",
+      "combined_coverage_sha256": "0ffad9e240c7d21b24bdb653e13b953d77fa21cc7b56d1b231eb1bd4bfac4776",
+      "source_sha256": "b81bbc86ced12d2e629fc2cf4c77d54f6543df78efe8ab818b92012f4db0ecb1",
+      "new_issue_ids": [],
+      "note": "The whole-paper follow-up completes the remaining root scope. No additional issues were released; the three historical Minor findings remain retained. Direct source verification of the Gordon–Luecke reference remains unresolved."
+    }
   }
 ]

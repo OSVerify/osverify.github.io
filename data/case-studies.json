@@ -1236,8 +1236,8 @@
     "version": "September 23, 2026",
     "paper_url": "https://github.com/openai/math/blob/main/preprints/Purely-Cosmetic-Surgery-on-Knots-in-the-Three-Sphere-September-23-2026/paper.pdf",
     "summary": "A parameter-count misstatement, a boundary-flux sign error, and an overcount in an index equality.",
-    "coverage_complete": false,
-    "scopes_searched": 53,
+    "coverage_complete": true,
+    "scopes_searched": 54,
     "scopes_total": 54,
     "issues": [
       {
@@ -1455,6 +1455,7 @@
           "Section 9.4"
         ]
       }
-    ]
+    ],
+    "review_note": "The whole-paper follow-up completed its search without releasing additional findings; the three previously released Minor issues are retained. Direct source verification of Gordon–Luecke’s “Knots are determined by their complements” remains unresolved because the original paper could not be retrieved."
   }
 ]
