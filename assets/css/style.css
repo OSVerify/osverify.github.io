@@ -189,6 +189,23 @@ code { font-family: var(--mono); font-size: 0.84em; }
 .subhead { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; }
 h2 + .subhead { margin-top: 0; }
 .paper-list.featured { margin-top: 1.25rem; }
+
+/* use-case overview cards */
+.usecases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin: 1.25rem 0 0.5rem; }
+@media (max-width: 720px) { .usecases { grid-template-columns: 1fr; } }
+.usecase {
+  display: flex; flex-direction: column; gap: 0.45rem;
+  padding: 1.1rem 1.2rem 1.15rem; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--green);
+  color: var(--ink); text-decoration: none;
+}
+.usecase.rose { border-top-color: var(--rose); }
+.usecase:hover { border-color: var(--ink-2); border-top-color: var(--green); text-decoration: none; }
+.usecase.rose:hover { border-top-color: var(--rose); }
+.usecase-title { font-size: 1.2rem; font-weight: bold; }
+.usecase-text { font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
+.usecase-proof { margin-top: auto; padding-top: 0.35rem; font-size: 0.95rem; font-weight: bold; color: var(--green-ink); }
+.usecase.rose .usecase-proof { color: var(--rose-ink); }
 .post-hero { padding-top: 3.5rem; }
 
 /* compact three-step cards on the home page */

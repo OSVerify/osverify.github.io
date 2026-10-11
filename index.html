@@ -19,7 +19,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css?v=14">
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -120,10 +120,23 @@
       </div>
     </section>
 
-    <!-- ================= 03 EVIDENCE ================= -->
-    <section id="evidence" aria-labelledby="evidence-title">
+    <!-- ================= 03 USE CASES ================= -->
+    <section id="use-cases" aria-labelledby="use-cases-title">
       <div class="container">
-        <h2 id="evidence-title"><span class="secnum">03</span>Evidence</h2>
+        <h2 id="use-cases-title"><span class="secnum">03</span>Use cases</h2>
+        <p>OSVerify only needs a problem and a candidate solution, so it fits wherever expert checking is the bottleneck. We use it in two ways.</p>
+        <div class="usecases">
+          <a class="usecase" href="#referee">
+            <span class="usecase-title">Refereeing research papers</span>
+            <span class="usecase-text">Give it a research paper. It reports the issues it confirms, graded Major or Minor, with their locations in the paper and proposed repairs.</span>
+            <span class="usecase-proof">45 + 88 issues confirmed in two papers · 10 OpenAI preprints reviewed</span>
+          </a>
+          <a class="usecase rose" href="#discovery">
+            <span class="usecase-title">Facilitating scientific discovery</span>
+            <span class="usecase-text">Plug it into a test-time scaling or autoresearch harness as the verifier when no automatic evaluator exists. It rejects candidates with confirmed errors and passes the rest on.</span>
+            <span class="usecase-proof">Helped resolve 3 open conjectures in relative Langlands duality</span>
+          </a>
+        </div>
 
         <h3 class="subhead" id="referee">Refereeing research papers</h3>
         <p>In the paper, OSVerify found <b>45 issues</b> in a paper published in the <em>Annals of Mathematics</em> and <b>88</b> in a recent preprint, compared with 11 and 3 from direct review with the same model. <b>The authors confirmed the errors and revised their papers.</b></p>
@@ -157,16 +170,21 @@
         <p class="more"><a class="btn secondary" href="case-studies.html#paper-referee">See all 10 referee reports <span aria-hidden="true">→</span></a></p>
 <!-- referee-summary:end -->
 
-        <h3 class="subhead" id="conjectures">Resolving open conjectures</h3>
-        <p>Used as the verifier for an agentic mathematical problem solver, with <b>no formal proof checker</b> in the loop, OSVerify helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
+        <h3 class="subhead" id="discovery">Facilitating scientific discovery</h3>
+        <p>Test-time scaling and autoresearch systems can generate many candidate solutions, but open problems rarely come with an automatic evaluator to tell which ones are right. OSVerify can fill that role. We used it as the verifier for an agentic mathematical problem solver, with <b>no formal proof checker</b> in the loop, and it helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
         <ol class="conj">
           <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2);</li>
           <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (Conj. 8.1.8), with (i) and (ii) in the setting of Liu–Wang, Conj. 4.36;</li>
           <li>the automorphic commutator relation (Liu–Wang, Conj. 4.45), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
         </ol>
-        <p class="muted"><b>Human experts have confirmed the proofs</b>, and the results are being prepared for submission to mathematical journals.</p>
+        <p class="muted">OSVerify provided the verification signal during solving and passed the final proofs. <b>Human experts have since confirmed the proofs</b>, and the results are being prepared for submission to mathematical journals.</p>
+      </div>
+    </section>
 
-        <h3 class="subhead" id="benchmarks">Benchmarks</h3>
+    <!-- ================= 04 BENCHMARKS ================= -->
+    <section id="benchmarks" aria-labelledby="benchmarks-title">
+      <div class="container">
+        <h2 id="benchmarks-title"><span class="secnum">04</span>Benchmarks</h2>
         <p>On competition-level <b>Putnam100</b> and <b>Hard2Verify (H2V)</b> and research-level <b>FirstProof-Eval</b>, with reference solutions and formal proof checkers withheld, OSVerify rejects far more invalid solutions than LLM-as-a-judge and voting at the same FNR budget.</p>
         <div class="table-wrap" tabindex="0" role="region" aria-labelledby="results-caption" aria-describedby="results-note">
           <table class="results">
