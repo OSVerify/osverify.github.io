@@ -173,7 +173,7 @@
       <div class="container">
         <div class="prose">
           <h2 id="results-title">Results</h2>
-          <p>We evaluate on competition-level <b>Putnam100</b> and <b>Hard2Verify (H2V)</b>, and research-level <b>FirstProof-Eval</b>, built from First Proof with human-labeled valid and invalid solutions. To mimic problems beyond the verifier’s own ability, we use relatively weak backbones (<code>gpt-oss-120b</code> and <code>gpt-5-mini</code>). Reference solutions and formal proof checkers are withheld from every verifier.</p>
+          <p>We evaluate on competition-level <b>Putnam100</b> and <b><a href="https://aclanthology.org/2026.acl-long.1031/">Hard2Verify (H2V)</a></b>, and research-level <b>FirstProof-Eval</b>, built from <a href="https://arxiv.org/abs/2602.05192">First Proof</a> with human-labeled valid and invalid solutions. To mimic problems beyond the verifier’s own ability, we use relatively weak backbones (<code>gpt-oss-120b</code> and <code>gpt-5-mini</code>). Reference solutions and formal proof checkers are withheld from every verifier.</p>
         </div>
 
         <div class="table-wrap" tabindex="0" role="region" aria-labelledby="results-caption" aria-describedby="results-note">
@@ -278,8 +278,8 @@
             <table class="mini">
               <thead><tr><th scope="col">Paper</th><th scope="col" style="text-align:right">OSVerify</th><th scope="col" style="text-align:right">Direct review</th></tr></thead>
               <tbody>
-                <tr><td>Zhu (2017)<span class="venue">Annals of Mathematics</span></td><td class="n"><strong>45</strong></td><td class="n">11</td></tr>
-                <tr><td>Liu &amp; Wang (2026)<span class="venue">arXiv preprint</span></td><td class="n"><strong>88</strong></td><td class="n">3</td></tr>
+                <tr><td><a href="https://arxiv.org/abs/1407.8519">Zhu (2017)</a><span class="venue">Annals of Mathematics</span></td><td class="n"><strong>45</strong></td><td class="n">11</td></tr>
+                <tr><td><a href="https://arxiv.org/abs/2504.00275v3">Liu &amp; Wang (2026)</a><span class="venue">arXiv preprint</span></td><td class="n"><strong>88</strong></td><td class="n">3</td></tr>
               </tbody>
             </table>
             <p class="muted">Direct review asks the same backbone model, through its web interface, to review the paper and then to look for any remaining issues.</p>
@@ -287,13 +287,15 @@
           </article>
           <article class="case">
             <h3>Resolving open conjectures</h3>
-            <p>Used as the verifier for an agentic mathematical problem solver, with <b>no formal proof checker</b> anywhere in the loop, OSVerify helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
+            <p>Used as the verifier for the agentic mathematical problem solver <a href="https://github.com/frenzymath/Rethlas">Rethlas</a>, with <b>no formal proof checker</b> anywhere in the loop, OSVerify helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
             <ol class="conj">
-              <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2);</li>
-              <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (Conj. 8.1.8), with (i) and (ii) in the setting of Liu–Wang, Conj. 4.36;</li>
-              <li>the automorphic commutator relation (Liu–Wang, Conj. 4.45), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
+              <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (<a href="https://arxiv.org/abs/2409.04677v1">Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2</a>);</li>
+              <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (<a href="https://arxiv.org/abs/2409.04677v1">Conj. 8.1.8</a>), with (i) and (ii) in the setting of <a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.36</a>;</li>
+              <li>the automorphic commutator relation (<a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.45</a>), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
             </ol>
-            <p class="muted"><b>Human experts have confirmed the proofs</b>, and the results are being prepared for submission to mathematical journals.</p>
+            <p class="muted"><b>Human experts have confirmed the proofs</b>.</p>
+            <p><b>Resulting papers:</b> <a href="https://hexagonmath.org/2609.00128?version=1">On properties of Plancherel algebras</a> (items 1–2), and <a href="https://arxiv.org/abs/2610.05781">Automorphic commutator relations in relative geometric Langlands</a> (item 3).</p>
+            <p><b>Latest result:</b> <a href="https://srliu.com/math_papers/manin_constant.pdf">On the Manin–Stevens Constant</a> proves the Manin constant conjecture and Stevens’ Conjectures I and II. OSVerify found an error and suggested a repair; Rethlas with OSVerify also reproduced a proof of the Manin constant conjecture from its statement (Appendix A.3–A.4).</p>
           </article>
         </div>
       </div>

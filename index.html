@@ -128,7 +128,7 @@
         <p>OSVerify only needs a problem and a candidate solution, so it fits wherever expert checking is the bottleneck. We use it in two ways.</p>
 
         <h3 class="subhead" id="referee">Refereeing research papers</h3>
-        <p>In the paper, OSVerify found <b>45 issues</b> in a paper published in the <em>Annals of Mathematics</em> and <b>88</b> in a recent preprint, compared with 11 and 3 from direct review with the same model. <b>The authors confirmed the errors and revised their papers.</b></p>
+        <p>In the paper, OSVerify found <b>45 issues</b> in <a href="https://arxiv.org/abs/1407.8519">Zhu (2017)</a>, published in the <em>Annals of Mathematics</em>, and <b>88</b> in <a href="https://arxiv.org/abs/2504.00275v3">Liu &amp; Wang (2026)</a>, compared with 11 and 3 from direct review with the same model. <b>The authors confirmed the errors and revised their papers.</b></p>
 <!-- referee-summary:start -->
         <p>We now also run OSVerify as a referee on new mathematics preprints from OpenAI. Across <b>10 papers</b>, it has flagged <mark class="hl rose">4 major</mark> and <b>13 minor</b> issues, each verified by human experts. The papers with major issues:</p>
         <div class="paper-list featured"><article class="paper-card">
@@ -160,13 +160,15 @@
 <!-- referee-summary:end -->
 
         <h3 class="subhead" id="discovery">Facilitating scientific discovery</h3>
-        <p>Test-time scaling and autoresearch systems can generate many candidate solutions, but open problems rarely come with an automatic evaluator to tell which ones are right. OSVerify can fill that role. We used it as the verifier for an agentic mathematical problem solver, with <b>no formal proof checker</b> in the loop, and it helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
+        <p>Test-time scaling and autoresearch systems can generate many candidate solutions, but open problems rarely come with an automatic evaluator to tell which ones are right. OSVerify can fill that role. We used it as the verifier for the agentic mathematical problem solver <a href="https://github.com/frenzymath/Rethlas">Rethlas</a>, with <b>no formal proof checker</b> in the loop, and it helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
         <ol class="conj">
-          <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2);</li>
-          <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (Conj. 8.1.8), with (i) and (ii) in the setting of Liu–Wang, Conj. 4.36;</li>
-          <li>the automorphic commutator relation (Liu–Wang, Conj. 4.45), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
+          <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (<a href="https://arxiv.org/abs/2409.04677v1">Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2</a>);</li>
+          <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (<a href="https://arxiv.org/abs/2409.04677v1">Conj. 8.1.8</a>), with (i) and (ii) in the setting of <a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.36</a>;</li>
+          <li>the automorphic commutator relation (<a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.45</a>), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
         </ol>
-        <p class="muted">OSVerify provided the verification signal during solving and passed the final proofs. <b>Human experts have since confirmed the proofs</b>, and the results are being prepared for submission to mathematical journals.</p>
+        <p class="muted">OSVerify provided the verification signal during solving and passed the final proofs. <b>Human experts have since confirmed the proofs</b>.</p>
+        <p><b>Resulting papers:</b> <a href="https://hexagonmath.org/2609.00128?version=1">On properties of Plancherel algebras</a> (items 1–2), and <a href="https://arxiv.org/abs/2610.05781">Automorphic commutator relations in relative geometric Langlands</a> (item 3).</p>
+        <p><b>Latest result:</b> <a href="https://srliu.com/math_papers/manin_constant.pdf">On the Manin–Stevens Constant</a> proves the Manin constant conjecture and Stevens’ Conjectures I and II. OSVerify found an error and suggested a repair; Rethlas with OSVerify also reproduced a proof of the Manin constant conjecture from its statement (Appendix A.3–A.4).</p>
       </div>
     </section>
 
@@ -174,7 +176,7 @@
     <section id="benchmarks" aria-labelledby="benchmarks-title">
       <div class="container">
         <h2 id="benchmarks-title"><span class="secnum">04</span>Benchmarks</h2>
-        <p>On competition-level <b>Putnam100</b> and <b>Hard2Verify (H2V)</b> and research-level <b>FirstProof-Eval</b>, with reference solutions and formal proof checkers withheld, OSVerify rejects far more invalid solutions than LLM-as-a-judge and voting at the same FNR budget.</p>
+        <p>On competition-level <b>Putnam100</b> and <b><a href="https://aclanthology.org/2026.acl-long.1031/">Hard2Verify (H2V)</a></b> and research-level <b>FirstProof-Eval</b> (based on <a href="https://arxiv.org/abs/2602.05192">First Proof</a>), with reference solutions and formal proof checkers withheld, OSVerify rejects far more invalid solutions than LLM-as-a-judge and voting at the same FNR budget.</p>
         <div class="table-wrap" tabindex="0" role="region" aria-labelledby="results-caption" aria-describedby="results-note">
           <table class="results">
             <caption id="results-caption" class="visually-hidden">Empirical TNR (%) of each method under FNR constraints of 0%, 5% and 10%, on Putnam100, H2V and FirstProof-Eval</caption>
