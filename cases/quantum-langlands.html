@@ -19,7 +19,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/style.css?v=17">
+  <link rel="stylesheet" href="../assets/css/style.css?v=18">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -36,28 +36,29 @@
         <a href="../blog/">Blog</a>
         <a href="../case-studies.html" aria-current="page">Results</a>
         <a href="../#contribute">Contribute</a>
+        <a class="nav-icon" href="https://github.com/OSVerify" aria-label="OSVerify on GitHub" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
 <header class="paper-intro container">
-      <a class="back-link" href="../case-studies.html">← All results</a>
+      <a class="back-link" href="../case-studies.html"><svg class="icon back" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16 10H4m5-5-5 5 5 5"/></svg><span>All results</span></a>
       <p class="eyebrow">Paper Referee · OpenAI</p><h1>Global quantum geometric Langlands at irrational level</h1>
       <p class="paper-version">Reviewed version: October 4, 2026</p><div class="finding-counts"><span class="severity major">2 Major</span><span class="severity minor">1 Minor</span></div>
-      <div class="paper-actions"><a class="btn" href="https://github.com/openai/math/blob/main/preprints/Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026/quantum-langlands.pdf">Original paper <span aria-hidden="true">↗</span></a></div>
+      <div class="paper-actions"><a class="btn" href="https://github.com/openai/math/blob/main/preprints/Global-quantum-geometric-Langlands-at-irrational-level-October-4-2026/quantum-langlands.pdf">Original paper <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg></a></div>
       <p class="review-note">Findings and severity labels below are from OSVerify’s internal review. They do not by themselves establish that the paper’s main theorem is false.</p>
       <nav class="case-nav issue-nav" aria-label="Issue severity"><a href="#major-issues">Major issues (2)</a><a href="#minor-issues">Minor issues (1)</a></nav>
     </header><section class="issue-group" id="major-issues" aria-labelledby="major-title"><div class="container"><h2 id="major-title">Major issues <span class="group-count">2</span></h2><article class="issue-card major" id="the-absolute-pairing-fails-to-preserve-direct-sums" data-issue-id="node-0011-issue-000001">
-      <div class="issue-masthead"><span class="severity major">Major · Issue 01</span><a href="#the-absolute-pairing-fails-to-preserve-direct-sums" aria-label="Link to issue: The absolute pairing fails to preserve direct sums">Link <span aria-hidden="true">↗</span></a></div>
+      <div class="issue-masthead"><span class="severity major">Major · Issue 01</span><a class="issue-link" href="#the-absolute-pairing-fails-to-preserve-direct-sums" aria-label="Link to issue: The absolute pairing fails to preserve direct sums"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-1 1M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l1-1"/></svg><span>Link</span></a></div>
       <h3>The absolute pairing fails to preserve direct sums</h3><p class="issue-location">Section 4.3 · Proposition 4.3 · Equation (4.3)</p>
       <h4>Issue</h4><p>The absolute pairing (4.3) is asserted to be continuous for the stated parameter class, which includes non-quasi-compact spaces.</p><h4>Counterexample</h4><p>Take S to be a countable disjoint union of points with constant marking, H = SL₂, X = ℙ¹, and s = 0. The zero-label stratum is 𝔸¹; the normalized pairing of opposite exponential objects is ℂ.</p><p>Let W carry the positive object on every component, and Vₙ the negative object only on component n. All lie in the zero-pole bound. Ordinary global sections give:</p><div class="issue-equations"><div>B(W, ⨁ₙ Vₙ) = ∏ₙ ℂ</div><div>⨁ₙ B(W, Vₙ) = ⨁ₙ ℂ</div></div><p>The canonical comparison from the direct sum to the product is not an isomorphism. Increasing pole bounds does not remove the failure. This tests the stated generality at s = 0; it is not a counterexample at irrational level, and does not challenge the relative pairing or the pairing on Xᴵ.</p><aside class="issue-repair"><h4>Correction requested by OSVerify</h4><p>For the stated non-quasi-compact parameter generality, distinguish ordinary absolute de Rham sections from a continuous categorical evaluation and justify the construction supporting the asserted duality. Check agreement with (4.3) on quasi-compact parameters and compatibility with the claimed closed-image transposition identities. In the disjoint-union example, continuity requires the direct sum of the componentwise evaluations; that observation alone does not construct the evaluation for general S. The current extension in pole bounds does not supply this parameter-direction argument.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 2.1; Section 2.3; Section 4.1; Section 4.2; Section 4.3; Proposition 4.3; Equation (4.3); Proof of Proposition 4.3; Section 8.5; Proof of Lemma 8.5.</p></details>
     </article><article class="issue-card major" id="constant-fibres-do-not-imply-a-global-scalar-identification" data-issue-id="node-0018-issue-000001">
-      <div class="issue-masthead"><span class="severity major">Major · Issue 02</span><a href="#constant-fibres-do-not-imply-a-global-scalar-identification" aria-label="Link to issue: Constant fibres do not imply a global scalar identification">Link <span aria-hidden="true">↗</span></a></div>
+      <div class="issue-masthead"><span class="severity major">Major · Issue 02</span><a class="issue-link" href="#constant-fibres-do-not-imply-a-global-scalar-identification" aria-label="Link to issue: Constant fibres do not imply a global scalar identification"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-1 1M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l1-1"/></svg><span>Link</span></a></div>
       <h3>Constant fibres do not imply a global scalar identification</h3><p class="issue-location">Section 6.1 · Proof of Proposition 6.1</p>
       <h4>Issue</h4><p>The global scalar-identity assertion in the finite-averaging argument is too strong: constant fibre cohomology does not eliminate a torsor’s derived extension data.</p><h4>Counterexample</h4><p>After the stated cancellations, the diagonal coefficient is E = p<sub>*</sub>ω<sub>H×N</sub>, where p(h′, n) = h′B⁻, up to fixed normalization shifts. For H = SL₂, the constant-sheaf counterpart is Rπ<sub>*</sub>ℂ<sub>SL₂</sub> on ℙ¹ for π : SL₂ → ℙ¹. Here B⁻ is the opposite Borel subgroup and N the unipotent subgroup in the averaging construction.</p><p>With complex coefficients and dimensions summed over all degrees, a constant derived coefficient with fibre H<sup>*</sup>(B⁻) would give total dimension four. The actual pushforward instead has the cohomology of SL₂, of total dimension two:</p><div class="issue-equations"><div>dim H<sup>*</sup>(ℙ¹) · dim H<sup>*</sup>(B⁻) = 2 · 2 = 4</div><div>dim H<sup>*</sup>(SL₂) = 2</div></div><p>The claimed global scalar identification fails. The report proposes a repair of conservativity using the actual coefficient and descent.</p><aside class="issue-repair"><h4>Proposed repair by OSVerify</h4><p>Keep E=p<sub>*</sub>ω<sub>H×N</sub>, with p(h&#x27;,n)=h&#x27;B⁻. Trivialize H→H/B⁻ on translates of the big cell. On each covering open U, the coefficient becomes ω_U⊗V, where V=Γ_dR(B⁻×N,ω) is a nonzero finite complex. Over ℂ, V splits into shifted finite-dimensional vector spaces, so tensoring with V detects zero for arbitrary input complexes. Descent therefore makes tensoring with E conservative globally. The same calculation on products with spectator charts preserves spectators. Together with the preceding diagonal-support calculation, this proves conservativity of the composite and hence of finite averaging, supplying the conservativity needed downstream without asserting a global splitting.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 6.1; Proof of Proposition 6.1; Section 6.6; Proof of Theorem 6.7.</p></details>
     </article></div></section><section class="issue-group" id="minor-issues" aria-labelledby="minor-title"><div class="container"><h2 id="minor-title">Minor issues <span class="group-count">1</span></h2><article class="issue-card minor" id="three-references-point-to-the-wrong-equation" data-issue-id="node-0038-issue-000001">
-      <div class="issue-masthead"><span class="severity minor">Minor · Issue 03</span><a href="#three-references-point-to-the-wrong-equation" aria-label="Link to issue: Three references point to the wrong equation">Link <span aria-hidden="true">↗</span></a></div>
+      <div class="issue-masthead"><span class="severity minor">Minor · Issue 03</span><a class="issue-link" href="#three-references-point-to-the-wrong-equation" aria-label="Link to issue: Three references point to the wrong equation"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-1 1M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l1-1"/></svg><span>Link</span></a></div>
       <h3>Three references point to the wrong equation</h3><p class="issue-location">Section 10.5 · Proof of Proposition 10.6</p>
       <h4>Issue &amp; evidence</h4><p>The references to (4.1) at lines 7026, 7134, and 7139 are inaccurate: that equation displays finite-loop averaging, whereas these passages refer to the zero-defect phase, the parameter map q_D, and the stratum projector. The intended definitions and projector are present elsewhere in the submission, so this is a nonblocking cross-reference defect.</p><aside class="issue-repair"><h4>Correction requested by OSVerify</h4><p>Correct the reference at line 7026 to the definition of psi_D at lines 1760–1764, specialized to D=0. At line 7134, refer to the definition of q_D at lines 1725–1734 and the formula (4.2). At line 7139, replace (4.1) with (4.2). Add labels to the definitions if needed; the associated shift calculation is already given at lines 1856–1862.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 10.5; Proof of Proposition 10.6; Section 4.2; Proof of Proposition 4.2; Equation (4.1); Equation (4.2).</p></details>
     </article></div></section>
@@ -65,15 +66,14 @@
 
   <footer>
     <div class="site-footer">
-      <div class="container row">
-        <picture>
-          <source srcset="../assets/img/logo-dark.png" media="(prefers-color-scheme: dark)">
-          <img class="mark" src="../assets/img/logo-light.png" alt="OSVerify" width="106" height="32">
-        </picture>
-        <ul class="links">
-          <li><a href="https://github.com/OSVerify">GitHub</a></li>
-          <!-- TODO: add a contact address with a valid Stanford affiliation (required by Stanford's Minimum Web Standards). -->
-        </ul>
+      <div class="container footer-row">
+        <a class="footer-brand" href="../">
+          <picture>
+            <source srcset="../assets/img/logo-dark.png" media="(prefers-color-scheme: dark)">
+            <img class="mark" src="../assets/img/logo-light.png" alt="OSVerify home" width="106" height="32">
+          </picture>
+        </a>
+        <a class="pill-link" href="https://github.com/OSVerify"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>GitHub</span></a>
       </div>
     </div>
     <!-- Stanford global footer: required links per Stanford Minimum Web Standards (Accessibility link is mandatory). -->

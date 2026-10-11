@@ -13,6 +13,14 @@ FOOT = '  <footer>' + HOME.split('  <footer>', 1)[1]
 FOOT = re.sub(r'  <script[^>]+></script>\n', '', FOOT)
 
 
+ICON = {
+    'arrow': '<svg class="icon go" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg>',
+    'back': '<svg class="icon back" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16 10H4m5-5-5 5 5 5"/></svg>',
+    'external': '<svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg>',
+    'link': '<svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-1 1M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l1-1"/></svg>',
+}
+
+
 def text(value):
     return html.escape(str(value), quote=True)
 
@@ -47,6 +55,7 @@ def document(title, description, body, prefix=''):
             head = head.replace(f'{attr}="assets/', f'{attr}="{prefix}assets/')
             foot = foot.replace(f'{attr}="assets/', f'{attr}="{prefix}assets/')
         head = head.replace('href="./', f'href="{prefix}')
+        foot = foot.replace('href="./', f'href="{prefix}')
         head = head.replace('href="case-studies.html"', f'href="{prefix}case-studies.html"')
         head = head.replace('href="blog/"', f'href="{prefix}blog/"')
     return head + '  <main id="main">\n' + body + '\n  </main>\n\n' + foot
@@ -99,7 +108,7 @@ def issue_card(issue, number):
     details += '<p class="source-location">' + text('; '.join(references)) + '.</p>'
     details += '</details>'
     return f'''<article class="issue-card {severity}" id="{anchor}" data-issue-id="{text(issue['source_issue_id'])}">
-      <div class="issue-masthead"><span class="severity {severity}">{severity.title()} · Issue {number:02d}</span><a href="#{anchor}" aria-label="Link to issue: {text(issue['title'])}">Link <span aria-hidden="true">↗</span></a></div>
+      <div class="issue-masthead"><span class="severity {severity}">{severity.title()} · Issue {number:02d}</span><a class="issue-link" href="#{anchor}" aria-label="Link to issue: {text(issue['title'])}">{ICON['link']}<span>Link</span></a></div>
       <h3>{text(issue['title'])}</h3><p class="issue-location">{text(issue['location'])}</p>
       {evidence}{repair}{details}
     </article>'''
@@ -114,10 +123,10 @@ def paper_page(paper):
     if paper.get("review_note"):
         scope += f'<p class="review-note"><b>Review note.</b> {text(paper["review_note"])}</p>'
     body = f'''<header class="paper-intro container">
-      <a class="back-link" href="../case-studies.html">← All results</a>
+      <a class="back-link" href="../case-studies.html">{ICON['back']}<span>All results</span></a>
       <p class="eyebrow">Paper Referee · OpenAI</p><h1>{title}</h1>
       <p class="paper-version">Reviewed version: {text(paper['version'])}</p>{badges(paper)}
-      <div class="paper-actions"><a class="btn" href="{text(paper['paper_url'])}">Original paper <span aria-hidden="true">↗</span></a></div>
+      <div class="paper-actions"><a class="btn" href="{text(paper['paper_url'])}">Original paper {ICON['external']}</a></div>
       <p class="review-note">Findings and severity labels below are from OSVerify’s internal review. They do not by themselves establish that the paper’s main theorem is false.</p>{scope}
       <nav class="case-nav issue-nav" aria-label="Issue severity">{nav}</nav>
     </header>'''
@@ -143,7 +152,7 @@ def home_referee():
     block = f'''<!-- referee-summary:start -->
         <p>We now also run OSVerify as a referee on new mathematics preprints from OpenAI. Across <b>{papers} papers</b>, it has flagged <mark class="hl rose">{major} major</mark> and <b>{minor} minor</b> issues, each verified by human experts. The papers with major issues:</p>
         <div class="paper-list featured">{''.join(card(p, 'h4') for p in featured)}</div>
-        <p class="more"><a class="btn secondary" href="case-studies.html#paper-referee">See all {papers} referee reports <span aria-hidden="true">→</span></a></p>
+        <p class="more"><a class="btn secondary" href="case-studies.html#paper-referee">See all {papers} referee reports {ICON['arrow']}</a></p>
 <!-- referee-summary:end -->'''
     home = (ROOT / 'index.html').read_text()
     home = re.sub(r'<!-- referee-summary:start -->.*?<!-- referee-summary:end -->', lambda m: block, home, flags=re.S)

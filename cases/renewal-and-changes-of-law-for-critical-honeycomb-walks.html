@@ -19,7 +19,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/style.css?v=17">
+  <link rel="stylesheet" href="../assets/css/style.css?v=18">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -36,20 +36,21 @@
         <a href="../blog/">Blog</a>
         <a href="../case-studies.html" aria-current="page">Results</a>
         <a href="../#contribute">Contribute</a>
+        <a class="nav-icon" href="https://github.com/OSVerify" aria-label="OSVerify on GitHub" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
 <header class="paper-intro container">
-      <a class="back-link" href="../case-studies.html">← All results</a>
+      <a class="back-link" href="../case-studies.html"><svg class="icon back" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16 10H4m5-5-5 5 5 5"/></svg><span>All results</span></a>
       <p class="eyebrow">Paper Referee · OpenAI</p><h1>Renewal and changes of law for critical honeycomb walks</h1>
       <p class="paper-version">Reviewed version: September 26, 2026</p><div class="finding-counts"><span class="severity major">0 Major</span><span class="severity minor">1 Minor</span></div>
-      <div class="paper-actions"><a class="btn" href="https://github.com/openai/math/blob/main/preprints/Renewal-and-changes-of-law-for-critical-honeycomb-walks-September-26-2026/main.pdf">Original paper <span aria-hidden="true">↗</span></a></div>
+      <div class="paper-actions"><a class="btn" href="https://github.com/openai/math/blob/main/preprints/Renewal-and-changes-of-law-for-critical-honeycomb-walks-September-26-2026/main.pdf">Original paper <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg></a></div>
       <p class="review-note">Findings and severity labels below are from OSVerify’s internal review. They do not by themselves establish that the paper’s main theorem is false.</p>
       <nav class="case-nav issue-nav" aria-label="Issue severity"><a href="#major-issues">Major issues (0)</a><a href="#minor-issues">Minor issues (1)</a></nav>
     </header><section class="issue-group" id="major-issues" aria-labelledby="major-title"><div class="container"><h2 id="major-title">Major issues <span class="group-count">0</span></h2><p class="muted">No major issues were released in this report.</p></div></section><section class="issue-group" id="minor-issues" aria-labelledby="minor-title"><div class="container"><h2 id="minor-title">Minor issues <span class="group-count">1</span></h2><article class="issue-card minor" id="the-signed-cylinder-citation-points-to-the-wrong-propositions" data-issue-id="root-issue-000001">
-      <div class="issue-masthead"><span class="severity minor">Minor · Issue 01</span><a href="#the-signed-cylinder-citation-points-to-the-wrong-propositions" aria-label="Link to issue: The signed-cylinder citation points to the wrong propositions">Link <span aria-hidden="true">↗</span></a></div>
+      <div class="issue-masthead"><span class="severity minor">Minor · Issue 01</span><a class="issue-link" href="#the-signed-cylinder-citation-points-to-the-wrong-propositions" aria-label="Link to issue: The signed-cylinder citation points to the wrong propositions"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-1 1M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l1-1"/></svg><span>Link</span></a></div>
       <h3>The signed-cylinder citation points to the wrong propositions</h3><p class="issue-location">Section 11.1</p>
       <h4>Issue &amp; evidence</h4><p>The signed-cylinder citation at line 4164 has incorrect proposition numbers. In the supplied cited PDF, the boundary-arch result is Proposition 10.1 (page 76), and the interior-visit comparison is Proposition 10.7 (statement on page 89, proof through page 90). These results support the corresponding inputs at lines 4175–4189 under matching conventions.</p><aside class="issue-repair"><h4>Proposed repair by OSVerify</h4><p>At line 4164, replace “Propositions 9.1–9.2” with “Propositions 10.1 and 10.7”. Retain Section 2 and Theorems 1.1–1.2 in that citation. This corrects the locators without changing the stated finite inputs or their downstream uses.</p></aside><details class="issue-context"><summary>Locations in the paper</summary><p class="source-location">Section 11.1; Equation (66).</p></details>
     </article></div></section>
@@ -57,15 +58,14 @@
 
   <footer>
     <div class="site-footer">
-      <div class="container row">
-        <picture>
-          <source srcset="../assets/img/logo-dark.png" media="(prefers-color-scheme: dark)">
-          <img class="mark" src="../assets/img/logo-light.png" alt="OSVerify" width="106" height="32">
-        </picture>
-        <ul class="links">
-          <li><a href="https://github.com/OSVerify">GitHub</a></li>
-          <!-- TODO: add a contact address with a valid Stanford affiliation (required by Stanford's Minimum Web Standards). -->
-        </ul>
+      <div class="container footer-row">
+        <a class="footer-brand" href="../">
+          <picture>
+            <source srcset="../assets/img/logo-dark.png" media="(prefers-color-scheme: dark)">
+            <img class="mark" src="../assets/img/logo-light.png" alt="OSVerify home" width="106" height="32">
+          </picture>
+        </a>
+        <a class="pill-link" href="https://github.com/OSVerify"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>GitHub</span></a>
       </div>
     </div>
     <!-- Stanford global footer: required links per Stanford Minimum Web Standards (Accessibility link is mandatory). -->
