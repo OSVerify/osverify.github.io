@@ -40,7 +40,6 @@ def document(title, description, body, prefix=''):
     head = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m[1] + text(description), head)
     head = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m[1] + text(title + ' · OSVerify'), head)
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m[1] + text(description), head)
-    head = head.replace('<a href="./" aria-current="page">Blog</a>', '<a href="./">Blog</a>')
     head = head.replace('<a href="case-studies.html">Results</a>', '<a href="case-studies.html" aria-current="page">Results</a>')
     foot = FOOT
     if prefix:
@@ -49,6 +48,7 @@ def document(title, description, body, prefix=''):
             foot = foot.replace(f'{attr}="assets/', f'{attr}="{prefix}assets/')
         head = head.replace('href="./', f'href="{prefix}')
         head = head.replace('href="case-studies.html"', f'href="{prefix}case-studies.html"')
+        head = head.replace('href="blog/"', f'href="{prefix}blog/"')
     return head + '  <main id="main">\n' + body + '\n  </main>\n\n' + foot
 
 
@@ -63,11 +63,11 @@ def badges(paper):
     return '<div class="finding-counts">' + result + '</div>'
 
 
-def card(paper):
+def card(paper, heading='h2'):
     slug = text(paper['slug'])
     return f'''<article class="paper-card">
       <div class="study-meta"><span>OpenAI · {text(paper['version'])}</span>{badges(paper)}</div>
-      <h2><a href="cases/{slug}.html">{text(paper['title'])}</a></h2>
+      <{heading}><a href="cases/{slug}.html">{text(paper['title'])}</a></{heading}>
       <p>{text(paper['summary'])}</p>
       <div class="paper-links">
         <a class="paper-link-primary" href="cases/{slug}.html">Read issues <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
@@ -134,6 +134,22 @@ def paper_page(paper):
     return document(paper['title'], paper['summary'], body, '../')
 
 
+def home_referee():
+    """Write referee counts and the papers with major issues into the home page."""
+    papers = len(PAPERS)
+    major = sum(count(p, 'major') for p in PAPERS)
+    minor = sum(count(p, 'minor') for p in PAPERS)
+    featured = [p for p in PAPERS if count(p, 'major')]
+    block = f'''<!-- referee-summary:start -->
+        <p>We now also run OSVerify as a referee on new mathematics preprints from OpenAI. Across <b>{papers} papers</b>, it has flagged <mark class="hl rose">{major} major</mark> and <b>{minor} minor</b> issues, each verified by human experts. The papers with major issues:</p>
+        <div class="paper-list featured">{''.join(card(p, 'h4') for p in featured)}</div>
+        <p class="more"><a class="btn secondary" href="case-studies.html#paper-referee">See all {papers} referee reports <span aria-hidden="true">→</span></a></p>
+<!-- referee-summary:end -->'''
+    home = (ROOT / 'index.html').read_text()
+    home = re.sub(r'<!-- referee-summary:start -->.*?<!-- referee-summary:end -->', lambda m: block, home, flags=re.S)
+    (ROOT / 'index.html').write_text(home)
+
+
 def main():
     (ROOT / 'cases').mkdir(exist_ok=True)
     total = sum(len(p['issues']) for p in PAPERS)
@@ -145,6 +161,7 @@ def main():
     (ROOT / 'case-studies.html').write_text(document('Results', 'Paper Referee results from OSVerify, with original papers, Major and Minor findings, and proposed repairs.', body))
     for paper in PAPERS:
         (ROOT / f'cases/{paper["slug"]}.html').write_text(paper_page(paper))
+    home_referee()
     print(f'Rendered results index and {len(PAPERS)} paper pages ({total} issues).')
 
 

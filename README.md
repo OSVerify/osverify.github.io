@@ -4,7 +4,8 @@ Project page for **OSVerify: One-Sided Verification Under Limited Expert Review*
 Plain static HTML/CSS with no build step, meant for GitHub Pages and eventually served at `osv.stanford.edu`.
 
 ```
-index.html            main blog / project article, including citation
+index.html            home page: summary, 01 problem, 02 method, 03 evidence, citation
+blog/index.html       long-form blog post (full method, results and analysis)
 case-studies.html     index of OpenAI paper referee case studies
 cases/               individual paper pages, grouped by Major / Minor issues
 data/                curated findings and source-report provenance
@@ -26,9 +27,11 @@ Then open http://localhost:8765.
 
 ## Navigation and results
 
-The shared top menu is **Blog / Results / Cite**. Blog opens the main
-article; Cite always opens its `#citation` section. Results pages inherit
-the header and footer from `index.html`, with Results marked current.
+The shared top menu is **Blog / Results / Cite**; the logo links to the
+home page. Blog opens `blog/`; Cite opens the home page's `#citation`
+section. Results pages inherit the header and footer from `index.html`,
+with Results marked current. `blog/index.html` keeps its own copy of the
+header and footer, so edit both when the chrome changes.
 
 `case-studies.html#paper-referee` lists reports with released findings. Each
 paper has an original-paper link, reviewed version date, and separate Major
@@ -46,8 +49,10 @@ To update entries, edit `data/case-studies.json` and run:
 python3 scripts/build_case_studies.py
 ```
 
-Commit the generated HTML along with its input data; GitHub Pages needs no
-build step. `data/case-study-provenance.json` records report hashes and issue
+The script also rewrites the block between `<!-- referee-summary:start -->`
+and `<!-- referee-summary:end -->` in `index.html`: the paper and issue
+counts, and cards for every paper with a Major issue. Commit the generated
+HTML along with its input data; GitHub Pages needs no build step. `data/case-study-provenance.json` records report hashes and issue
 IDs for checking the import. The imported findings are OSVerify-reviewed,
 not author-confirmed. Reference-only follow-ups do not replace the original
 full-paper review's coverage state. The three expanded counterexample cards
