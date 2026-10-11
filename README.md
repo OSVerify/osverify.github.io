@@ -37,8 +37,9 @@ header and footer, so edit both when the chrome changes.
 `case-studies.html#paper-referee` lists reports with released findings. Each
 paper has an original-paper link, reviewed version date, and separate Major
 and Minor groups. Each issue has a stable shareable anchor.
-Severity comes from the source report, not from the headline or the existence
-of a proposed repair. Incomplete review coverage is shown explicitly. Source
+Severity defaults to the source report. Explicit editorial reclassifications
+are recorded in `data/case-study-provenance.json` under `severity_overrides`;
+the original report and its classification remain unchanged. Incomplete review coverage is shown explicitly. Source
 commit strings are not shown on the pages.
 
 Full referee PDFs are temporarily withheld while their formatting is revised.

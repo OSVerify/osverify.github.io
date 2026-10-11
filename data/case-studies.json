@@ -135,7 +135,7 @@
         "anchor": "constant-fibres-do-not-imply-a-global-scalar-identification",
         "title": "Constant fibres do not imply a global scalar identification",
         "location": "Section 6.1 · Proof of Proposition 6.1",
-        "severity": "minor",
+        "severity": "major",
         "classification_note": "The report supplies a local-trivialization and descent repair that preserves the required conservativity without a global splitting.",
         "feedback": [
           {
