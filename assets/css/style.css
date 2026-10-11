@@ -189,6 +189,9 @@ code { font-family: var(--mono); font-size: 0.84em; }
 .subhead { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; }
 h2 + .subhead { margin-top: 0; }
 .paper-list.featured { margin-top: 1.25rem; }
+.box ul.contacts { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; }
+.contacts li { margin: 0; }
+.contacts b { margin-right: 0.4rem; }
 .post-hero { padding-top: 3.5rem; }
 
 /* compact three-step cards on the home page */

@@ -13,7 +13,7 @@ scripts/             static case study page generator
 404.html              GitHub Pages not-found page
 assets/css/style.css  all styles (light + dark via prefers-color-scheme)
 assets/js/site.js     BibTeX copy button
-assets/img/           logo (SVG), paper figures (PNG, 1920 px wide), icons, social preview
+assets/img/           logo (PNG, light + dark), paper figures (PNG, 1920 px wide), icons, social preview
 .nojekyll             serve files as-is (no Jekyll processing)
 ```
 
@@ -27,9 +27,10 @@ Then open http://localhost:8765.
 
 ## Navigation and results
 
-The shared top menu is **Blog / Results / Cite**; the logo links to the
-home page. Blog opens `blog/`; Cite opens the home page's `#citation`
-section. Results pages inherit the header and footer from `index.html`,
+The shared top menu is **Blog / Results / Contribute**; the logo links to
+the home page. Blog opens `blog/`; Contribute opens the home page's
+`#contribute` section. The BibTeX button in each page's header opens that
+page's `#citation` section. Results pages inherit the header and footer from `index.html`,
 with Results marked current. `blog/index.html` keeps its own copy of the
 header and footer, so edit both when the chrome changes.
 
@@ -72,7 +73,6 @@ The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in 
 
 - [ ] arXiv and code links (replace the two "coming soon" buttons)
 - [ ] arXiv eprint / url in the BibTeX
-- [ ] Contact address with a Stanford affiliation in the footer
 - [ ] Absolute `og:image` / `og:url` once the final domain is known
 
 ## Deploy (GitHub Pages)
