@@ -71,7 +71,8 @@ The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in 
 
 ## Before going public
 
-- [ ] arXiv and code links (replace the two "coming soon" buttons)
+- [ ] arXiv link (replace the "coming soon" Paper button)
+- [x] Code link → https://github.com/OSVerify
 - [ ] arXiv eprint / url in the BibTeX
 - [ ] Absolute `og:image` / `og:url` once the final domain is known
 
