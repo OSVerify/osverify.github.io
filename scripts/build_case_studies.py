@@ -189,6 +189,10 @@ def home_referee():
 <!-- referee-summary:end -->'''
     home = (ROOT / 'index.html').read_text()
     home = re.sub(r'<!-- referee-summary:start -->.*?<!-- referee-summary:end -->', lambda m: block, home, flags=re.S)
+    news = f'''<!-- news-referee:start -->
+                <span class="news-body"><b>{papers} OpenAI preprints refereed</b><span class="news-sep" aria-hidden="true">·</span><span class="news-desc">{major} Major and {minor} Minor issues found, each verified by human experts</span></span>
+<!-- news-referee:end -->'''
+    home = re.sub(r'<!-- news-referee:start -->.*?<!-- news-referee:end -->', lambda m: news, home, flags=re.S)
     (ROOT / 'index.html').write_text(home)
 
 

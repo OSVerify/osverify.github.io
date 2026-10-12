@@ -17,3 +17,15 @@ document.querySelectorAll("button.copy").forEach((btn) => {
     setTimeout(() => { btn.textContent = "Copy"; }, 1800);
   });
 });
+
+// Relative dates in the News panel ("today", "3d ago", "2w ago"); older items keep the printed date.
+document.querySelectorAll("time[data-relative]").forEach((el) => {
+  const then = new Date(el.getAttribute("datetime") + "T12:00:00");
+  const days = Math.floor((Date.now() - then.getTime()) / 86400000);
+  if (Number.isNaN(days) || days < 0) return;
+  const label = days === 0 ? "today" : days < 7 ? `${days}d ago` : days < 35 ? `${Math.floor(days / 7)}w ago` : null;
+  if (label) {
+    el.title = el.textContent;
+    el.textContent = label;
+  }
+});
