@@ -5,7 +5,7 @@ Plain static HTML/CSS with no build step, meant for GitHub Pages and eventually 
 
 ```
 index.html            home page: summary, 01 problem, 02 method, 03 evidence, citation
-blog/index.html       long-form blog post (full method, results and analysis)
+blog/index.html       Coming soon placeholder; blog links are temporarily hidden
 case-studies.html     index of OpenAI paper referee case studies
 cases/               individual paper pages, grouped by Major / Minor issues
 data/                curated findings and source-report provenance
@@ -27,10 +27,11 @@ Then open http://localhost:8765.
 
 ## Navigation and results
 
-The shared top menu is **Blog / Results / Contribute**; the logo links to
-the home page. Blog opens `blog/`; Contribute opens the home page's
-`#contribute` section. The BibTeX button in each page's header opens that
-page's `#citation` section. Results pages inherit the header and footer from `index.html`,
+The shared top menu is **Results / Contribute**; the logo links to
+the home page. Blog links are temporarily removed from navigation and the home
+page; `blog/` displays "Coming soon". Restore the earlier article from Git history
+when it is ready to publish. Contribute opens the home page's `#contribute`
+section. The home page's BibTeX button opens its `#citation` section. Results pages inherit the header and footer from `index.html`,
 with Results marked current. `blog/index.html` keeps its own copy of the
 header and footer, so edit both when the chrome changes.
 
