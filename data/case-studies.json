@@ -974,7 +974,7 @@
             }
           },
           {
-            "location": "Section 5.2, remainder of the proof of Lemma 5.3, Equation (7)",
+            "location": "Section 5.2, remainder of the proof of Lemma 5.3, completing the proof of (7)",
             "role": "downstream",
             "explanation": "The added term must be carried through the smooth-bump, coarse-mean and curvature-difference estimates; the proposed repair preserves their parameter dependence.",
             "source_span": {
@@ -1758,7 +1758,7 @@
         ],
         "related_context": [
           {
-            "location": "Section 2.5, Lemma 2.15 (weighted plank estimate)",
+            "location": "Section 2.5, proof of Lemma 2.15 (Weighted full-time plank estimate)",
             "role": "background",
             "explanation": "This is the paper’s own formulation of the imported estimate. The reported defect is the locator in reference [24], not the stated weighted estimate.",
             "source_span": {
