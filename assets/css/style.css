@@ -368,7 +368,7 @@ table.results { border-collapse: separate; border-spacing: 0; width: 100%; min-w
 .results thead tr:first-child th { color: var(--ink); font-weight: bold; border-bottom: 1px solid var(--line); text-align: center; }
 .results thead tr:last-child th { border-bottom: 1px solid var(--ink-2); }
 .results th[scope="row"] { text-align: left; font-weight: normal; padding-left: 0.75rem; }
-.results .group th { text-align: left; padding-left: 0.75rem !important; font-family: var(--mono); font-size: 0.85rem; color: var(--ink-2); background: var(--surface-2); padding: 0.4rem; }
+.results .group th { text-align: center; font-family: var(--mono); font-size: 0.85rem; color: var(--ink-2); background: var(--surface-2); padding: 0.4rem; }
 .results .dsep { border-left: 1px solid var(--line); }
 .results th[scope="row"], .results thead tr:last-child th:first-child, .results thead tr:first-child td:first-child { position: sticky; left: 0; z-index: 1; background: var(--surface); }
 .results .ours { background: var(--green-tint); }
@@ -379,7 +379,11 @@ table.results { border-collapse: separate; border-spacing: 0; width: 100%; min-w
 .results .trained th[scope="row"] { font-weight: bold; }
 .results td .sd { color: var(--ink-2); font-size: 0.72em; margin-left: 0.1rem; }
 .results td strong { font-weight: bold; }
-.results .group th span { position: sticky; left: 0.75rem; }
+@media (max-width: 760px) {
+  /* the table scrolls sideways here, so keep the backbone label pinned at the left */
+  .results .group th { text-align: left; padding-left: 0.75rem; }
+  .results .group th span { position: sticky; left: 0.75rem; }
+}
 .table-note { color: var(--ink-2); font-size: 0.9rem; line-height: 1.5; margin: 0.7rem 0 0; }
 .table-note b { color: var(--ink); }
 .scroll-hint { display: none; font-size: 0.85rem; color: var(--ink-2); margin: 0.4rem 0 0; }
