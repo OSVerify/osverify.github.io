@@ -43,6 +43,14 @@ def rich(value, reference_labels=None):
     return result
 
 
+def quotation(value):
+    rendered = text(value)
+    rendered = re.sub(r'_\{([^}]+)\}', r'<sub>\1</sub>', rendered)
+    rendered = re.sub(r'_([A-Za-z]+)', r'<sub>\1</sub>', rendered)
+    rendered = rendered.replace('TV_[q,∞)', 'TV<sub>[q,∞)</sub>')
+    return rendered.replace('G*G', 'G<sup>*</sup>G')
+
+
 def document(title, description, body, prefix=''):
     head = HEAD.replace('<title>OSVerify: One-Sided Verification</title>', f'<title>{text(title)} · OSVerify</title>')
     head = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m[1] + text(description), head)
@@ -103,14 +111,33 @@ def issue_card(issue, number):
     repairs = suggestions or requests
     repair_title = 'Proposed repair by OSVerify' if suggestions else 'Correction requested by OSVerify'
     repair = f'<aside class="issue-repair"><h4>{repair_title}</h4>' + ''.join(f'<p>{prose(f["text"])}</p>' for f in repairs) + '</aside>'
-    references = issue['paper_references']
-    details = '<details class="issue-context"><summary>Locations in the paper</summary>'
-    details += '<p class="source-location">' + text('; '.join(references)) + '.</p>'
-    details += '</details>'
+    passages = issue.get('issue_passages', [])
+    if not passages:
+        raise ValueError(f"Missing precise source passage: {issue['source_issue_id']}")
+    located = '<section class="issue-passages"><h4>Where the issue occurs</h4>'
+    for passage in passages:
+        if not passage.get('quote') or not passage.get('explanation'):
+            raise ValueError(f"Incomplete source passage: {issue['source_issue_id']}")
+        located += '<div class="issue-passage"><p class="passage-location">' + text(passage['location'])
+        located += ' · p. ' + text(passage['pdf_page']) + '</p>'
+        located += '<blockquote class="paper-quote"><p>' + quotation(passage['quote']) + '</p></blockquote>'
+        located += '<p class="passage-explanation">' + text(passage['explanation']) + '</p></div>'
+    located += '</section>'
+    details = ''
+    contexts = issue.get('related_context', [])
+    if contexts:
+        details = '<details class="issue-context"><summary>Related context</summary><ul>'
+        for context in contexts:
+            role = {'background': 'Background', 'downstream': 'Downstream use'}[context['role']]
+            if not context.get('explanation'):
+                raise ValueError(f"Context needs a purpose: {issue['source_issue_id']}")
+            details += '<li><p><span class="context-role">' + role + '</span> <b>' + text(context['location']) + '</b></p>'
+            details += '<p>' + text(context['explanation']) + '</p></li>'
+        details += '</ul></details>'
     return f'''<article class="issue-card {severity}" id="{anchor}" data-issue-id="{text(issue['source_issue_id'])}">
       <div class="issue-masthead"><span class="severity {severity}">{severity.title()} · Issue {number:02d}</span><a class="issue-link" href="#{anchor}" aria-label="Link to issue: {text(issue['title'])}">{ICON['link']}<span>Link</span></a></div>
-      <h3>{text(issue['title'])}</h3><p class="issue-location">{text(issue['location'])}</p>
-      {evidence}{repair}{details}
+      <h3>{text(issue['title'])}</h3>
+      {located}{evidence}{repair}{details}
     </article>'''
 
 

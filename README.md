@@ -100,3 +100,14 @@ its frozen-source hashes, and the original line spans for traceability. Numbers
 come from LaTeX cross-references or exact named headings in the original PDF.
 Classification explanations and raw source-line lists are not rendered in the
 case-page metadata; the Major/Minor grouping is retained.
+
+
+Each published issue must have `issue_passages`: the precise paragraph/formula,
+original PDF page, short quotation, and an explanation identifying the disputed
+step. Quotes are transcribed from the reviewed PDF; `source_quote` and
+`source_span` retain the corresponding frozen LaTeX evidence. Printed references
+inside quotations are preserved, including erroneous citations in the paper.
+`related_context` labels every other reference as background or a downstream use
+and explains its relevance. A proof error must not be presented as a refutation
+of its theorem. The historical `paper_references` union remains audit metadata
+and is not rendered as a list of error locations.

@@ -463,3 +463,14 @@ a:hover > .icon.back { transform: translateX(-3px); }
 .pill-link svg.gh { width: 1.05rem; height: 1.05rem; fill: currentColor; }
 .issue-masthead a.issue-link { text-decoration: none; }
 .issue-masthead a.issue-link:hover { color: var(--green-ink); }
+
+/* Quote the disputed passage separately from supporting references. */
+.issue-passages { padding: 0; margin: 1.35rem 0 1.6rem; }
+.issue-passage + .issue-passage { margin-top: 1.4rem; }
+.issue-card .passage-location { font-size: 0.9rem; line-height: 1.55; color: var(--ink-2); margin: 0.4rem 0 0.65rem; }
+.paper-quote { margin: 0; padding: 0.8rem 1rem; border-left: 3px solid var(--line); background: var(--bg); }
+.issue-card .paper-quote p { margin: 0; font-size: 1rem; line-height: 1.65; white-space: pre-line; }
+.issue-card .passage-explanation { margin: 0.65rem 0 0; font-size: 0.9rem; color: var(--ink-2); }
+.issue-context ul { padding-left: 1.25rem; }
+.issue-context li + li { margin-top: 1rem; }
+.context-role { display: block; font-size: 0.75rem; font-family: system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.04em; }

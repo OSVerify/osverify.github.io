@@ -13,7 +13,7 @@
         "source_issue_id": "node-0011-issue-000001",
         "anchor": "the-absolute-pairing-fails-to-preserve-direct-sums",
         "title": "The absolute pairing fails to preserve direct sums",
-        "location": "Section 4.3 · Proposition 4.3 · Equation (4.3)",
+        "location": "Section 4.3, Proposition 4.3 (Whittaker duality), immediately after Equation (4.3)",
         "severity": "major",
         "classification_note": "A continuous evaluation for the full parameter class remains to be constructed. The counterexample tests the stated generality at s = 0; it is not a counterexample at irrational level.",
         "feedback": [
@@ -128,13 +128,79 @@
           "(W2)": "(4.3)",
           "eq:W1": "(4.1)",
           "whittaker:stratum-projector": "(4.2)"
-        }
+        },
+        "issue_passages": [
+          {
+            "location": "Section 4.3, Proposition 4.3 (Whittaker duality), immediately after Equation (4.3)",
+            "pdf_page": 28,
+            "quote": "In a pole bound this formula uses the bounded-zero star-extension convention of Proposition 4.2. It then extends continuously to the full pole model.",
+            "explanation": "The issue is the asserted continuous extension of this absolute pairing over the full stated parameter class.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1924,
+              "end_line": 1926
+            },
+            "source_quote": "In a pole bound this formula uses the bounded-zero star-extension\nconvention of Proposition~\\ref{whittaker:strata-properties}. It then\nextends continuously to the full pole model."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 2.1, conventions for functors",
+            "role": "background",
+            "explanation": "Specifies that functors are continuous unless explicitly stated otherwise.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 299,
+              "end_line": 313
+            }
+          },
+          {
+            "location": "Section 4.1, opening description of the parameter scheme S",
+            "role": "background",
+            "explanation": "Gives the parameter generality tested by the counterexample; this is an assumption, not a second erroneous assertion.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1513,
+              "end_line": 1519
+            }
+          },
+          {
+            "location": "Section 2.3 and Section 4.2, quasi-compactness and bounded-zero opens",
+            "role": "background",
+            "explanation": "Supplies the safe-pushforward and quasi-compactness conditions used to compare the claimed pairing with its bounded construction.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 501,
+              "end_line": 510
+            }
+          },
+          {
+            "location": "Section 4.3, proof of Proposition 4.3, passage to increasing pole bounds",
+            "role": "background",
+            "explanation": "Explains the extension argument being challenged: increasing pole bounds does not by itself address the parameter-direction failure.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1989,
+              "end_line": 2000
+            }
+          },
+          {
+            "location": "Section 8.5, proof of Lemma 8.5, description of the zero-pole bound",
+            "role": "background",
+            "explanation": "Identifies the zero-label model used in the counterexample. This location is supporting evidence, not another reported error.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5371,
+              "end_line": 5377
+            }
+          }
+        ]
       },
       {
         "source_issue_id": "node-0018-issue-000001",
         "anchor": "constant-fibres-do-not-imply-a-global-scalar-identification",
         "title": "Constant fibres do not imply a global scalar identification",
-        "location": "Section 6.1 · Proof of Proposition 6.1",
+        "location": "Section 6.1, proof of Proposition 6.1, final paragraph of the diagonal calculation",
         "severity": "major",
         "classification_note": "The report supplies a local-trivialization and descent repair that preserves the required conservativity without a global splitting.",
         "feedback": [
@@ -223,14 +289,52 @@
         "reference_labels": {
           "(W2)": "(4.3)",
           "eq:W1": "(4.1)",
-          "whittaker:stratum-projector": "(4.2)"
-        }
+          "whittaker:stratum-projector": "(4.2)",
+          "at lines 3299–3300": "in the quoted paragraph of the proof of Proposition 6.1",
+          "at lines 3884–3885": "in the proof of Theorem 6.7"
+        },
+        "issue_passages": [
+          {
+            "location": "Section 6.1, proof of Proposition 6.1, final paragraph of the diagonal calculation",
+            "pdf_page": 45,
+            "quote": "Its cohomology is nonzero and varies constantly along the diagonal. The composite therefore acts as the identity tensored with a nonzero complex of vector spaces, and is conservative.",
+            "explanation": "The disputed step is the inference from constant fibre cohomology to a global scalar identity. The report does not disprove the required conservativity.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3298,
+              "end_line": 3301
+            },
+            "source_quote": "Its cohomology is nonzero and\nvaries constantly along the diagonal.  The composite therefore acts as\nthe identity tensored with a nonzero complex of vector spaces, and is\nconservative."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 6.1, proof of Proposition 6.1, finite-averaging kernel and diagonal calculation",
+            "role": "background",
+            "explanation": "Defines the composite and the coefficient whose fibre cohomology is being computed.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3267,
+              "end_line": 3298
+            }
+          },
+          {
+            "location": "Section 6.6, proof of Theorem 6.7, invocation of Proposition 6.1",
+            "role": "downstream",
+            "explanation": "Uses conservativity of the finite-averaging functor. It is included to explain what the proposed repair must preserve, not as a separate error in Theorem 6.7.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3883,
+              "end_line": 3887
+            }
+          }
+        ]
       },
       {
         "source_issue_id": "node-0038-issue-000001",
         "anchor": "three-references-point-to-the-wrong-equation",
         "title": "Three references point to the wrong equation",
-        "location": "Section 10.5 · Proof of Proposition 10.6",
+        "location": "Section 10.5, paragraph defining the exponential period, before Proposition 10.6",
         "severity": "minor",
         "classification_note": "The intended definitions and formulas are already present; correcting their references resolves the issue.",
         "feedback": [
@@ -319,8 +423,75 @@
         "reference_labels": {
           "(W2)": "(4.3)",
           "eq:W1": "(4.1)",
-          "whittaker:stratum-projector": "(4.2)"
-        }
+          "whittaker:stratum-projector": "(4.2)",
+          "at lines 7026, 7134, and 7139": "in the three passages quoted above",
+          "at line 7026": "in the first quoted passage",
+          "At line 7134": "In the second quoted passage",
+          "At line 7139": "In the third quoted passage",
+          "at lines 1760–1764": "in Section 4.2",
+          "at lines 1725–1734": "in Section 4.2",
+          "at lines 1856–1862": "immediately after Equation (4.2)"
+        },
+        "issue_passages": [
+          {
+            "location": "Section 10.5, paragraph defining the exponential period, before Proposition 10.6",
+            "pdf_page": 92,
+            "quote": "let ψ₀ be the zero-defect function in (4.1), pulled back to this stack.",
+            "explanation": "The reference should identify the definition of ψ_D in Section 4.2, specialized to D = 0.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7025,
+              "end_line": 7027
+            },
+            "source_quote": "let\n$\\psi_0$ be the zero-defect function in \\eqref{eq:W1}, pulled back to\nthis stack."
+          },
+          {
+            "location": "Section 10.5, proof of Proposition 10.6, paragraph beginning “Enlarge l once more”",
+            "pdf_page": 93,
+            "quote": "Pulling this presentation to the stratum identifies normalized averaging with the conjugated pull after star image along the stratum map q_D in (4.1).",
+            "explanation": "Here the intended references are the definition of q_D and the projector formula (4.2).",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7132,
+              "end_line": 7134
+            },
+            "source_quote": "Pulling this presentation to the stratum identifies normalized\naveraging with the conjugated pull after star image along the\nstratum map $q_D$ in \\eqref{eq:W1}."
+          },
+          {
+            "location": "Section 10.5, proof of Proposition 10.6, later in the same paragraph",
+            "pdf_page": 93,
+            "quote": "The averaging correspondence and the Whittaker stratum projector in (4.1) are thus !-base changes of the same relative quotient presentation.",
+            "explanation": "The projector displayed in (4.2) is the intended target of this third reference.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7137,
+              "end_line": 7140
+            },
+            "source_quote": "The averaging correspondence\nand the Whittaker stratum projector\nin \\eqref{eq:W1} are thus $!$-base changes of the same relative quotient\npresentation."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 4.2, definitions of q_D and ψ_D",
+            "role": "background",
+            "explanation": "These are the correct definition targets for the first two citations.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1725,
+              "end_line": 1764
+            }
+          },
+          {
+            "location": "Section 4.2, proof of Proposition 4.2, Equations (4.1) and (4.2)",
+            "role": "background",
+            "explanation": "Equation (4.1) is finite-loop averaging; (4.2) is the stratum projector. The formulas are not themselves the errors reported here.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1819,
+              "end_line": 1866
+            }
+          }
+        ]
       }
     ]
   },
@@ -338,7 +509,7 @@
         "source_issue_id": "node-0033-issue-000001",
         "anchor": "genericity-can-fail-after-enlarging-the-coefficient-field",
         "title": "Genericity can fail after enlarging the coefficient field",
-        "location": "Section 8.2 · Lemma 8.3",
+        "location": "Section 8.2, final sentence of the function-field discussion after the proof of Lemma 8.3",
         "severity": "major",
         "classification_note": "The proposed correction narrows the original assertion. The report explains why the cited applications are preserved, but does not establish the broader assertion as written.",
         "feedback": [
@@ -458,7 +629,68 @@
           "Section 8.4",
           "Proof of Lemma 8.6",
           "Section 8.5"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 8.2, final sentence of the function-field discussion after the proof of Lemma 8.3",
+            "pdf_page": 46,
+            "quote": "The same argument applies to a point after adjoining the other grid points to 𝓑, using Theorem 8.3.",
+            "explanation": "This is the automatic-enlargement assertion being challenged, not the statement of Lemma 8.3. The quoted “Theorem 8.3” is the paper’s own wording.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3507,
+              "end_line": 3509
+            },
+            "source_quote": "The same argument\napplies to a point after adjoining the other grid points to\n\\(\\mathcal B\\), using \\Cref{alg:generic-grid}."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 8.2, Lemma 8.3 and Equation (8.5)",
+            "role": "background",
+            "explanation": "Gives joint genericity over B₀; it does not assert preservation over an arbitrary enlarged coefficient field.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3401,
+              "end_line": 3409
+            }
+          },
+          {
+            "location": "Section 8.2, beginning of the same function-field paragraph",
+            "role": "background",
+            "explanation": "The preceding evaluation criterion explicitly assumes genericity over its coefficient field and is not challenged.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3493,
+              "end_line": 3495
+            }
+          },
+          {
+            "location": "Section 8.3, proof of Lemma 8.5, Equation (8.12)",
+            "role": "downstream",
+            "explanation": "Separately establishes the genericity needed over K₀; the report’s proposed correction preserves this application.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3600,
+              "end_line": 3612
+            }
+          },
+          {
+            "location": "Section 8.4, proof of Lemma 8.6, and Section 8.5, rank-condition argument",
+            "role": "downstream",
+            "explanation": "These anchor arguments use independence over B₀ and algebraic extensions. They explain the scope of the proposed correction, rather than identify additional errors.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3688,
+              "end_line": 3707
+            }
+          }
+        ],
+        "reference_labels": {
+          "at lines 3507–3509": "in the quoted final sentence of Section 8.2",
+          "Revise lines 3507–3509": "Revise that sentence",
+          "at lines 3600–3612": "in the proof of Lemma 8.5"
+        }
       }
     ]
   },
@@ -476,7 +708,7 @@
         "source_issue_id": "node-0037-issue-000001",
         "anchor": "the-bad-density-chains-lemma-is-missing-an-endpoint-hypothesis",
         "title": "The bad-density chains lemma is missing an endpoint hypothesis",
-        "location": "Section 8.5 · Lemma 8.6",
+        "location": "Section 8.5, Lemma 8.6 (Bad-density chains), nesting hypothesis",
         "severity": "major",
         "classification_note": "The proposed repair strengthens the written hypotheses. The later application supplies the missing condition, so this finding does not establish that the final numerical conclusion is false.",
         "feedback": [
@@ -542,13 +774,61 @@
           "Equation (22)",
           "Section 8.6",
           "Proof of Proposition 8.9"
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 8.5, Lemma 8.6 (Bad-density chains), nesting hypothesis",
+            "pdf_page": 70,
+            "quote": "Pᵢ,ₕ ⊆ Cᵢ,ₕ ⊆ Pᵢ₊₁,ₕ  (i < N).",
+            "explanation": "The qualifier i < N applies to the whole display, leaving P_N,h ⊆ C_N,h unstated.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 6014,
+              "end_line": 6017
+            },
+            "source_quote": "\\[\n \\mathsf P_{i,h}\\subseteq\\mathsf C_{i,h}\n       \\subseteq\\mathsf P_{i+1,h}\\qquad(i<N).\n\\]"
+          },
+          {
+            "location": "Section 8.5, proof of Lemma 8.6, first failure-indicator estimate",
+            "pdf_page": 70,
+            "quote": "For h ≥ Δ, the first failure indicator is bounded by cᵢ,ₕ − pᵢ,ₕ₋Δ = (pᵢ,ₕ − pᵢ,ₕ₋Δ) + (cᵢ,ₕ − pᵢ,ₕ).",
+            "explanation": "This is the proof step that uses the missing endpoint inclusion; the report does not supply a counterexample to the final numerical conclusion.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 6045,
+              "end_line": 6049
+            },
+            "source_quote": "For \\(h\\ge\\Delta\\), the first failure indicator is bounded by\n\\[\n c_{i,h}-p_{i,h-\\Delta}\n =(p_{i,h}-p_{i,h-\\Delta})+(c_{i,h}-p_{i,h}).\n\\]"
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 8.4, Equation (22) and the following PRE/CURRENT definitions",
+            "role": "background",
+            "explanation": "PRE refines CURRENT, supplying the within-event inclusion in the actual application.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5748,
+              "end_line": 5769
+            }
+          },
+          {
+            "location": "Section 8.6, proof of Proposition 8.9, linked-event chain and application of Lemma 8.6",
+            "role": "downstream",
+            "explanation": "The graph application supplies both required inclusions, including the endpoint condition.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 6247,
+              "end_line": 6275
+            }
+          }
         ]
       },
       {
         "source_issue_id": "node-0017-issue-000001",
         "anchor": "the-predictor-identity-omits-a-conditional-expectation-term",
         "title": "The predictor identity omits a conditional-expectation term",
-        "location": "Section 5.2 · Lemma 5.3 · Equation (7)",
+        "location": "Section 5.2, proof of Lemma 5.3, predictor-moment identity and its increment",
         "severity": "minor",
         "classification_note": "The supplied correction preserves the parameter dependence of estimate (7), with adjusted absolute constants.",
         "feedback": [
@@ -657,13 +937,72 @@
           "Proof of Lemma 5.3",
           "Section 5.4",
           "Proof of Proposition 5.6"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 5.2, proof of Lemma 5.3, predictor-moment identity and its increment",
+            "pdf_page": 32,
+            "quote": "If aₕ,ₚ is the predictor coefficient on a depth-h cell, orthogonality to Φₚ gives μₕ = εaₕ,ₚ. Consequently μₕ₊₁ − μₕ is √ε times the change of the p-th private coordinate of PₕFₐ. This identity continues to hold after arbitrary further column insertions.",
+            "explanation": "These unnumbered identities omit the conditional-expectation term for general augmented inputs. Equation (7) is the estimate being proved, not the incorrect identity.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2708,
+              "end_line": 2715
+            },
+            "source_quote": "If $a_{h,p}$ is the predictor coefficient on a depth-$h$ cell,\northogonality to $\\Phi_p$ gives\n\\[\n \\mu_h=\\epsilon a_{h,p}.\n\\]\nConsequently $\\mu_{h+1}-\\mu_h$ is $\\sqrt\\epsilon$ times the change\nof the $p$-th private coordinate of $P_hF_a$.  This identity continues\nto hold after arbitrary further column insertions."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 5.1, admissible-input definition",
+            "role": "background",
+            "explanation": "Allows general augmented inputs, which is why the scalar-input identity cannot be used without its extra term.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2432,
+              "end_line": 2452
+            }
+          },
+          {
+            "location": "Section 3.2, Lemma 3.2, scalar-input identity",
+            "role": "background",
+            "explanation": "The identity is valid for scalar embeddings; this distinguishes the supported special case from the disputed general use.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 517,
+              "end_line": 523
+            }
+          },
+          {
+            "location": "Section 5.2, remainder of the proof of Lemma 5.3, Equation (7)",
+            "role": "downstream",
+            "explanation": "The added term must be carried through the smooth-bump, coarse-mean and curvature-difference estimates; the proposed repair preserves their parameter dependence.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2737,
+              "end_line": 2781
+            }
+          },
+          {
+            "location": "Section 5.4, proof of Proposition 5.6",
+            "role": "downstream",
+            "explanation": "Uses the delayed-predictor estimate in the high-truncation argument.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2971,
+              "end_line": 3005
+            }
+          }
+        ],
+        "reference_labels": {
+          "at lines 2708–2715": "in the quoted passage from the proof of Lemma 5.3"
+        }
       },
       {
         "source_issue_id": "node-0043-issue-000001",
         "anchor": "the-first-failing-role-convention-uses-the-wrong-order",
         "title": "The first-failing-role convention uses the wrong order",
-        "location": "Section 9.1 · Section 9.2",
+        "location": "Section 9.1, paragraph assigning each failed trial to its first failing role",
         "severity": "minor",
         "classification_note": "Correcting the wording and masks preserves the partition and subsequent summed estimates.",
         "feedback": [
@@ -704,7 +1043,47 @@
         "paper_references": [
           "Section 9.1",
           "Section 9.2"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 9.1, paragraph assigning each failed trial to its first failing role",
+            "pdf_page": 78,
+            "quote": "For a fixed assignment the conditions in each role form a product mask on its modes: that role must fail at the trials assigned to it, and must succeed at the earlier roles’ required positions.",
+            "explanation": "The last clause reverses the success condition for the stated first-failing-role convention.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 6791,
+              "end_line": 6793
+            },
+            "source_quote": "For a fixed assignment the conditions in each role form a product mask\non its modes: that role must fail at the trials assigned to it, and must\nsucceed at the earlier roles' required positions."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 9.1, immediately preceding assignment sentence",
+            "role": "background",
+            "explanation": "Specifies the first failing role, in the natural order of the roles.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 6788,
+              "end_line": 6790
+            }
+          },
+          {
+            "location": "Section 9.2, estimates for assignments with failure counts n_j",
+            "role": "downstream",
+            "explanation": "The bounds discard additional success conditions; the report explains why the corrected convention preserves these estimates.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7052,
+              "end_line": 7071
+            }
+          }
+        ],
+        "reference_labels": {
+          "Lines 6789–6793": "The quoted passage in Section 9.1",
+          "at lines 7052–7071": "in Section 9.2"
+        }
       }
     ]
   },
@@ -722,7 +1101,7 @@
         "source_issue_id": "node-0025-issue-000001",
         "anchor": "milne-s-article-has-the-wrong-page-range",
         "title": "Milne’s article has the wrong page range",
-        "location": "Bibliography, entry “Milne1999Tate”",
+        "location": "References, entry [25], Milne, “Lefschetz motives and the Tate conjecture”",
         "severity": "minor",
         "classification_note": "This is a bibliographic correction; the theorem and remark locators do not need adjustment.",
         "feedback": [
@@ -752,7 +1131,22 @@
         "social": null,
         "paper_references": [
           "Bibliography, entry “Milne1999Tate”"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "References, entry [25], Milne, “Lefschetz motives and the Tate conjecture”",
+            "pdf_page": 52,
+            "quote": "J. S. Milne. Lefschetz motives and the Tate conjecture. Compositio Mathematica, 117(1):45–76, 1999.",
+            "explanation": "The erroneous part is the page range 45–76; the published range is 47–81.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4512,
+              "end_line": 4521
+            },
+            "source_quote": "@article{Milne1999Tate,\n  author = {Milne, J. S.},\n  doi = {10.1023/A:1000776613765},\n  journal = {Compositio Mathematica},\n  number = {1},\n  pages = {45--76},\n  title = {Lefschetz Motives and the {Tate} Conjecture},\n  url = {https://www.jmilne.org/math/articles/1999b.html},\n  volume = {117},\n  year = {1999}"
+          }
+        ],
+        "related_context": []
       }
     ]
   },
@@ -770,7 +1164,7 @@
         "source_issue_id": "node-0027-issue-000001",
         "anchor": "silverman-s-chapter-x-results-are-mislabeled",
         "title": "Silverman’s Chapter X results are mislabeled",
-        "location": "Section 5 · Proof of Proposition 2.1",
+        "location": "Section 5, proof of Proposition 2.1, citation in the two-isogeny descent paragraph",
         "severity": "minor",
         "classification_note": "The corrected locators support the descent inputs used in the paper.",
         "feedback": [
@@ -801,7 +1195,36 @@
         "paper_references": [
           "Section 5",
           "Proof of Proposition 2.1"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 5, proof of Proposition 2.1, citation in the two-isogeny descent paragraph",
+            "pdf_page": 44,
+            "quote": "[67, Chapter X, Proposition 4.7 and Example 4.9, pp. 336–337]",
+            "explanation": "The citation mislabels the results: 4.7 is a remark and 4.9 is a proposition.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3372,
+              "end_line": 3372
+            },
+            "source_quote": "\\cite[Chapter~X, Proposition~4.7 and Example~4.9, pp.~336--337]{Silverman2009}"
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 5, the two-isogeny maps and square-class homomorphisms surrounding the citation",
+            "role": "background",
+            "explanation": "Identifies the descent application supported by the corrected Silverman references; the application is not the reported error.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3370,
+              "end_line": 3379
+            }
+          }
+        ],
+        "reference_labels": {
+          "at line 3372": "in the quoted descent paragraph"
+        }
       }
     ]
   },
@@ -819,7 +1242,7 @@
         "source_issue_id": "node-0018-issue-000001",
         "anchor": "a-strict-comparison-becomes-an-equality",
         "title": "A strict comparison becomes an equality",
-        "location": "Section 9 · Proof of Proposition 9.1",
+        "location": "Section 9, proof of Proposition 9.1, unnumbered product-variation display immediately before Equation (9.10)",
         "severity": "minor",
         "classification_note": "Keeping the exact maximum restores strictness and preserves the later variation and edge-deficit estimates.",
         "feedback": [
@@ -882,7 +1305,58 @@
           "Proof of Proposition 9.1",
           "Equation (9.10)",
           "Equation (9.12)"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 9, proof of Proposition 9.1, unnumbered product-variation display immediately before Equation (9.10)",
+            "pdf_page": 54,
+            "quote": "Q TV_[q,∞)(h₋/u) ≤ Q(0.024/q + 0.012/q) < 0.036 min(1, Q/7.5).",
+            "explanation": "The final strict inequality in this chain is the error; it becomes an equality when Q ≥ ζ. Equation (9.10) is a subsequent bound, not this display.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3054,
+              "end_line": 3058
+            },
+            "source_quote": "\\[\n Q\\operatorname{TV}_{[q,\\infty)}(h_-/u)\n \\le Q\\left(\\frac{0.024}{q}+\\frac{0.012}{q}\\right)\n <0.036\\min(1,Q/7.5).\n\\]"
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 9, proof of Proposition 9.1, first-atom domain",
+            "role": "background",
+            "explanation": "Shows that Q ≥ ζ can occur within the stated parameter range.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2944,
+              "end_line": 2947
+            }
+          },
+          {
+            "location": "Section 9, same proof, definitions of ζ and the exact negative minimum m",
+            "role": "background",
+            "explanation": "The retained strict bound m < 0.012 supplies the proposed repair.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2975,
+              "end_line": 2988
+            }
+          },
+          {
+            "location": "Section 9, Equations (9.10) and (9.12)",
+            "role": "downstream",
+            "explanation": "These later variation bounds are preserved by the proposed correction; neither is identified as a separate error.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 3061,
+              "end_line": 3063
+            }
+          }
+        ],
+        "reference_labels": {
+          "in lines 3055–3057": "in the quoted display",
+          "from line 2984": "defined earlier in this proof",
+          "in lines 3061–3063 and 3103–3109": "in Equations (9.10) and (9.12)"
+        }
       }
     ]
   },
@@ -900,7 +1374,7 @@
         "source_issue_id": "node-0016-issue-000001",
         "anchor": "the-global-kernel-bound-omits-a-bulk-contribution",
         "title": "The global kernel bound omits a bulk contribution",
-        "location": "Section 3.6 · Proof of Lemma 3.9",
+        "location": "Section 3.6, proof of Lemma 3.9, paragraph estimating the second circle kernel",
         "severity": "minor",
         "classification_note": "Adding the bounded bulk term repairs the estimate; the existing L² term absorbs it in the subsequent argument.",
         "feedback": [
@@ -1004,7 +1478,57 @@
           "Proof of Lemma 3.9",
           "Section 3.5",
           "Section 3.1"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 3.6, proof of Lemma 3.9, paragraph estimating the second circle kernel",
+            "pdf_page": 40,
+            "quote": "Its integral in one variable is at most C/d(s).",
+            "explanation": "The issue is the unqualified global integral bound; the endpoint estimate alone does not include the bounded bulk contribution.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2493,
+              "end_line": 2494
+            },
+            "source_quote": "Its integral in one\nvariable is at most \\(C/d(s)\\)."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 3.6, same proof, definition of d(s) and the two circle kernels",
+            "role": "background",
+            "explanation": "Identifies d(s) = A − |s| and the full second kernel to which the sentence refers.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2471,
+              "end_line": 2489
+            }
+          },
+          {
+            "location": "Section 3.5, definitions of λ_L and θ; Section 3.1, density varrho",
+            "role": "background",
+            "explanation": "Supplies the change of variables and positive bulk density used to check the integral.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2339,
+              "end_line": 2345
+            }
+          },
+          {
+            "location": "Section 3.6, upper comparison and subsequent gap/counting argument",
+            "role": "downstream",
+            "explanation": "The existing L² term can absorb the missing bulk contribution, preserving the comparison and its applications.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2537,
+              "end_line": 2556
+            }
+          }
+        ],
+        "reference_labels": {
+          "in lines 2493–2494": "in the quoted sentence",
+          "in line 2478": "displayed earlier in the proof of Lemma 3.9"
+        }
       }
     ]
   },
@@ -1022,7 +1546,7 @@
         "source_issue_id": "root-issue-000001",
         "anchor": "the-signed-cylinder-citation-points-to-the-wrong-propositions",
         "title": "The signed-cylinder citation points to the wrong propositions",
-        "location": "Section 11.1",
+        "location": "Section 11.1, opening paragraph identifying the signed-cylinder inputs",
         "severity": "minor",
         "classification_note": "Replacing the proposition numbers preserves the finite inputs and their downstream uses.",
         "feedback": [
@@ -1063,7 +1587,38 @@
         "paper_references": [
           "Section 11.1",
           "Equation (66)"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 11.1, opening paragraph identifying the signed-cylinder inputs",
+            "pdf_page": 71,
+            "quote": "The finite inputs come from the signed cylinder representation [22, Section 2, Propositions 9.1–9.2 and Theorems 1.1–1.2].",
+            "explanation": "Only the proposition locators are wrong here: the corresponding results in the cited paper are Propositions 10.1 and 10.7.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4163,
+              "end_line": 4164
+            },
+            "source_quote": "The finite inputs come from the signed cylinder representation\n\\cite[Section~2, Propositions~9.1--9.2 and Theorems~1.1--1.2]{RenewalSignedCompanion}."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 11.1, Equation (66) and the following interior-visit comparison",
+            "role": "downstream",
+            "explanation": "States the finite boundary and interior-visit inputs supported by the corrected citations. These statements are not identified as errors.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4175,
+              "end_line": 4189
+            }
+          }
+        ],
+        "reference_labels": {
+          "at line 4164": "in the opening paragraph of Section 11.1",
+          "At line 4164": "In that citation",
+          "at lines 4175–4189": "in Equation (66) and the following interior-visit comparison"
+        }
       }
     ]
   },
@@ -1081,7 +1636,7 @@
         "source_issue_id": "node-0006-issue-000001",
         "anchor": "the-weighted-plank-estimate-has-the-wrong-lemma-number",
         "title": "The weighted plank estimate has the wrong lemma number",
-        "location": "Section 1.1 · Section 2.5 · Section 5.1",
+        "location": "Section 1.1, paragraph introducing the three-dimensional weighted plank input",
         "severity": "minor",
         "classification_note": "The intended lemma matches the stated input; only the locator needs correction.",
         "feedback": [
@@ -1148,14 +1703,77 @@
           "Bibliography, entry “ThreeDimensional”"
         ],
         "reference_labels": {
-          "(a03:packet-base-cap)": "(4.20)"
-        }
+          "(a03:packet-base-cap)": "(4.20)",
+          "at candidate lines 200, 1366, 5751, and 13753": "in the four passages quoted above"
+        },
+        "issue_passages": [
+          {
+            "location": "Section 1.1, paragraph introducing the three-dimensional weighted plank input",
+            "pdf_page": 4,
+            "quote": "The three-dimensional estimate used in our reduction is the weighted full-time plank bound of OpenAI [24, Lemma 2.3], recorded as Lemma 2.15.",
+            "explanation": "This first citation should point to Lemma 3.3 in reference [24].",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 199,
+              "end_line": 201
+            },
+            "source_quote": "The three-dimensional estimate used in our reduction is the weighted\nfull-time plank bound of \\citet[Lemma~2.3]{ThreeDimensional}, recorded\nas \\Cref{lem:weighted-planks}."
+          },
+          {
+            "location": "Section 2.5, proof of Lemma 2.15, first sentence",
+            "pdf_page": 18,
+            "quote": "This is the indexed weighted formulation of OpenAI [24, Lemma 2.3].",
+            "explanation": "The same incorrect external lemma number is repeated here.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1365,
+              "end_line": 1366
+            },
+            "source_quote": "This is the indexed weighted formulation of\n\\citet[Lemma~2.3]{ThreeDimensional}."
+          },
+          {
+            "location": "Section 5.1, proof of Lemma 5.1, weighted full-trace application",
+            "pdf_page": 72,
+            "quote": "Apply Lemma 2.15, namely the weighted full-trace form of OpenAI [24, Lemma 2.3].",
+            "explanation": "This third citation also needs Lemma 3.3.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5750,
+              "end_line": 5751
+            },
+            "source_quote": "Apply \\Cref{lem:weighted-planks}, namely the weighted full-trace form of\n\\citet[Lemma~2.3]{ThreeDimensional}."
+          },
+          {
+            "location": "References, entry [24], final note",
+            "pdf_page": 175,
+            "quote": "Lemma 2.3.",
+            "explanation": "The bibliography note repeats the same incorrect locator.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 13753,
+              "end_line": 13753
+            },
+            "source_quote": "note = {Lemma~2.3}"
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 2.5, Lemma 2.15 (weighted plank estimate)",
+            "role": "background",
+            "explanation": "This is the paper’s own formulation of the imported estimate. The reported defect is the locator in reference [24], not the stated weighted estimate.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1364,
+              "end_line": 1371
+            }
+          }
+        ]
       },
       {
         "source_issue_id": "node-0013-issue-000001",
         "anchor": "the-jacobian-sentence-reverses-the-coordinate-maps",
         "title": "The Jacobian sentence reverses the coordinate maps",
-        "location": "Section 4.3 · Proof of Proposition 4.7 · Equation (4.20)",
+        "location": "Section 4.3, proof of Proposition 4.7, sentence immediately before Equation (4.20)",
         "severity": "minor",
         "classification_note": "The displayed estimates already use the correct change-of-variables factors.",
         "feedback": [
@@ -1226,7 +1844,53 @@
         ],
         "reference_labels": {
           "(a03:packet-base-cap)": "(4.20)"
-        }
+        },
+        "issue_passages": [
+          {
+            "location": "Section 4.3, proof of Proposition 4.7, sentence immediately before Equation (4.20)",
+            "pdf_page": 56,
+            "quote": "The map to unit base coordinates u of Q_s has Jacobian q_s J_s; denote this map by base_Q.",
+            "explanation": "This sentence attaches the inverse map’s Jacobian to the parent-to-unit map. The displayed density estimate (4.20) already has the correct factor.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4569,
+              "end_line": 4571
+            },
+            "source_quote": "The map to unit\nbase coordinates \\(u\\) of \\(Q_s\\) has Jacobian \\(q_sJ_s\\);\ndenote this map by \\(\\operatorname{base}_Q\\)."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 2.3, Definition 2.8 and Equation (2.7); Section 2.4, proof of Lemma 2.13",
+            "role": "background",
+            "explanation": "Defines the spatial chart determinant and the inverse affine change of coordinates used to check the direction of the Jacobian.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 843,
+              "end_line": 849
+            }
+          },
+          {
+            "location": "Section 2.4, Equation (2.15)",
+            "role": "background",
+            "explanation": "Displays the corresponding density transformation, which agrees with the factor used later.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 1186,
+              "end_line": 1195
+            }
+          },
+          {
+            "location": "Section 4.3, Equation (4.20) and following time normalization",
+            "role": "downstream",
+            "explanation": "These formulas remain unchanged under the proposed sentence correction.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4573,
+              "end_line": 4586
+            }
+          }
+        ]
       }
     ]
   },
@@ -1244,7 +1908,7 @@
         "source_issue_id": "node-0021-issue-000001",
         "anchor": "the-single-interval-case-misstates-how-many-parameters-disappear",
         "title": "The single-interval case misstates how many parameters disappear",
-        "location": "Section 5.4 · Lemma 5.8",
+        "location": "Section 5.4, proof of Lemma 5.8, single-interval case k = 1",
         "severity": "minor",
         "classification_note": "Correcting the wording preserves the test assignments and score calculations.",
         "feedback": [
@@ -1309,13 +1973,53 @@
           "Lemma 5.8",
           "Proof of Lemma 5.8",
           "Equation (5.19)"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 5.4, proof of Lemma 5.8, single-interval case k = 1",
+            "pdf_page": 63,
+            "quote": "For k = 1, both parameters disappear and the two test assignments are u, 1 − u, with u ∈ {0, 1}.",
+            "explanation": "The phrase “both parameters” is the error: this case has one interval parameter, whose removal leaves both pieces with p = 0.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4916,
+              "end_line": 4917
+            },
+            "source_quote": "For \\(k=1\\), both parameters disappear and the two test assignments\nare \\(u,1-u\\), with \\(u\\in\\{0,1\\}\\)."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 5.4, Lemma 5.8 and parameter-total identity in its proof",
+            "role": "background",
+            "explanation": "A single interval has b = 1, and the displayed total is ∑p = b − k.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4882,
+              "end_line": 4904
+            }
+          },
+          {
+            "location": "Section 5.4, immediately following single-interval score calculations",
+            "role": "downstream",
+            "explanation": "The correction preserves these bounds; they are not additional erroneous assertions.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4918,
+              "end_line": 4922
+            }
+          }
+        ],
+        "reference_labels": {
+          "at line 4916": "in the quoted passage",
+          "in lines 4918–4920": "immediately following it"
+        }
       },
       {
         "source_issue_id": "node-0046-issue-000001",
         "anchor": "the-index-equality-counts-virtually-restored-lens-parameters",
         "title": "The index equality counts virtually restored lens parameters",
-        "location": "Section 9.7 · Proof of Proposition 9.12",
+        "location": "Section 9.7, proof of Proposition 9.12, paragraph beginning “For S retain only the pure tangential equations”",
         "severity": "minor",
         "classification_note": "Replacing the equality with the justified upper bound preserves the tangential inequality and its applications.",
         "feedback": [
@@ -1407,13 +2111,62 @@
           "Proposition 8.3",
           "Definition 8.7",
           "Equation (8.14)"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 9.7, proof of Proposition 9.12, paragraph beginning “For S retain only the pure tangential equations”",
+            "pdf_page": 125,
+            "quote": "The actual pure-line problem has index d_s + p_i, with the prescribed ideal labels adding at most 4ℓ_i position directions when tests are ignored.",
+            "explanation": "The equality for the actual index counts virtually restored lens parameters. The following upper-bound argument is preserved by the proposed correction.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 9831,
+              "end_line": 9833
+            },
+            "source_quote": "The actual pure-line\nproblem has index $d_s+p_i$, with the prescribed ideal labels adding\nat most $4\\ell_i$ position directions when tests are ignored."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 8.3, definition of p_i before Definition 8.7",
+            "role": "background",
+            "explanation": "Specifies that p_i restores one interval parameter at each lens end, which is why it is not the actual retained parameter count.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7845,
+              "end_line": 7848
+            }
+          },
+          {
+            "location": "Section 8.2, Proposition 8.3",
+            "role": "background",
+            "explanation": "Supplies the zero tangential correction for the sharp reference fillings.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7595,
+              "end_line": 7596
+            }
+          },
+          {
+            "location": "Section 8.3, Definition 8.7(i), Equation (8.14); Section 9.7, following transversality inference",
+            "role": "downstream",
+            "explanation": "The required bound d_s + p_i + 4ℓ_i ≥ 0 remains valid; it is not the disputed equality.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7904,
+              "end_line": 7909
+            }
+          }
+        ],
+        "reference_labels": {
+          "in lines 9831–9832": "in the quoted passage from the proof of Proposition 9.12"
+        }
       },
       {
         "source_issue_id": "node-0043-issue-000001",
         "anchor": "the-boundary-flux-pairing-has-its-sign-reversed",
         "title": "The boundary-flux pairing has its sign reversed",
-        "location": "Section 9.4",
+        "location": "Section 9.4, universal-surjectivity argument, unnumbered display after “Green’s formula for the gauge row gives”",
         "severity": "minor",
         "classification_note": "The pairing is zero for every allowed end constant, so the corrected sign still gives bₑ = 0.",
         "feedback": [
@@ -1453,7 +2206,46 @@
         "social": null,
         "paper_references": [
           "Section 9.4"
-        ]
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 9.4, universal-surjectivity argument, unnumbered display after “Green’s formula for the gauge row gives”",
+            "pdf_page": 116,
+            "quote": "0 = ∫_X ⟨ξ, G*G(χ_e c)⟩ = −⟨b_e, c⟩_{L²(Y_e)}.",
+            "explanation": "The minus sign in the final pairing is the reported error; it should be plus.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 9165,
+              "end_line": 9168
+            },
+            "source_quote": "\\[\n 0=\\int_X\\langle\\xi,G^*G(\\chi_e c)\\rangle\n   =-\\langle b_e,c\\rangle_{L^2(Y_e)}.\n\\]"
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 9.4, preceding limiting operator and expansion of ξ",
+            "role": "background",
+            "explanation": "Fixes the sign convention and the linear end coefficient b_e used in the boundary-flux calculation.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 9151,
+              "end_line": 9157
+            }
+          },
+          {
+            "location": "Section 9.4, paragraph immediately following the display",
+            "role": "downstream",
+            "explanation": "The pairing still vanishes for every allowed c, so b_e = 0 and the subsequent integration-by-parts argument are unchanged.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 9169,
+              "end_line": 9171
+            }
+          }
+        ],
+        "reference_labels": {
+          "at line 9167": "in the quoted display"
+        }
       }
     ],
     "review_note": "The whole-paper follow-up completed its search without releasing additional findings; the three previously released Minor issues are retained. Direct source verification of Gordon–Luecke’s “Knots are determined by their complements” remains unresolved because the original paper could not be retrieved."

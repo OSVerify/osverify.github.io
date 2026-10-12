@@ -18,7 +18,13 @@
         "basis": "User-requested editorial reclassification",
         "date": "2026-10-11"
       }
-    ]
+    ],
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "def4ae96b4b9a8991347aa13ee614baa4cbd721a41bcb0c6c58d877a527e08c4",
+      "original_pdf_sha256": "8d9bc135865dbc97a76efbf10fd7b9631bbe1107bd87c467b64db60eb3f229f1"
+    }
   },
   {
     "slug": "planar-unit-distances",
@@ -28,7 +34,13 @@
     "source_issue_ids": [
       "node-0033-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "f948c8881f224056a8a6608755418fefd3e32f28dee8078867395114ccf8eb4d",
+      "original_pdf_sha256": "72bfa9153772b2124385cf4e53a5557320ab92e29fe4bdcb35a05a34481aede0"
+    }
   },
   {
     "slug": "trilinear-hilbert",
@@ -40,7 +52,13 @@
       "node-0043-issue-000001",
       "node-0037-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "286042b941867bd703d062b8600ac6a97b2acb0619e5b17384dd676bf1d0c920",
+      "original_pdf_sha256": "24b584066ae76b2f28dc03d32a2b0a2cdc3b4f92e0e82f4a3d133f28ccc5a936"
+    }
   },
   {
     "slug": "cm-hodge",
@@ -50,7 +68,13 @@
     "source_issue_ids": [
       "node-0025-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "643ba7ddb770ed0344f33854eb48fedccb9c5cb10fc992613d8ddfa911ba85af",
+      "original_pdf_sha256": "6e3e66a407773ad5091d4cb48d9b4dc55a69c58fb0948a88daf19f3bb21bf27b"
+    }
   },
   {
     "slug": "hilbert-tenth-rationals",
@@ -60,7 +84,13 @@
     "source_issue_ids": [
       "node-0027-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "a0d0adb774096eecee9435d2b84c142f27922a579bda82d09d8f7629f1fdf485",
+      "original_pdf_sha256": "f79236c22b981fe66aaf3ba494a466bf26db212117db47d95a31bf0315af2b30"
+    }
   },
   {
     "slug": "cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks",
@@ -70,7 +100,13 @@
     "source_issue_ids": [
       "node-0018-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "0d4effd562ed11c1ec4620a8037cebe1826e7f3415d2c4e37640420917c598b4",
+      "original_pdf_sha256": "7fd6eb0adc06ad82c6a5dba6286d3c49096692b9d967ac3d117e753fdc09db8f"
+    }
   },
   {
     "slug": "cylinder-loop-weights-and-planar-nesting",
@@ -80,7 +116,13 @@
     "source_issue_ids": [
       "node-0016-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "9d64762e7270967d1c4911fef9e69ca2e49d38d187db6735b51927baf186ae80",
+      "original_pdf_sha256": "2e5effc6ded133601d01d0608f8031145b1fdc6519949b424c92bad191a4b209"
+    }
   },
   {
     "slug": "renewal-and-changes-of-law-for-critical-honeycomb-walks",
@@ -90,7 +132,13 @@
     "source_issue_ids": [
       "root-issue-000001"
     ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage."
+    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "8d229ab2419c4fb2dab7913d51f349fffa716cdc885a6fb6fedd800ada5bb459",
+      "original_pdf_sha256": "d179fa55e4b82fed6e226b4d9b9894f4ea28c990283e0b55173dc98b10c42356"
+    }
   },
   {
     "slug": "kakeya-4d",
@@ -112,6 +160,12 @@
         "reference-001": "node-0006-issue-000001"
       },
       "note": "The whole-paper follow-up completes the remaining root scope. Its citation finding repeats the first published issue and is counted once; original findings are retained."
+    },
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "9c4330cec0437cab72da1a7731bb98a894d8f451352cf6d0c433ed44251a6a59",
+      "original_pdf_sha256": "30d0c186aa9c697d02ab9bf736968028f1ce8a2f164f1d7291398d530035ccde"
     }
   },
   {
@@ -133,6 +187,12 @@
       "source_sha256": "b81bbc86ced12d2e629fc2cf4c77d54f6543df78efe8ab818b92012f4db0ecb1",
       "new_issue_ids": [],
       "note": "The whole-paper follow-up completes the remaining root scope. No additional issues were released; the three historical Minor findings remain retained. Direct source verification of the Gordon–Luecke reference remains unresolved."
+    },
+    "location_audit": {
+      "date": "2026-10-11",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
+      "source_sha256": "b81bbc86ced12d2e629fc2cf4c77d54f6543df78efe8ab818b92012f4db0ecb1",
+      "original_pdf_sha256": "ee916c92b825a8686ddfa5cf1970c320d611899212992da40ca56791bd79fa3d"
     }
   }
 ]
