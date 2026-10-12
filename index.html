@@ -158,15 +158,51 @@
 <!-- referee-summary:end -->
 
         <h3 class="subhead" id="discovery">Facilitating scientific discovery</h3>
-        <p>Test-time scaling and autoresearch systems can generate many candidate solutions, but open problems rarely come with an automatic evaluator to tell which ones are right. OSVerify can fill that role. We used it as the verifier for the agentic mathematical problem solver <a href="https://github.com/frenzymath/Rethlas">Rethlas</a>, with <b>no formal proof checker</b> in the loop, and it helped produce proofs of <mark class="hl">three previously open statements</mark> in relative Langlands duality:</p>
-        <ol class="conj">
-          <li>flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (<a href="https://arxiv.org/abs/2409.04677v1">Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2</a>);</li>
-          <li>commutativity of <span class="math">PL<sub><i>X</i></sub></span> (<a href="https://arxiv.org/abs/2409.04677v1">Conj. 8.1.8</a>), with (i) and (ii) in the setting of <a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.36</a>;</li>
-          <li>the automorphic commutator relation (<a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.45</a>), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
-        </ol>
-        <p class="muted">OSVerify provided the verification signal during solving and passed the final proofs. <b>Human experts have since confirmed the proofs</b>.</p>
-        <p><b>Resulting papers:</b> <a href="https://hexagonmath.org/2609.00128?version=1">On properties of Plancherel algebras</a> (items 1–2), and <a href="https://arxiv.org/abs/2610.05781">Automorphic commutator relations in relative geometric Langlands</a> (item 3).</p>
-        <p><b>Latest result:</b> <a href="https://srliu.com/math_papers/manin_constant.pdf">On the Manin–Stevens Constant</a> proves the Manin constant conjecture and Stevens’ Conjectures I and II. OSVerify found an error and suggested a repair; Rethlas with OSVerify also reproduced a proof of the Manin constant conjecture from its statement (Appendix A.3–A.4).</p>
+        <p>Test-time scaling and autoresearch systems can generate many candidate solutions, but open problems rarely come with an automatic evaluator to tell which ones are right. OSVerify can fill that role. We paired it with the agentic mathematical problem solver <a href="https://github.com/frenzymath/Rethlas">Rethlas</a>, with <b>no formal proof checker</b> in the loop.</p>
+
+        <div class="flow" role="list" aria-label="How OSVerify fits into the solving loop">
+          <div class="flow-step" role="listitem">
+            <span class="flow-role">Solver</span>
+            <span class="flow-name">Rethlas</span>
+            <span class="flow-text">proposes candidate proofs</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></span>
+          <div class="flow-step ours" role="listitem">
+            <span class="flow-role">Verifier</span>
+            <span class="flow-name">OSVerify</span>
+            <span class="flow-text">checks candidates during solving and rejects those with confirmed errors</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></span>
+          <div class="flow-step" role="listitem">
+            <span class="flow-role">Final check</span>
+            <span class="flow-name">Human experts</span>
+            <span class="flow-text">confirm the proofs that OSVerify passes</span>
+          </div>
+        </div>
+
+        <div class="paper-list discoveries">
+          <article class="paper-card">
+            <div class="study-meta"><span>Relative Langlands duality</span><div class="finding-counts"><span class="severity minor">Proofs confirmed by experts</span></div></div>
+            <h4>Three previously open conjectures</h4>
+            <ol class="conj">
+              <li>Flatness of the loop-rotated Plancherel algebra <span class="math">PL<sub><i>X</i>,ħ</sub></span> over <span class="math"><i>k</i>[ħ]</span> (<a href="https://arxiv.org/abs/2409.04677v1">Ben-Zvi–Sakellaridis–Venkatesh, Conj. 8.5.2</a>).</li>
+              <li>Commutativity of <span class="math">PL<sub><i>X</i></sub></span> (<a href="https://arxiv.org/abs/2409.04677v1">Conj. 8.1.8</a>), with 1 and 2 in the setting of <a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.36</a>.</li>
+              <li>The automorphic commutator relation (<a href="https://arxiv.org/abs/2504.00275v3">Liu–Wang, Conj. 4.45</a>), previously known only under extra cohomological vanishing assumptions and for curves of genus other than one.</li>
+            </ol>
+            <div class="paper-links">
+              <a class="paper-link-secondary" href="https://hexagonmath.org/2609.00128?version=1"><span>On properties of Plancherel algebras (1–2)</span><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg></a>
+              <a class="paper-link-secondary" href="https://arxiv.org/abs/2610.05781"><span>Automorphic commutator relations in relative geometric Langlands (3)</span><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg></a>
+            </div>
+          </article>
+          <article class="paper-card">
+            <div class="study-meta"><span>Number theory · Latest result</span><div class="finding-counts"><span class="severity major">Error found</span></div></div>
+            <h4>On the Manin–Stevens constant</h4>
+            <p>The paper proves the Manin constant conjecture and Stevens’ Conjectures I and II. OSVerify found an error and suggested a repair. Rethlas with OSVerify also reproduced a proof of the Manin constant conjecture from its statement (Appendix A.3–A.4).</p>
+            <div class="paper-links">
+              <a class="paper-link-secondary" href="https://srliu.com/math_papers/manin_constant.pdf"><span>On the Manin–Stevens Constant</span><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg></a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
