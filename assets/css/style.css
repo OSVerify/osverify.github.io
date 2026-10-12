@@ -193,11 +193,23 @@ code { font-family: var(--mono); font-size: 0.84em; }
 h2 + .subhead { margin-top: 0; }
 .paper-list.featured { margin-top: 1.25rem; }
 
-.discoveries { margin-top: 0; }
-.discoveries .paper-card ol.conj { margin: 0.75rem 0 0; padding-left: 1.25rem; font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
-.discoveries .paper-card ol.conj li { margin-bottom: 0.45rem; }
-.discoveries .paper-links { flex-direction: column; align-items: flex-start; gap: 0.1rem; }
-.discoveries .paper-links a { white-space: normal; justify-content: flex-start; text-align: left; min-height: 36px; }
+/* conjectures resolved with OSVerify */
+ol.resolved { list-style: none; counter-reset: resolved; margin: 1.25rem 0 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+ol.resolved > li { counter-increment: resolved; display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); column-gap: 1rem; padding: 1.15rem 1.3rem 1.1rem; }
+ol.resolved > li + li { border-top: 1px solid var(--line); }
+ol.resolved > li::before { content: counter(resolved); grid-row: 1 / span 2; display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1px solid var(--green); color: var(--green-ink); font-size: 1rem; }
+ol.resolved > li > * { grid-column: 2; }
+.resolved-title { margin: 0 0 0.5rem; font-size: 1.1rem; font-weight: bold; line-height: 1.8rem; }
+.resolved-meta { display: grid; grid-template-columns: 6.25rem minmax(0, 1fr); gap: 0.3rem 0.75rem; margin: 0; font-size: 0.98rem; line-height: 1.55; }
+.resolved-meta dt { font-variant: small-caps; letter-spacing: 0.06em; color: var(--ink-2); }
+.resolved-meta dd { margin: 0; }
+.tag { display: inline-block; margin-left: 0.35rem; padding: 0 0.45rem; border-radius: 4px; background: var(--rose-tint); color: var(--rose-ink); font-size: 0.78rem; font-weight: normal; line-height: 1.6; vertical-align: 0.15em; }
+@media (max-width: 560px) {
+  ol.resolved > li { padding: 1rem; column-gap: 0.75rem; }
+  .resolved-meta { grid-template-columns: 1fr; gap: 0; }
+  .resolved-meta dd { margin-bottom: 0.45rem; }
+}
+
 .box ul.contacts { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; }
 .contacts li { margin: 0; }
 .contacts b { margin-right: 0.4rem; }
