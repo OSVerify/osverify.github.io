@@ -17,6 +17,7 @@ ICON = {
     'arrow': '<svg class="icon go" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg>',
     'back': '<svg class="icon back" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16 10H4m5-5-5 5 5 5"/></svg>',
     'external': '<svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8 5H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M11 4h5v5m0-5-8 8"/></svg>',
+    'down': '<svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12m-5-5 5 5 5-5"/></svg>',
     'link': '<svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M8.5 11.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-1 1M11.5 8.5a3 3 0 0 0-4.2 0l-2.6 2.6a3 3 0 0 0 4.2 4.2l1-1"/></svg>',
 }
 
@@ -142,7 +143,12 @@ def issue_card(issue, number):
 
 def paper_page(paper):
     title = text(paper['title'])
-    nav = ''.join(f'<a href="#{s}-issues">{s.title()} issues ({count(paper, s)})</a>' for s in ('major', 'minor'))
+    jump = ''.join(
+        f'<a class="severity {s}" href="#{s}-issues">{count(paper, s)} {s.title()}{ICON["down"]}</a>' if count(paper, s)
+        else f'<span class="severity {s} empty">0 {s.title()}</span>'
+        for s in ('major', 'minor'))
+    if not paper['coverage_complete']:
+        jump += '<span class="review-status">Coverage incomplete</span>'
     scope = ''
     if not paper['coverage_complete']:
         scope = f'<p class="review-note"><b>Review coverage.</b> This report searched {paper["scopes_searched"]} of {paper["scopes_total"]} planned scopes. The findings below passed OSVerify’s internal review; the full-paper search is incomplete.</p>'
@@ -150,11 +156,10 @@ def paper_page(paper):
         scope += f'<p class="review-note"><b>Review note.</b> {text(paper["review_note"])}</p>'
     body = f'''<header class="paper-intro container">
       <a class="back-link" href="../case-studies.html">{ICON['back']}<span>All results</span></a>
-      <p class="eyebrow">Paper Referee · OpenAI</p><h1>{title}</h1>
-      <p class="paper-version">Reviewed version: {text(paper['version'])}</p>{badges(paper)}
-      <div class="paper-actions"><a class="btn" href="{text(paper['paper_url'])}">Original paper {ICON['external']}</a></div>
-      <p class="review-note">Findings and severity labels below are from OSVerify’s internal review. They do not by themselves establish that the paper’s main theorem is false.</p>{scope}
-      <nav class="case-nav issue-nav" aria-label="Issue severity">{nav}</nav>
+      <p class="eyebrow">Paper Referee</p><h1>{title}</h1>
+      <p class="paper-meta">OpenAI preprint · reviewed version of {text(paper['version'])} · <a href="{text(paper['paper_url'])}">Original paper{ICON['external']}</a></p>
+      <nav class="issue-jump" aria-label="Jump to issues">{jump}</nav>
+      <p class="review-note disclaimer">Findings and severity labels come from OSVerify’s internal review and do not by themselves show that the paper’s main theorem is false.</p>{scope}
     </header>'''
     number = 0
     for severity in ('major', 'minor'):
