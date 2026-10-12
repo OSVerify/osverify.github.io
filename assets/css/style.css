@@ -421,6 +421,7 @@ ol.conj li { margin-bottom: 0.5rem; }
 .issue-equations > div { white-space: nowrap; }
 .issue-repair p { font-size: 0.95rem; line-height: 1.6; }
 .issue-repair, .issue-context { margin-top: 1.25rem; font-size: 0.9rem; color: var(--ink-2); }
+.issue-repair + .issue-context { margin-top: 0; }
 .issue-repair summary, .issue-context summary { cursor: pointer; padding: 0.6rem 0; min-height: 44px; }
 .issue-context p { font-size: 0.9rem; margin: 0.6rem 0; }
 .issue-context .source-location { font-size: 0.85rem; }
