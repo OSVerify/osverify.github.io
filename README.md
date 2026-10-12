@@ -38,6 +38,13 @@ header and footer, so edit both when the chrome changes.
 `case-studies.html#paper-referee` lists reports with released findings. Each
 paper has an original-paper link, reviewed version date, and separate Major
 and Minor groups. Each issue has a stable shareable anchor.
+
+Repair sections use **Proposed repair by OSVerify**. A curated `proposed_repair`
+contains the smallest supported local change and any necessary qualification; its
+`source_feedback_indices` are zero-based references to the original `feedback`
+array. Keep the released feedback unchanged. A proof obligation without a supplied
+construction must remain explicitly incomplete, even under the proposed-repair heading.
+
 Severity defaults to the source report. Explicit editorial reclassifications
 are recorded in `data/case-study-provenance.json` under `severity_overrides`;
 the original report and its classification remain unchanged. Incomplete review coverage is shown explicitly. Source

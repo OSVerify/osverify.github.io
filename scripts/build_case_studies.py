@@ -109,8 +109,18 @@ def issue_card(issue, number):
     suggestions = [f for f in issue['feedback'] if f['kind'] == 'repair_suggestion']
     requests = [f for f in issue['feedback'] if f['kind'] == 'repair_request']
     repairs = suggestions or requests
-    repair_title = 'Proposed repair by OSVerify' if suggestions else 'Correction requested by OSVerify'
-    repair = f'<aside class="issue-repair"><h4>{repair_title}</h4>' + ''.join(f'<p>{prose(f["text"])}</p>' for f in repairs) + '</aside>'
+    summary = issue.get('proposed_repair')
+    if summary:
+        refs = summary.get('source_feedback_indices', [])
+        if not summary.get('text', '').strip() or not refs or any(
+            not isinstance(n, int) or not 0 <= n < len(issue['feedback'])
+            or issue['feedback'][n]['kind'] not in ('repair_request', 'repair_suggestion') for n in refs
+        ):
+            raise ValueError(f"Repair summary needs released repair feedback: {issue['source_issue_id']}")
+        repair_texts = [summary['text']]
+    else:
+        repair_texts = [f['text'] for f in repairs]
+    repair = '<aside class="issue-repair"><h4>Proposed repair by OSVerify</h4>' + ''.join(f'<p>{prose(p)}</p>' for p in repair_texts) + '</aside>'
     passages = issue.get('issue_passages', [])
     if not passages:
         raise ValueError(f"Missing precise source passage: {issue['source_issue_id']}")

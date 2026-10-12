@@ -194,7 +194,13 @@
               "end_line": 5377
             }
           }
-        ]
+        ],
+        "proposed_repair": {
+          "text": "For non-quasi-compact S, construct a continuous categorical evaluation agreeing with (4.3) on quasi-compact parameters and compatible with the claimed closed-image transposition identities. The report identifies this obligation but does not supply the construction for general S.",
+          "source_feedback_indices": [
+            1
+          ]
+        }
       },
       {
         "source_issue_id": "node-0018-issue-000001",
@@ -328,7 +334,13 @@
               "end_line": 3887
             }
           }
-        ]
+        ],
+        "proposed_repair": {
+          "text": "Replace the global scalar identification with a local conservativity argument. Keep E=p_*ω_{H×N}, with p(h′,n)=h′B⁻. On big-cell trivializations, E becomes ω_U⊗V for a nonzero finite complex V=Γ_dR(B⁻×N,ω); tensoring with V detects zero over ℂ. Apply descent to obtain conservativity globally, using the same calculation on products with spectator charts.",
+          "source_feedback_indices": [
+            2
+          ]
+        }
       },
       {
         "source_issue_id": "node-0038-issue-000001",
@@ -491,7 +503,13 @@
               "end_line": 1866
             }
           }
-        ]
+        ],
+        "proposed_repair": {
+          "text": "In the first quoted passage, cite the definition of ψ_D in Section 4.2 with D=0. In the second, cite the definition of q_D in Section 4.2 and Equation (4.2). In the third, replace (4.1) with (4.2).",
+          "source_feedback_indices": [
+            1
+          ]
+        }
       }
     ]
   },
@@ -690,6 +708,12 @@
           "at lines 3507–3509": "in the quoted final sentence of Section 8.2",
           "Revise lines 3507–3509": "Revise that sentence",
           "at lines 3600–3612": "in the proof of Lemma 8.5"
+        },
+        "proposed_repair": {
+          "text": "Restrict automatic preservation of genericity to extensions obtained by adjoining other grid points to B₀. For an arbitrary larger coefficient field, retain an explicit genericity hypothesis. The cited applications already supply the required independence or genericity.",
+          "source_feedback_indices": [
+            2
+          ]
         }
       }
     ]
@@ -822,7 +846,13 @@
               "end_line": 6275
             }
           }
-        ]
+        ],
+        "proposed_repair": {
+          "text": "State P_{i,h}⊆C_{i,h} for every 1≤i≤N and C_{i,h}⊆P_{i+1,h} for i<N. This includes the missing endpoint condition, which the later application already supplies.",
+          "source_feedback_indices": [
+            1
+          ]
+        }
       },
       {
         "source_issue_id": "node-0017-issue-000001",
@@ -996,6 +1026,12 @@
         ],
         "reference_labels": {
           "at lines 2708–2715": "in the quoted passage from the proof of Lemma 5.3"
+        },
+        "proposed_repair": {
+          "text": "Set f_p=(F_a)_p and replace the predictor identity by μ_h=√ε[(P_hF_a)_p−E_hf_p]. Use (∑_h‖μ_{h+1}−μ_h‖²₂)^(1/2)≤2√ε‖F_a‖₂ and ‖μ_H‖₂≤2√ε‖F_a‖₂ in the existing proof; these retain the parameter dependence in (7), with adjusted absolute constants.",
+          "source_feedback_indices": [
+            2
+          ]
         }
       },
       {
@@ -1083,6 +1119,12 @@
         "reference_labels": {
           "Lines 6789–6793": "The quoted passage in Section 9.1",
           "at lines 7052–7071": "in Section 9.2"
+        },
+        "proposed_repair": {
+          "text": "Replace “the earlier roles’ required positions” with “the trials assigned to later roles.” If a(t) is the assigned role, require role j to fail when a(t)=j and succeed when a(t)>j, with no condition when a(t)<j. Retain success in every core role at the final height.",
+          "source_feedback_indices": [
+            1
+          ]
         }
       }
     ]
@@ -1146,7 +1188,13 @@
             "source_quote": "@article{Milne1999Tate,\n  author = {Milne, J. S.},\n  doi = {10.1023/A:1000776613765},\n  journal = {Compositio Mathematica},\n  number = {1},\n  pages = {45--76},\n  title = {Lefschetz Motives and the {Tate} Conjecture},\n  url = {https://www.jmilne.org/math/articles/1999b.html},\n  volume = {117},\n  year = {1999}"
           }
         ],
-        "related_context": []
+        "related_context": [],
+        "proposed_repair": {
+          "text": "Change the Milne1999Tate bibliography entry to `pages = {47--81}`.",
+          "source_feedback_indices": [
+            1
+          ]
+        }
       }
     ]
   },
@@ -1224,6 +1272,12 @@
         ],
         "reference_labels": {
           "at line 3372": "in the quoted descent paragraph"
+        },
+        "proposed_repair": {
+          "text": "Replace the locator with Chapter X, Remark 4.7, Example 4.8, Proposition 4.9, and Remark 4.9.1, pp. 335–338.",
+          "source_feedback_indices": [
+            1
+          ]
         }
       }
     ]
@@ -1356,6 +1410,12 @@
           "in lines 3055–3057": "in the quoted display",
           "from line 2984": "defined earlier in this proof",
           "in lines 3061–3063 and 3103–3109": "in Equations (9.10) and (9.12)"
+        },
+        "proposed_repair": {
+          "text": "Replace the disputed chain by Q TV_[q,∞)(h_-/u)≤3mQ/q<0.036 min(1,Q/7.5), retaining the exact maximum m. The final inequality uses m<0.012 and Q/q≤min(1,Q/7.5).",
+          "source_feedback_indices": [
+            1
+          ]
         }
       }
     ]
@@ -1528,6 +1588,12 @@
         "reference_labels": {
           "in lines 2493–2494": "in the quoted sentence",
           "in line 2478": "displayed earlier in the proof of Lemma 3.9"
+        },
+        "proposed_repair": {
+          "text": "Use the global bound C(1+1/d(s)). The resulting integral estimate includes an additional C‖Q‖₂² term, which the existing L² term absorbs.",
+          "source_feedback_indices": [
+            2
+          ]
         }
       }
     ]
@@ -1618,6 +1684,12 @@
           "at line 4164": "in the opening paragraph of Section 11.1",
           "At line 4164": "In that citation",
           "at lines 4175–4189": "in Equation (66) and the following interior-visit comparison"
+        },
+        "proposed_repair": {
+          "text": "Replace “Propositions 9.1–9.2” with “Propositions 10.1 and 10.7”, retaining Section 2 and Theorems 1.1–1.2 in the citation.",
+          "source_feedback_indices": [
+            1
+          ]
         }
       }
     ]
@@ -1767,7 +1839,13 @@
               "end_line": 1371
             }
           }
-        ]
+        ],
+        "proposed_repair": {
+          "text": "Replace Lemma 2.3 with Lemma 3.3 in all three citations to ThreeDimensional and its bibliography note.",
+          "source_feedback_indices": [
+            1
+          ]
+        }
       },
       {
         "source_issue_id": "node-0013-issue-000001",
@@ -1890,7 +1968,13 @@
               "end_line": 4586
             }
           }
-        ]
+        ],
+        "proposed_repair": {
+          "text": "Replace the Jacobian sentence with: “Writing u = base_Q(t,y) for unit base coordinates, the volume elements satisfy dt dy = q_sJ_s du.” Equation (4.20) and the following time-normalization formulas already have the correct factors.",
+          "source_feedback_indices": [
+            1
+          ]
+        }
       }
     ]
   },
@@ -2013,6 +2097,12 @@
         "reference_labels": {
           "at line 4916": "in the quoted passage",
           "in lines 4918–4920": "immediately following it"
+        },
+        "proposed_repair": {
+          "text": "Replace “both parameters disappear” with “the single interval parameter disappears, so both pieces have p=0.”",
+          "source_feedback_indices": [
+            1
+          ]
         }
       },
       {
@@ -2160,6 +2250,12 @@
         ],
         "reference_labels": {
           "in lines 9831–9832": "in the quoted passage from the proof of Proposition 9.12"
+        },
+        "proposed_repair": {
+          "text": "Replace “has index d_s+p_i” with “has index at most d_s+p_i”, accounting for one lost parameter per separated lens end. With particle positions, use index ≤d_s+p_i−h_i+4ℓ_i≤d_s+p_i+4ℓ_i.",
+          "source_feedback_indices": [
+            2
+          ]
         }
       },
       {
@@ -2245,6 +2341,12 @@
         ],
         "reference_labels": {
           "at line 9167": "in the quoted display"
+        },
+        "proposed_repair": {
+          "text": "Replace −⟨b_e,c⟩_{L²(Y_e)} by +⟨b_e,c⟩_{L²(Y_e)} in the quoted boundary pairing. Its vanishing still gives b_e=0.",
+          "source_feedback_indices": [
+            1
+          ]
         }
       }
     ],
