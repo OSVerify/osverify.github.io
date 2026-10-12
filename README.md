@@ -39,11 +39,9 @@ header and footer, so edit both when the chrome changes.
 paper has an original-paper link, reviewed version date, and separate Major
 and Minor groups. Each issue has a stable shareable anchor.
 
-Repair sections use **Proposed repair by OSVerify**. A curated `proposed_repair`
-contains the smallest supported local change and any necessary qualification; its
-`source_feedback_indices` are zero-based references to the original `feedback`
-array. Keep the released feedback unchanged. A proof obligation without a supplied
-construction must remain explicitly incomplete, even under the proposed-repair heading.
+Repair sections use **Proposed repair by OSVerify** and are collapsed by default,
+like **Related context**. Expanding them displays the original released repair
+feedback in full; collapsing the UI must not shorten or rewrite the content.
 
 Severity defaults to the source report. Explicit editorial reclassifications
 are recorded in `data/case-study-provenance.json` under `severity_overrides`;
