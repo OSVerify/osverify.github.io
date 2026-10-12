@@ -160,26 +160,6 @@
         <h3 class="subhead" id="discovery">Facilitating scientific discovery</h3>
         <p>Test-time scaling and autoresearch systems can generate many candidate solutions, but open problems rarely come with an automatic evaluator to tell which ones are right. OSVerify can fill that role. We paired it with the agentic mathematical problem solver <a href="https://github.com/frenzymath/Rethlas">Rethlas</a>, with <b>no formal proof checker</b> in the loop.</p>
 
-        <div class="flow" role="list" aria-label="How OSVerify fits into the solving loop">
-          <div class="flow-step" role="listitem">
-            <span class="flow-role">Solver</span>
-            <span class="flow-name">Rethlas</span>
-            <span class="flow-text">proposes candidate proofs</span>
-          </div>
-          <span class="flow-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></span>
-          <div class="flow-step ours" role="listitem">
-            <span class="flow-role">Verifier</span>
-            <span class="flow-name">OSVerify</span>
-            <span class="flow-text">checks candidates during solving and rejects those with confirmed errors</span>
-          </div>
-          <span class="flow-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></span>
-          <div class="flow-step" role="listitem">
-            <span class="flow-role">Final check</span>
-            <span class="flow-name">Human experts</span>
-            <span class="flow-text">confirm the proofs that OSVerify passes</span>
-          </div>
-        </div>
-
         <div class="paper-list discoveries">
           <article class="paper-card">
             <div class="study-meta"><span>Relative Langlands duality</span><div class="finding-counts"><span class="severity minor">Proofs confirmed by experts</span></div></div>
@@ -195,7 +175,7 @@
             </div>
           </article>
           <article class="paper-card">
-            <div class="study-meta"><span>Number theory · Latest result</span><div class="finding-counts"><span class="severity major">Error found</span></div></div>
+            <div class="study-meta"><span>Number theory · Latest result</span></div>
             <h4>On the Manin–Stevens constant</h4>
             <p>The paper proves the Manin constant conjecture and Stevens’ Conjectures I and II. OSVerify found an error and suggested a repair. Rethlas with OSVerify also reproduced a proof of the Manin constant conjecture from its statement (Appendix A.3–A.4).</p>
             <div class="paper-links">

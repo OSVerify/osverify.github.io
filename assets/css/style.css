@@ -193,20 +193,6 @@ code { font-family: var(--mono); font-size: 0.84em; }
 h2 + .subhead { margin-top: 0; }
 .paper-list.featured { margin-top: 1.25rem; }
 
-/* discovery loop: solver -> OSVerify -> experts */
-.flow { display: flex; align-items: stretch; gap: 0.5rem; margin: 1.5rem 0 1.25rem; }
-.flow-step { flex: 1 1 0; display: flex; flex-direction: column; gap: 0.2rem; padding: 0.9rem 1rem 0.95rem; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
-.flow-step.ours { background: var(--green-tint); border-color: var(--green); }
-.flow-role { font-size: 0.75rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2); }
-.flow-name { font-size: 1.12rem; font-weight: bold; color: var(--ink); }
-.flow-step.ours .flow-name { color: var(--green-ink); }
-.flow-text { font-size: 0.95rem; line-height: 1.45; color: var(--ink-2); }
-.flow-arrow { flex: none; align-self: center; display: inline-flex; color: var(--ink-2); }
-.flow-arrow svg { width: 1.3rem; height: 1.3rem; }
-@media (max-width: 640px) {
-  .flow { flex-direction: column; }
-  .flow-arrow { transform: rotate(90deg); }
-}
 .discoveries { margin-top: 0; }
 .discoveries .paper-card ol.conj { margin: 0.75rem 0 0; padding-left: 1.25rem; font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
 .discoveries .paper-card ol.conj li { margin-bottom: 0.45rem; }
