@@ -1376,7 +1376,7 @@
         "anchor": "the-global-kernel-bound-omits-a-bulk-contribution",
         "title": "The global kernel bound omits a bulk contribution",
         "location": "Section 3.6, proof of Lemma 3.9, paragraph estimating the second circle kernel",
-        "severity": "minor",
+        "severity": "major",
         "classification_note": "Adding the bounded bulk term repairs the estimate; the existing L² term absorbs it in the subsequent argument.",
         "feedback": [
           {

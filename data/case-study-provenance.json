@@ -117,6 +117,15 @@
       "node-0016-issue-000001"
     ],
     "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
+    "severity_overrides": [
+      {
+        "source_issue_id": "node-0016-issue-000001",
+        "source_severity": "minor",
+        "published_severity": "major",
+        "basis": "User-requested editorial reclassification",
+        "date": "2026-10-12"
+      }
+    ],
     "location_audit": {
       "date": "2026-10-11",
       "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
