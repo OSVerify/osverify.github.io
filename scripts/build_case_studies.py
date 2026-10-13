@@ -73,9 +73,13 @@ def count(paper, severity):
     return sum(i['severity'] == severity for i in paper['issues'])
 
 
+def coverage_flagged(paper):
+    return not paper['coverage_complete'] and paper.get('show_coverage_status', True)
+
+
 def badges(paper):
     result = ''.join(f'<span class="severity {s}">{count(paper, s)} {s.title()}</span>' for s in ('major', 'minor'))
-    if not paper['coverage_complete']:
+    if coverage_flagged(paper):
         result += '<span class="review-status">Coverage incomplete</span>'
     return '<div class="finding-counts">' + result + '</div>'
 
@@ -149,10 +153,10 @@ def paper_page(paper):
         f'<a class="severity {s}" href="#{s}-issues" title="Jump to {s} issues">{count(paper, s)} {s.title()}</a>' if count(paper, s)
         else f'<span class="severity {s} empty">0 {s.title()}</span>'
         for s in ('major', 'minor'))
-    if not paper['coverage_complete']:
+    if coverage_flagged(paper):
         jump += '<span class="review-status">Coverage incomplete</span>'
     scope = ''
-    if not paper['coverage_complete']:
+    if coverage_flagged(paper):
         scope = f'<p class="review-note"><b>Review coverage.</b> This report searched {paper["scopes_searched"]} of {paper["scopes_total"]} planned scopes. The findings below passed OSVerify’s internal review; the full-paper search is incomplete.</p>'
     if paper.get("review_note"):
         scope += f'<p class="review-note"><b>Review note.</b> {text(paper["review_note"])}</p>'

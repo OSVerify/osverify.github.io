@@ -2119,7 +2119,7 @@
     "coverage_complete": false,
     "scopes_searched": 42,
     "scopes_total": 48,
-    "review_note": "Follow-up checks of seven steps in the main proof chain left at least one material premise unresolved, so the whole-paper scope remains open. These checks released no further issues.",
+    "show_coverage_status": false,
     "issues": [
       {
         "source_issue_id": "root-issue-000002",
