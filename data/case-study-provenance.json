@@ -61,38 +61,6 @@
     }
   },
   {
-    "slug": "cm-hodge",
-    "report": "results/openai-four-papers-astra-max-20261009/cm-hodge/verification/report.json",
-    "report_sha256": "aa25a2c0afbbcfdab0386a01d00b770cd7da38d79fc75e32e5be3e1aa3390b97",
-    "pdf_sha256": "d05a896320a4690a5fc809e5557c3ee45fe24b2dfd2f78e1d87ea9c8e1cf7647",
-    "source_issue_ids": [
-      "node-0025-issue-000001"
-    ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
-    "location_audit": {
-      "date": "2026-10-11",
-      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
-      "source_sha256": "643ba7ddb770ed0344f33854eb48fedccb9c5cb10fc992613d8ddfa911ba85af",
-      "original_pdf_sha256": "6e3e66a407773ad5091d4cb48d9b4dc55a69c58fb0948a88daf19f3bb21bf27b"
-    }
-  },
-  {
-    "slug": "hilbert-tenth-rationals",
-    "report": "results/openai-hilbert-tenth-astra-max-20261009/hilbert-tenth-rationals/verification/report.json",
-    "report_sha256": "8758fdcf77f7323afa23b1941d42fd02d2e3fd385e1f1221b3336743f6726444",
-    "pdf_sha256": "fb776799fd52e40f358ffa8f49cb5387ab305528fd798803e9c55a46e0512691",
-    "source_issue_ids": [
-      "node-0027-issue-000001"
-    ],
-    "note": "Uses released, classified findings from this report snapshot. Follow-up reference-only runs are not merged into its coverage.",
-    "location_audit": {
-      "date": "2026-10-11",
-      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context",
-      "source_sha256": "a0d0adb774096eecee9435d2b84c142f27922a579bda82d09d8f7629f1fdf485",
-      "original_pdf_sha256": "f79236c22b981fe66aaf3ba494a466bf26db212117db47d95a31bf0315af2b30"
-    }
-  },
-  {
     "slug": "cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks",
     "report": "results/openai-honeycomb-13-astra-max-20261009/cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks/verification/report.json",
     "report_sha256": "461e2fef997c5a5a60199b8d5e6d5506a47d1590b2234ba0c48f890d5e94a00b",

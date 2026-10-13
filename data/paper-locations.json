@@ -278,51 +278,6 @@
     "original_pdf_sha256": "24b584066ae76b2f28dc03d32a2b0a2cdc3b4f92e0e82f4a3d133f28ccc5a936",
     "compilation_status": "compiled"
   },
-  "cm-hodge": {
-    "schema_version": "paper-locations-1",
-    "request_id": "The rational Hodge conjecture for CM abelian varieties October 6 2026",
-    "source_sha256": "643ba7ddb770ed0344f33854eb48fedccb9c5cb10fc992613d8ddfa911ba85af",
-    "numbering_status": "compiled",
-    "issues": {
-      "node-0025-issue-000001": {
-        "references": [
-          "Bibliography, entry “Milne1999Tate”"
-        ],
-        "spans": [
-          {
-            "document": "candidate_solution",
-            "start_line": 4512,
-            "end_line": 4521
-          }
-        ]
-      }
-    },
-    "original_pdf_sha256": "6e3e66a407773ad5091d4cb48d9b4dc55a69c58fb0948a88daf19f3bb21bf27b",
-    "compilation_status": "compiled"
-  },
-  "hilbert-tenth-rationals": {
-    "schema_version": "paper-locations-1",
-    "request_id": "Hilberts tenth problem over the rational numbers October 6 2026",
-    "source_sha256": "a0d0adb774096eecee9435d2b84c142f27922a579bda82d09d8f7629f1fdf485",
-    "numbering_status": "compiled",
-    "issues": {
-      "node-0027-issue-000001": {
-        "references": [
-          "Section 5",
-          "Proof of Proposition 2.1"
-        ],
-        "spans": [
-          {
-            "document": "candidate_solution",
-            "start_line": 3370,
-            "end_line": 3379
-          }
-        ]
-      }
-    },
-    "original_pdf_sha256": "f79236c22b981fe66aaf3ba494a466bf26db212117db47d95a31bf0315af2b30",
-    "compilation_status": "compiled"
-  },
   "cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks": {
     "schema_version": "paper-locations-1",
     "request_id": "Cap selected amplitudes and triangle chords for honeycomb walks September 26 2026",
