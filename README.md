@@ -83,7 +83,7 @@ The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in 
 
 The home page's Paper button links to `assets/papers/osverify.pdf`. This is the
 40-page arXiv-ready PDF prepared on 2026-10-13 from manuscript commit
-`368f32a53eb31f4bb4bfb8bfd4faa37216cb3a3e`. It matches the verified release
+`ed8b95a9f38591f95b0432047d02b0edc8589cf7`. It matches the verified release
 PDF byte for byte. Publish only the PDF here; source archives and cleanup
 reports stay outside the site. Once the arXiv entry is public, change the Paper
 button to its `https://arxiv.org/abs/...` URL and add the identifier to BibTeX.
