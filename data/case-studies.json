@@ -2109,5 +2109,445 @@
       }
     ],
     "review_note": "The whole-paper follow-up completed its search without releasing additional findings; the three previously released Minor issues are retained. Direct source verification of Gordon–Luecke’s “Knots are determined by their complements” remains unresolved because the original paper could not be retrieved."
+  },
+  {
+    "slug": "exact-bsd-low-selmer-corank",
+    "title": "Exact Birch–Swinnerton-Dyer formula from low Selmer corank",
+    "version": "October 7, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
+    "summary": "Eight citations to the companion paper on the Selmer converse point to the wrong equation or lemma numbers.",
+    "coverage_complete": false,
+    "scopes_searched": 42,
+    "scopes_total": 48,
+    "review_note": "Follow-up checks of seven steps in the main proof chain left at least one material premise unresolved, so the whole-paper scope remains open. These checks released no further issues.",
+    "issues": [
+      {
+        "source_issue_id": "root-issue-000002",
+        "merged_issue_ids": [
+          "root-issue-000001",
+          "node-0030-issue-000001",
+          "node-0031-issue-000001",
+          "node-0032-issue-000001",
+          "node-0037-issue-000001"
+        ],
+        "anchor": "eight-citations-to-the-companion-paper-point-to-the-wrong-items",
+        "title": "Eight citations to the companion paper point to the wrong items",
+        "location": "Sections 7.1–7.5 and 8.3, citations of reference [23]",
+        "severity": "minor",
+        "classification_note": "Citation locators only. Every intended passage is present in the cited October 7, 2026 version of [23], so no mathematical claim is affected. Six overlapping released findings are merged into this single issue; together they cover eight citation sites.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "Several numbered citations to [C], The Selmer converse for elliptic curves at every prime, do not match its October 7, 2026 version. Item 4.4 is a convention, the unary-moment result is Lemma 4.5, and the mixed-expansion result is Lemma 4.6. The spherical-parameter, separation and period-formula citations also contain incorrect equation numbers. The intended passages occur nearby, so this finding concerns citation accuracy and does not establish a mathematical obstruction.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4676,
+                "end_line": 4681
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4860,
+                "end_line": 4865
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4917,
+                "end_line": 4920
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5014,
+                "end_line": 5018
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5100,
+                "end_line": 5107
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5321,
+                "end_line": 5342
+              }
+            ]
+          },
+          {
+            "kind": "diagnosis",
+            "text": "The citation at line 5985 has the wrong lemma number. In the October 7, 2026 version of C, The Selmer converse for elliptic curves at every prime, Lemma 7.3 concerns cusp base change. The stated differential-scaling bounds occur in the proof of Lemma 7.4, pp. 50–51, and the normalized operators are defined in equation (7.2).",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 5983,
+                "end_line": 5990
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Correct the [C] locators as follows: line 4681 to Equation (8.10) and Lemma 8.7; line 4865 to Lemma 4.2 and Equation (4.11); lines 4920 and 5017 to the proof of Lemma 4.5, retaining Convention 4.4 when referring to frames; line 5106 to Section 4.5 and Lemma 4.6; line 5334 to Equations (5.9) and (5.11), with (5.10) optionally retained for the explicit gamma scalar; and line 5342 to Equation (5.7) and its Section 5.4 discussion. These changes correct the references to the intended inputs; they do not replace the candidate's separate arguments extending the fixed-level constructions.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 4676,
+                "end_line": 4681
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4860,
+                "end_line": 4865
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 4917,
+                "end_line": 4920
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5014,
+                "end_line": 5018
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5100,
+                "end_line": 5107
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 5321,
+                "end_line": 5342
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace the reference to C, Lemma 7.3, at line 5985 with C, Lemma 7.4 and equation (7.2). Those passages contain the stated scaling bounds and normalization exponents, so this citation correction requires no change to the displayed operator formulas.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 5983,
+                "end_line": 5990
+              }
+            ]
+          }
+        ],
+        "paper_references": [
+          "Section 7.1",
+          "Proof of Lemma 7.2",
+          "Section 7.2",
+          "Proof of Lemma 7.4",
+          "Section 7.3",
+          "Proof of Lemma 7.5",
+          "Proof of Proposition 7.6",
+          "Section 7.5",
+          "Equation (7.3)",
+          "Section 8.3",
+          "Proof of Lemma 8.3",
+          "Reference [23]"
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 7.1, proof of Lemma 7.2 (Choice of a point)",
+            "pdf_page": 60,
+            "quote": "These are the spanning denominators of [23, Lemma 6.4] and the Frobenius separation resultants of [23, Equation (8.11) and Lemma 8.6].",
+            "explanation": "Should cite [23, Equation (8.10) and Lemma 8.7]. In [23], Equation (8.11) is the inertia identity and Lemma 8.6 concerns Hodge–Newton contacts.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4679,
+              "end_line": 4681
+            },
+            "source_quote": "\\cite[Lemma 6.4]{C} and the\nFrobenius separation resultants of\n\\cite[Equation (8.11) and Lemma 8.6]{C}."
+          },
+          {
+            "location": "Section 7.2, proof of Lemma 7.4 (The two p-operators)",
+            "pdf_page": 62,
+            "quote": "by the matched unramified theta calculation of [23, Lemma 4.2 and Equation (4.10)].",
+            "explanation": "The spherical parameter is Equation (4.11) in Lemma 4.2 of [23]; Equation (4.10) there defines the moving-prime pivot test.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4864,
+              "end_line": 4865
+            },
+            "source_quote": "by the matched unramified theta calculation of\n\\cite[Lemma 4.2 and Equation (4.10)]{C}."
+          },
+          {
+            "location": "Section 7.3, proof of Lemma 7.5 (Bounded cuts of unary moments)",
+            "pdf_page": 63,
+            "quote": "For these unary theta functions use the ordinary Hilbert modular Igusa tower with the fixed tame Schwartz level and its multiplicative differential trivializations, as in [23, Lemma 4.4].",
+            "explanation": "Item 4.4 of [23] is a convention for frames; the unary-moment result is Lemma 4.5 and its proof.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 4918,
+              "end_line": 4920
+            },
+            "source_quote": "functions use the ordinary Hilbert modular Igusa tower with the\nfixed tame Schwartz level and its multiplicative differential\ntrivializations, as in \\cite[Lemma 4.4]{C}.  At each split $p$-factor"
+          },
+          {
+            "location": "Section 7.3, proof of Lemma 7.5 (Bounded cuts of unary moments)",
+            "pdf_page": 64,
+            "quote": "These algebraicity and comparison facts are the finite-level facts proved in the unary-moment argument of [23, Lemma 4.4]; they require finiteness of the chosen list, not a uniform bound for its depth.",
+            "explanation": "Should cite the proof of [23, Lemma 4.5]; item 4.4 of [23] is a convention.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5015,
+              "end_line": 5018
+            },
+            "source_quote": "with the CM splitting.  These algebraicity and comparison facts are\nthe finite-level facts proved in the unary-moment argument of\n\\cite[Lemma 4.4]{C}; they require\nfiniteness of the chosen list, not a uniform bound for its depth."
+          },
+          {
+            "location": "Section 7.3, proof of Proposition 7.6 (Integral theta sections)",
+            "pdf_page": 66,
+            "quote": "These are the mixed-expansion identities of [23, Lemma 4.5]; the argument above checks the only changing input, the increasing p-depth.",
+            "explanation": "Should cite [23, Section 4.5 and Lemma 4.6], where the mixed Fourier–Jacobi expansions are treated; Lemma 4.5 of [23] is the unary-moment result.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5105,
+              "end_line": 5107
+            },
+            "source_quote": "sequences integrally.  These are the mixed-expansion identities of\n\\cite[Lemma 4.5]{C}; the argument\nabove checks the only changing input, the increasing $p$-depth."
+          },
+          {
+            "location": "Section 7.5, paragraph on the local functional equations after Equation (7.3)",
+            "pdf_page": 68,
+            "quote": "These are the normalizations in [23, Equations (5.8) and (5.10)].",
+            "explanation": "The two functional equations are Equations (5.9) and (5.11) of [23]; Equation (5.10) may be kept for the explicit gamma factor.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5333,
+              "end_line": 5334
+            },
+            "source_quote": "The Weyl involution uses trivial central character.  These are the\nnormalizations in \\cite[Equations (5.8) and (5.10)]{C}.  They hold for arbitrary"
+          },
+          {
+            "location": "Section 7.5, paragraph on the global Siegel–Weil/Rallis identity",
+            "pdf_page": 68,
+            "quote": "The global identity is the equal-rank, anisotropic binary Siegel–Weil/Rallis identity [33, 10] combined with the two Waldspurger identities [31], with the specific normalization of [23, Equation (5.6)].",
+            "explanation": "The normalization is Equation (5.7) of [23], the Rallis–Waldspurger period identity; Equation (5.6) there is a cusp-constant formula.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5340,
+              "end_line": 5342
+            },
+            "source_quote": "Siegel--Weil/Rallis identity \\cite{Yamana,GanQiuTakeda} combined\nwith the two Waldspurger identities \\cite{Waldspurger}, with the\nspecific normalization of \\cite[Equation (5.6)]{C}."
+          },
+          {
+            "location": "Section 8.3, proof of Lemma 8.3 (Uniform cusp congruence)",
+            "pdf_page": 76,
+            "quote": "The differential scalings have lower bounds λ′₃ + λ′₄ for j = 2 and λ′₄ for j = 3, exactly as in [23, Lemma 7.3].",
+            "explanation": "Should cite [23, Lemma 7.4 and Equation (7.2)]; Lemma 7.3 of [23] concerns cusp base change.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 5983,
+              "end_line": 5985
+            },
+            "source_quote": "The differential scalings have lower bounds\n$\\lambda'_3+\\lambda'_4$ for $j=2$ and $\\lambda'_4$ for $j=3$,\nexactly as in \\cite[Lemma~7.3]{C}.  Thus"
+          }
+        ],
+        "related_context": [
+          {
+            "location": "References, entry [23]",
+            "role": "background",
+            "explanation": "The companion paper The Selmer converse for elliptic curves at every prime (OpenAI, October 7, 2026), cited as [C] in the report. All corrected locators refer to this version.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 7462,
+              "end_line": 7467
+            }
+          }
+        ],
+        "reference_labels": {
+          "[C]": "[23]",
+          "version of C,": "version of [23],",
+          "reference to C, Lemma 7.3, at line 5985 with C, Lemma 7.4": "reference to [23, Lemma 7.3] in the proof of Lemma 8.3 with [23, Lemma 7.4]",
+          "The citation at line 5985": "The citation in the proof of Lemma 8.3",
+          "line 4681 to": "the citation in the proof of Lemma 7.2 to",
+          "line 4865 to": "the citation in the proof of Lemma 7.4 to",
+          "lines 4920 and 5017 to": "the two citations in the proof of Lemma 7.5 to",
+          "line 5106 to": "the citation in the proof of Proposition 7.6 to",
+          "line 5334 to": "the citation after Equation (7.3) to",
+          "line 5342 to": "the Siegel–Weil/Rallis normalization in Section 7.5 to"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "hyperkahler-syz",
+    "title": "The strong hyperkähler SYZ conjecture",
+    "version": "September 23, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/The-Strong-Hyperkahler-SYZ-Conjecture-September-23-2026/main.pdf",
+    "summary": "The introduction describes a cited finiteness result as boundedness, which the cited paper says does not hold.",
+    "coverage_complete": true,
+    "scopes_searched": 28,
+    "scopes_total": 28,
+    "issues": [
+      {
+        "source_issue_id": "node-0001-issue-000001",
+        "anchor": "a-cited-finiteness-result-is-described-as-boundedness",
+        "title": "A cited finiteness result is described as boundedness",
+        "location": "Section 1, paragraph following Corollary 1.2",
+        "severity": "minor",
+        "classification_note": "Terminology. Section 6 deduces Corollary 1.2 from the finiteness statement of [11], so the corollary and its proof are unaffected.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The unqualified “boundedness” description in lines 128–130 is imprecise. EFGMS Theorem B gives finiteness of locally trivial deformation classes in fixed dimension, while its following paragraph explicitly distinguishes this from forming a bounded family. Your later formulation in lines 2626–2636 uses the needed finiteness conclusion, so this is a terminology issue. See [EFGMS v1, page 3 and Definition 2.25](https://arxiv.org/pdf/2507.00973v1).",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 128,
+                "end_line": 132
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2626,
+                "end_line": 2636
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "In lines 128–129, replace “the boundedness of Lagrangian-fibered symplectic varieties” with “the finiteness, in each fixed dimension, of locally trivial deformation classes represented by primitive symplectic varieties admitting a Lagrangian fibration”. This matches the cited conclusion and the finiteness argument already given in lines 2626–2636.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 128,
+                "end_line": 132
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2626,
+                "end_line": 2636
+              }
+            ]
+          }
+        ],
+        "paper_references": [
+          "Section 1",
+          "Theorem 1.1",
+          "Corollary 1.2",
+          "Section 6",
+          "Reference [11]"
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 1, paragraph following Corollary 1.2",
+            "pdf_page": 2,
+            "quote": "This follows by combining Theorem 1.1 with the boundedness of Lagrangian-fibered symplectic varieties proved by Engel–Filipazzi–Greer–Mauri–Svaldi [11].",
+            "explanation": "Theorem B of [11] gives finitely many locally trivial deformation classes, and the same page of [11] states that these varieties do not form a bounded family.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 128,
+              "end_line": 130
+            },
+            "source_quote": "This follows by combining Theorem~\\ref{thm:main} with the boundedness\nof Lagrangian-fibered symplectic varieties proved by\nEngel--Filipazzi--Greer--Mauri--Svaldi~\\cite{EFGMS}."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "Section 6, opening paragraphs of the deduction of Corollary 1.2",
+            "role": "downstream",
+            "explanation": "The proof of Corollary 1.2 uses the finiteness consequence of [11, Theorem B and Corollary A.3]. This formulation is correct and is not challenged.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2626,
+              "end_line": 2636
+            }
+          }
+        ],
+        "reference_labels": {
+          "in lines 128–130": "in the sentence after Corollary 1.2",
+          "In lines 128–129": "In the sentence after Corollary 1.2",
+          "in lines 2626–2636": "in Section 6"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "nearby-lagrangian",
+    "title": "A counterexample to the nearby Lagrangian conjecture",
+    "version": "September 23, 2026",
+    "paper_url": "https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-nearby-Lagrangian-conjecture-September-23-2026/paper.pdf",
+    "summary": "The Porcelli–Smith citation in the introduction gives the wrong theorem number.",
+    "coverage_complete": true,
+    "scopes_searched": 20,
+    "scopes_total": 20,
+    "issues": [
+      {
+        "source_issue_id": "node-0001-issue-000001",
+        "anchor": "the-porcelli-smith-citation-has-the-wrong-theorem-number",
+        "title": "The Porcelli–Smith citation has the wrong theorem number",
+        "location": "Section 1.1, paragraph on further necessary conditions for nearby Lagrangians",
+        "severity": "minor",
+        "classification_note": "Citation locator only. The cited factorization is Theorem 1.17 of the specified arXiv version; the paper’s statements are unaffected.",
+        "feedback": [
+          {
+            "kind": "diagnosis",
+            "text": "The Porcelli–Smith citation has an incorrect theorem number: in the bibliography’s specified arXiv version 2509.21587v2, the stated normal-invariant factorization is Theorem 1.17 on page 8, not Theorem 6.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 135,
+                "end_line": 137
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2103,
+                "end_line": 2109
+              }
+            ]
+          },
+          {
+            "kind": "repair_suggestion",
+            "text": "Replace \\cite[Theorem~6]{PorcelliSmith2026} with \\cite[Theorem~1.17]{PorcelliSmith2026}. This corrects the locator for the stated background result without changing its hypotheses or conclusion.",
+            "source_spans": [
+              {
+                "document": "candidate_solution",
+                "start_line": 135,
+                "end_line": 137
+              },
+              {
+                "document": "candidate_solution",
+                "start_line": 2103,
+                "end_line": 2109
+              }
+            ]
+          }
+        ],
+        "paper_references": [
+          "Section 1.1",
+          "Reference [25]"
+        ],
+        "issue_passages": [
+          {
+            "location": "Section 1.1, paragraph on further necessary conditions for nearby Lagrangians",
+            "pdf_page": 2,
+            "quote": "Porcelli and Smith’s Floer-homotopy approach places this normal invariant in the image of the stable Hopf action B(G/O) → G/O [25, Theorem 6].",
+            "explanation": "In the cited version arXiv:2509.21587v2, this factorization is Theorem 1.17 on page 8.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 135,
+              "end_line": 137
+            },
+            "source_quote": "is $2$-torsion \\cite[Corollary~1.2]{AACK2025}. Porcelli and Smith's\nFloer-homotopy approach places this normal invariant in the image of the\nstable Hopf action $B(G/O)\\to G/O$ \\cite[Theorem~6]{PorcelliSmith2026}."
+          }
+        ],
+        "related_context": [
+          {
+            "location": "References, entry [25]",
+            "role": "background",
+            "explanation": "Specifies version 2 of Porcelli–Smith (arXiv:2509.21587v2), the version against which the theorem number is checked.",
+            "source_span": {
+              "document": "candidate_solution",
+              "start_line": 2103,
+              "end_line": 2109
+            }
+          }
+        ],
+        "reference_labels": {
+          "\\cite[Theorem~6]{PorcelliSmith2026}": "[25, Theorem 6]",
+          "\\cite[Theorem~1.17]{PorcelliSmith2026}": "[25, Theorem 1.17]"
+        }
+      }
+    ]
   }
 ]

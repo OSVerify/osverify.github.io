@@ -559,5 +559,127 @@
     },
     "original_pdf_sha256": "ee916c92b825a8686ddfa5cf1970c320d611899212992da40ca56791bd79fa3d",
     "compilation_status": "compiled"
+  },
+  "exact-bsd-low-selmer-corank": {
+    "schema_version": "paper-locations-1",
+    "request_id": "Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank",
+    "source_sha256": "0c15f184db9d0d58f581caa28d42df10c56988463820ef24db3d973b5519f9d6",
+    "numbering_status": "compiled",
+    "issues": {
+      "root-issue-000002": {
+        "references": [
+          "Section 7.1",
+          "Proof of Lemma 7.2",
+          "Section 7.2",
+          "Proof of Lemma 7.4",
+          "Section 7.3",
+          "Proof of Lemma 7.5",
+          "Proof of Proposition 7.6",
+          "Section 7.5",
+          "Equation (7.3)",
+          "Section 8.3",
+          "Proof of Lemma 8.3",
+          "Reference [23]"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 4676,
+            "end_line": 4681
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4860,
+            "end_line": 4865
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 4917,
+            "end_line": 4920
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5014,
+            "end_line": 5018
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5100,
+            "end_line": 5107
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5321,
+            "end_line": 5342
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 5983,
+            "end_line": 5990
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "64b46603e174462e5bb32d242852eb7f0afe6e519f26534e42fd3f178a16b885",
+    "compilation_status": "compiled"
+  },
+  "hyperkahler-syz": {
+    "schema_version": "paper-locations-1",
+    "request_id": "The strong hyperkähler SYZ conjecture",
+    "source_sha256": "4d6cdd83046316b57c13382d1b9e36b0815606fa61217bd489781257f1e7f5ba",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0001-issue-000001": {
+        "references": [
+          "Section 1",
+          "Theorem 1.1",
+          "Corollary 1.2",
+          "Section 6",
+          "Reference [11]"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 128,
+            "end_line": 132
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2626,
+            "end_line": 2636
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "dbb30c29398fcfa0905ac92b97a11fbfd5a56f1861fb88ae1a50c8137ac601eb",
+    "compilation_status": "compiled"
+  },
+  "nearby-lagrangian": {
+    "schema_version": "paper-locations-1",
+    "request_id": "A counterexample to the nearby Lagrangian conjecture",
+    "source_sha256": "0b65796743d99b3937f36e22f498a10db097f13ca8e7dd649c71ea9afe27e230",
+    "numbering_status": "compiled",
+    "issues": {
+      "node-0001-issue-000001": {
+        "references": [
+          "Section 1.1",
+          "Reference [25]"
+        ],
+        "spans": [
+          {
+            "document": "candidate_solution",
+            "start_line": 135,
+            "end_line": 137
+          },
+          {
+            "document": "candidate_solution",
+            "start_line": 2103,
+            "end_line": 2109
+          }
+        ]
+      }
+    },
+    "original_pdf_sha256": "ce7a208ddd7ef666a814114a9c92bbb782eda8ea82e21502f7624709539a9a34",
+    "compilation_status": "compiled"
   }
 }

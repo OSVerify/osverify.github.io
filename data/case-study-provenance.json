@@ -171,5 +171,71 @@
       "source_sha256": "b81bbc86ced12d2e629fc2cf4c77d54f6543df78efe8ab818b92012f4db0ecb1",
       "original_pdf_sha256": "ee916c92b825a8686ddfa5cf1970c320d611899212992da40ca56791bd79fa3d"
     }
+  },
+  {
+    "slug": "exact-bsd-low-selmer-corank",
+    "report": "results/openai-short-important-resume-20261011/exact-birch-swinnerton-dyer-formula-from-low-selmer-corank-october-7-2026/verification/report.json",
+    "report_sha256": "dffdafa335fa9075ad439021826b030da429be81d0b11a1fa95b2c3dd9bece36",
+    "pdf_sha256": "5377ebb25c8c920c7e427f45e0ac7028d8e3ce223a04d6b801de0fcc5e3ba6c4",
+    "source_issue_ids": [
+      "root-issue-000002",
+      "root-issue-000001",
+      "node-0030-issue-000001",
+      "node-0031-issue-000001",
+      "node-0032-issue-000001",
+      "node-0037-issue-000001"
+    ],
+    "note": "Uses released, classified findings from this report snapshot. The six released findings overlap and are merged into one issue covering eight citation sites (see merged_issue_ids). Residual proof-chain checks are recorded under coverage_update.",
+    "coverage_update": {
+      "combined_coverage": "results/openai-partial-gap-supplements-20261011/exact-birch-swinnerton-dyer-formula-from-low-selmer-corank-october-7-2026/combined-coverage.json",
+      "combined_coverage_sha256": "c84645fa12e20d4d7003aa778bf855d1b19795e08b5702a1ed66d359f24c4b63",
+      "note": "Seven residual proof-chain checks (results/openai-bsd-residual-chain-checks-20261011) left the root scope incomplete; they released no findings."
+    },
+    "location_audit": {
+      "date": "2026-10-13",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context; corrected locators checked against the cited versions",
+      "source_sha256": "0c15f184db9d0d58f581caa28d42df10c56988463820ef24db3d973b5519f9d6",
+      "original_pdf_sha256": "64b46603e174462e5bb32d242852eb7f0afe6e519f26534e42fd3f178a16b885"
+    }
+  },
+  {
+    "slug": "hyperkahler-syz",
+    "report": "results/openai-short-important-resume-20261011/the-strong-hyperkahler-syz-conjecture-september-23-2026/verification/report.json",
+    "report_sha256": "8d4a2d7945ad969c69a019bcb2e0c9f18faf32b11506a5fce26720274f4ff500",
+    "pdf_sha256": "38afa1c5ad6e2fe178a57ae5ac2cf41c285269e6ba0241a81cbf1d89703f27fa",
+    "source_issue_ids": [
+      "node-0001-issue-000001"
+    ],
+    "note": "Findings use the released primary report snapshot. Coverage includes the separately recorded gap supplement, bound to the same reviewed source.",
+    "coverage_update": {
+      "report": "results/openai-partial-gap-supplements-20261011/the-strong-hyperkahler-syz-conjecture-september-23-2026/verification/report.json",
+      "report_sha256": "f0791dded3970de27c8d091ad8bc857bfe2700c65c4f05330bab95a61cb46a8d",
+      "combined_coverage": "results/openai-partial-gap-supplements-20261011/the-strong-hyperkahler-syz-conjecture-september-23-2026/combined-coverage.json",
+      "combined_coverage_sha256": "4aed274caad70bba0fdf7113cc42445bb23035549755eabd3a47777f514c4468",
+      "source_sha256": "4d6cdd83046316b57c13382d1b9e36b0815606fa61217bd489781257f1e7f5ba",
+      "note": "The supplement completes the single unfinished original scope (companion base-smoothness checks); the other 27 scopes are inherited. It released no findings."
+    },
+    "location_audit": {
+      "date": "2026-10-13",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context; corrected locators checked against the cited versions",
+      "source_sha256": "4d6cdd83046316b57c13382d1b9e36b0815606fa61217bd489781257f1e7f5ba",
+      "original_pdf_sha256": "dbb30c29398fcfa0905ac92b97a11fbfd5a56f1861fb88ae1a50c8137ac601eb"
+    }
+  },
+  {
+    "slug": "nearby-lagrangian",
+    "report": "results/openai-short-then-important-astra-max-20261010/a-counterexample-to-the-nearby-lagrangian-conjecture-september-23-2026/verification/report.json",
+    "report_sha256": "5c6cc98c2395dafcbfb8329927451398c0047bd6e434e7d2bd7daaf7816dd38d",
+    "pdf_sha256": "2541dc1df255896e4f02396ebb9e9732df1d3ce670f2d873e37fd62bf55c3f35",
+    "source_issue_ids": [
+      "node-0001-issue-000001"
+    ],
+    "note": "Uses released, classified findings from this report snapshot.",
+    "location_audit": {
+      "date": "2026-10-13",
+      "basis": "Original PDF and frozen LaTeX checked for precise issue passages and separately labeled context; corrected locators checked against the cited versions",
+      "source_sha256": "0b65796743d99b3937f36e22f498a10db097f13ca8e7dd649c71ea9afe27e230",
+      "original_pdf_sha256": "ce7a208ddd7ef666a814114a9c92bbb782eda8ea82e21502f7624709539a9a34"
+    }
   }
 ]
