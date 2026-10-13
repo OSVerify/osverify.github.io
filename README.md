@@ -13,6 +13,7 @@ scripts/             static case study page generator
 404.html              GitHub Pages not-found page
 assets/css/style.css  all styles (light + dark via prefers-color-scheme)
 assets/js/site.js     BibTeX copy button
+assets/papers/        OSVerify preprint PDF, linked from the Paper button
 assets/img/           logo (PNG, light + dark), paper figures (PNG, 1920 px wide), icons, social preview
 .nojekyll             serve files as-is (no Jekyll processing)
 ```
@@ -78,9 +79,19 @@ pdftocairo -png -scale-to-x 1920 -scale-to-y -1 -singlefile ../validator-paper/f
 
 The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in the results table are copied by hand from the paper's Table 1 (`sections/05_evaluation.tex`).
 
+## Paper PDF
+
+The home page's Paper button links to `assets/papers/osverify.pdf`. This is the
+40-page arXiv-ready PDF prepared on 2026-10-13 from manuscript commit
+`368f32a53eb31f4bb4bfb8bfd4faa37216cb3a3e`. It matches the verified release
+PDF byte for byte. Publish only the PDF here; source archives and cleanup
+reports stay outside the site. Once the arXiv entry is public, change the Paper
+button to its `https://arxiv.org/abs/...` URL and add the identifier to BibTeX.
+
 ## Before going public
 
-- [ ] arXiv link (replace the "coming soon" Paper button)
+- [x] Paper PDF available from the home page
+- [ ] Replace the hosted Paper PDF link with the public arXiv entry
 - [x] Code link → https://github.com/OSVerify
 - [ ] arXiv eprint / url in the BibTeX
 - [ ] Absolute `og:image` / `og:url` once the final domain is known
