@@ -452,6 +452,9 @@ ol.conj li { margin-bottom: 0.5rem; }
 .issue-card .issue-location { margin: 0.5rem 0 1.4rem; font-size: 0.9rem; color: var(--ink-2); }
 .issue-equations { overflow-x: auto; background: var(--surface-2); border-radius: 4px; padding: 0.9rem 1rem; margin: 1rem 0; font-size: 1.1rem; line-height: 1.8; }
 .issue-equations > div { white-space: nowrap; }
+.expert-comment { margin-top: 1.4rem; padding: 0.9rem 1.1rem; background: var(--green-tint); border-left: 3px solid var(--green); border-radius: 4px; }
+.expert-comment h4 { margin: 0 0 0.35rem; }
+.issue-card .expert-comment p { margin: 0; font-size: 1rem; line-height: 1.6; }
 .issue-repair p { font-size: 0.95rem; line-height: 1.6; }
 .issue-repair, .issue-context { margin-top: 1.25rem; font-size: 0.9rem; color: var(--ink-2); }
 .issue-repair + .issue-context { margin-top: 0; }

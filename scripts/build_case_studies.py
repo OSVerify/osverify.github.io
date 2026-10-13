@@ -110,6 +110,9 @@ def issue_card(issue, number):
     requests = [f for f in issue['feedback'] if f['kind'] == 'repair_request']
     repairs = suggestions or requests
     repair = '<details class="issue-repair"><summary>Proposed repair by OSVerify</summary>' + ''.join(f'<p>{prose(f["text"])}</p>' for f in repairs) + '</details>'
+    comment = ''
+    if issue.get('expert_comment'):
+        comment = f'<aside class="expert-comment"><h4>Human expert comment</h4><p>{prose(issue["expert_comment"])}</p></aside>'
     passages = issue.get('issue_passages', [])
     if not passages:
         raise ValueError(f"Missing precise source passage: {issue['source_issue_id']}")
@@ -136,7 +139,7 @@ def issue_card(issue, number):
     return f'''<article class="issue-card {severity}" id="{anchor}" data-issue-id="{text(issue['source_issue_id'])}">
       <div class="issue-masthead"><span class="severity {severity}">{severity.title()} · Issue {number:02d}</span><a class="issue-link" href="#{anchor}" aria-label="Link to issue: {text(issue['title'])}">{ICON['link']}<span>Link</span></a></div>
       <h3>{text(issue['title'])}</h3>
-      {located}{evidence}{repair}{details}
+      {located}{evidence}{comment}{repair}{details}
     </article>'''
 
 

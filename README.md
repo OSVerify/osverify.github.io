@@ -40,7 +40,9 @@ paper has an original-paper link, reviewed version date, and separate Major
 and Minor groups. Each issue has a stable shareable anchor.
 
 Repair sections use **Proposed repair by OSVerify** and are collapsed by default,
-like **Related context**. Expanding them displays the original released repair
+like **Related context**.
+An optional `expert_comment` on an issue renders as a visible **Human expert comment** block
+between the evidence and the repair. Expanding them displays the original released repair
 feedback in full; collapsing the UI must not shorten or rewrite the content.
 
 Severity defaults to the source report. Explicit editorial reclassifications

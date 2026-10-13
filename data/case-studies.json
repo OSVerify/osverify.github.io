@@ -512,6 +512,7 @@
         "location": "Section 8.2, final sentence of the function-field discussion after the proof of Lemma 8.3",
         "severity": "major",
         "classification_note": "The proposed correction narrows the original assertion. The report explains why the cited applications are preserved, but does not establish the broader assertion as written.",
+        "expert_comment": "The reported issue and the suggested fix are both correct. So the statement in the paper is false as stated, but this error is fixable.",
         "feedback": [
           {
             "kind": "diagnosis",
