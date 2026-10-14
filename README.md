@@ -79,21 +79,23 @@ pdftocairo -png -scale-to-x 1920 -scale-to-y -1 -singlefile ../validator-paper/f
 
 The same command works for `fig1_motivation_row` and `scaling_rows`. Numbers in the results table are copied by hand from the paper's Table 1 (`sections/05_evaluation.tex`).
 
-## Paper PDF
+## Paper
 
-The home page's Paper button links to `assets/papers/osverify.pdf`. This is the
-40-page arXiv-ready PDF prepared on 2026-10-13 from manuscript commit
-`ed8b95a9f38591f95b0432047d02b0edc8589cf7`. It matches the verified release
-PDF byte for byte. Publish only the PDF here; source archives and cleanup
-reports stay outside the site. Once the arXiv entry is public, change the Paper
-button to its `https://arxiv.org/abs/...` URL and add the identifier to BibTeX.
+The home page's Paper button links to the public arXiv entry:
+[One-Sided Verification Under Limited Expert Review](https://arxiv.org/abs/2610.18089).
+The Citation section includes the arXiv identifier and URL in its BibTeX.
+
+The earlier hosted PDF remains at `assets/papers/osverify.pdf` as an archived
+snapshot. It is the 40-page arXiv-ready PDF prepared on 2026-10-13 from manuscript
+commit `ed8b95a9f38591f95b0432047d02b0edc8589cf7` and matches the verified
+release PDF byte for byte. Source archives and cleanup reports stay outside the site.
 
 ## Before going public
 
 - [x] Paper PDF available from the home page
-- [ ] Replace the hosted Paper PDF link with the public arXiv entry
+- [x] Replace the hosted Paper PDF link with the public arXiv entry
 - [x] Code link → https://github.com/OSVerify
-- [ ] arXiv eprint / url in the BibTeX
+- [x] arXiv eprint / url in the BibTeX
 - [ ] Absolute `og:image` / `og:url` once the final domain is known
 
 ## Deploy (GitHub Pages)
